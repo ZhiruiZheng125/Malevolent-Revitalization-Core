@@ -2,7 +2,7 @@
 <Defs>  
 
 <!--Cyberfluid-->
-  <ThingDef Name="SerumBase" ParentName="ResourceBase">
+  <ThingDef ParentName="ResourceBase">
     <defName>nanoCyberfluid</defName>
     <label>Nano Cyberfluid</label>
     <description>Here shoud add description for NanoCyberfluid.</description>
@@ -64,10 +64,10 @@
         <teetotalerCanConsume>true</teetotalerCanConsume>
       </li>
 
-      <li Class="CompProperties_UseEffectAddHediff">
-        <!-- <compClass>ZIRI_ApocritonMechResurrector.CompProperties_UseEffectAddHediffAndRecharge</compClass>
+      <li Class="ZIRI_ApocritonMechResurrector.CompProperties_UseEffectAddHediffAndRecharge">
+        <compClass>ZIRI_ApocritonMechResurrector.CompUseEffect_AddHediffAndResetMechResurrectCharge</compClass>
         <hediffDefAnother>FibrousMechanites</hediffDefAnother>
-        <haveAbilityDef>ApocritonMechResurrection</haveAbilityDef> -->
+        <haveAbilityDef>ApocritonMechResurrection</haveAbilityDef>
         <allowRepeatedUse>true</allowRepeatedUse>
         <hediffDef>SensoryMechanites</hediffDef>
       </li>
