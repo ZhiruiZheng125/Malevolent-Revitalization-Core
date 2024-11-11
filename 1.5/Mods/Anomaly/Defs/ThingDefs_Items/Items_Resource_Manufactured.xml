@@ -2,7 +2,7 @@
 <Defs>  
 
 <!--Cyberfluid-->
-  <ThingDef MayRequire="ludeon.rimworld.Anomaly"> 
+  <ThingDef Name="SerumBase" ParentName="ResourceBase">
     <defName>nanoCyberfluid</defName>
     <label>Nano Cyberfluid</label>
     <description>Here shoud add description for NanoCyberfluid.</description>
@@ -65,11 +65,11 @@
       </li>
 
       <li Class="CompProperties_UseEffectAddHediff">
-        <compClass>ZIRI_ApocritonMechResurrector.CompProperties_UseEffectAddHediffAndRecharge</compClass>
-        <hediffDef>SensoryMechanites</hediffDef>
+        <!-- <compClass>ZIRI_ApocritonMechResurrector.CompProperties_UseEffectAddHediffAndRecharge</compClass>
         <hediffDefAnother>FibrousMechanites</hediffDefAnother>
+        <haveAbilityDef>ApocritonMechResurrection</haveAbilityDef> -->
         <allowRepeatedUse>true</allowRepeatedUse>
-        <haveAbilityDef>ApocritonMechResurrection</haveAbilityDef>
+        <hediffDef>SensoryMechanites</hediffDef>
       </li>
       <li Class="CompProperties_UseEffectPlaySound">
         <soundOnUsed>MechSerumUsed</soundOnUsed>
@@ -93,7 +93,7 @@
       <skillRequirements>
         <Crafting>4</Crafting>
       </skillRequirements>
-      
+
       <researchPrerequisite>UltraMechtech</researchPrerequisite>
       <productCount>1</productCount>
       <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
