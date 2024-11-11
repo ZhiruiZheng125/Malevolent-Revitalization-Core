@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ModMetaData>
+  <name>ZIRI初始测试</name>
+
+  <author>ZIRI</author>
+
+  <supportedVersions>
+    <li>1.5</li>
+  </supportedVersions>
+
+  <packageId>Implement.test</packageId> <!--系列-->
+  <description>仅仅是测试而已</description> <!--描述-->
+</ModMetaData>

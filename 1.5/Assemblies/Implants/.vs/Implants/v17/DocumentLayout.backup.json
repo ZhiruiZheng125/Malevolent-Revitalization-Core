@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Zirimworld\\1.5\\Assemblies\\Implants\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A5BB73F5-2B73-4464-9585-5553F3695021}|Implants.csproj|d:\\steamlibrary\\steamapps\\common\\rimworld\\mods\\zirimworld\\1.5\\assemblies\\implants\\lts_implants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5BB73F5-2B73-4464-9585-5553F3695021}|Implants.csproj|solutionrelative:lts_implants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 100,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 67,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LTS_Implants.cs",
+              "DocumentMoniker": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Zirimworld\\1.5\\Assemblies\\Implants\\LTS_Implants.cs",
+              "RelativeDocumentMoniker": "LTS_Implants.cs",
+              "ToolTip": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Zirimworld\\1.5\\Assemblies\\Implants\\LTS_Implants.cs",
+              "RelativeToolTip": "LTS_Implants.cs",
+              "ViewState": "AgIAAHcBAAAAAAAAAAAgwJkBAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T20:21:20.107Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

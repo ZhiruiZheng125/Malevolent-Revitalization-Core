@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <Operation Class="PatchOperationFindMod">
+		<mods>
+            <li>RT Solar Flare Shield</li>
+        </mods>
+
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName = "Building_RTMagneticShield"]/comps/li[@Class="RT_SolarFlareShield.CompProperties_RTSolarFlareShield"]/shieldingPowerDrain</xpath>
+			<value>
+				<shieldingPowerDrain>10000</shieldingPowerDrain>
+			</value>
+		</match>
+
+	</Operation>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+            <li>RT Solar Flare Shield</li>
+        </mods>
+
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName = "Building_RTMagneticShield"]/description</xpath>
+			<value>
+				<description>!!!Test: Automatically switches on to protect the entire colony from a solar flare; tremendous power drain and considerable heating when operational. This shield is powered by the sun.</description>
+			</value>
+		</match>
+
+	</Operation>
+
+
+	
+
+
+</Patch>

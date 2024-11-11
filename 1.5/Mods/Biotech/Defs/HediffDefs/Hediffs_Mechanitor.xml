@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<!--Remote resurrector-->
+  
+  <ThingDef ParentName="MechanitorImplantCraftableBase" MayRequire="ludeon.rimworld.biotech">
+    <defName>ApocritonMechResurrector</defName>
+    <label>Apocriton Mech resurrector</label>
+    <description>description for ApocritonMechResurrector.</description>
+    <!-- <descriptionHyperlinks>
+      <AbilityDef>ApocritonMechResurrection</HedifAbilityDefDef>
+      <ThingDef>chipInjector</ThingDef>
+      <HediffDef>ApocritonMechResurrectorImplant</HediffDef>
+      <ThingDef>ApocritonMechResurrector</ThingDef>
+    </descriptionHyperlinks> -->
+    
+    <costList>
+      <NanostructuringChip>1</NanostructuringChip>
+      <ComponentSpacer>5</ComponentSpacer>
+    </costList>
+
+    <statBases>
+      <MaxInstallCount>3</MaxInstallCount>
+    </statBases>
+    
+    <recipeMaker>
+      <researchPrerequisite>UltraMechtech</researchPrerequisite>
+    </recipeMaker>
+
+    <graphicData> <!--try change color -->
+		  <texPath>Things/Item/testCase</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		  <drawSize>0.8</drawSize>
+      <color>(154,124,104)</color>
+    </graphicData>
+
+    <comps>
+      <li Class="CompProperties_Usable">
+        <compClass>CompUsableImplant</compClass>
+        <useJob>UseItem</useJob>
+        <useLabel>Implant {0_label}</useLabel>
+        <userMustHaveHediff>MechlinkImplant</userMustHaveHediff>
+      </li>
+      <li Class="CompProperties_UseEffectInstallImplant">
+        <compClass>ZIRI_ApocritonMechResurrector.CompUseEffect_InstallApocritonMechResurrector</compClass>
+        <hediffDef>ApocritonMechResurrectorImplant</hediffDef>
+        <bodyPart>Brain</bodyPart>
+        <canUpgrade>true</canUpgrade>
+      </li>
+    </comps>
+    <!-- <confirmationDialogText>Are you sure you want to install the remote resurrector?</confirmationDialogText> -->
+  </ThingDef>
+
+  <HediffDef MayRequire="ludeon.rimworld.biotech">
+    <defName>ApocritonMechResurrectorImplant</defName>
+    <hediffClass>Hediff_Level</hediffClass>
+
+    <!-- <descriptionHyperlinks>
+      <AbilityDef>ApocritonMechResurrection</HedifAbilityDefDef>
+      <ThingDef>chipInjector</ThingDef>
+      <HediffDef>ApocritonMechResurrectorImplant</HediffDef>
+      <ThingDef>ApocritonMechResurrector</ThingDef>
+    </descriptionHyperlinks> -->
+
+    <label>remote resurrector</label>
+    <description>Need add description for ApocritonMechResurrectorImplant</description>
+    <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
+    <isBad>false</isBad>
+    <priceImpact>true</priceImpact>
+    <initialSeverity>1</initialSeverity>
+    <minSeverity>0</minSeverity>
+    <maxSeverity>3</maxSeverity>
+    <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+    <levelIsQuantity>true</levelIsQuantity>
+    <duplicationAllowed>false</duplicationAllowed>
+    <comps>
+      <li Class="HediffCompProperties_GiveAbility">
+        <abilityDefs>
+          <li>ApocritonMechResurrection</li>
+        </abilityDefs>
+      </li>
+
+      <!-- 憎恶毒蜂死亡爆炸效果 -->
+      <li Class = "ZIRI_ApocritonMechResurrector.HediffCompProperties_pawnExpload" >
+        <wickTicks>0</wickTicks>
+        <explosiveRadius>30.9</explosiveRadius>
+        <explodeOnKilled>true</explodeOnKilled>
+        <explosiveDamageType>MechBandShockwave</explosiveDamageType>
+        <soundDef>MechBandShockwave</soundDef>
+        <propagationSpeed>0.5</propagationSpeed>
+        <chanceNeverExplodeFromDamage>1</chanceNeverExplodeFromDamage>
+        <extraInspectStringKey>MechStunPulseWarning</extraInspectStringKey>
+			</li>
+      
+    </comps>
+    <stages>
+      <li>
+        <minSeverity>1</minSeverity>
+        <statOffsets>
+          <MechResurrectDistance>6.9</MechResurrectDistance>
+          <MechResurrectMaxChargePoint>1</MechResurrectMaxChargePoint>
+          <MentalBreakThreshold>-0.04</MentalBreakThreshold>
+        </statOffsets>
+      </li>
+
+      <li>
+        <minSeverity>2</minSeverity>
+        <statOffsets>
+          <MechResurrectDistance>9.9</MechResurrectDistance>
+          <MechResurrectMaxChargePoint>2</MechResurrectMaxChargePoint>
+          <MentalBreakThreshold>-0.10</MentalBreakThreshold>
+        </statOffsets>
+      </li>
+
+      <li>
+        <minSeverity>3</minSeverity>
+        <statOffsets>
+          <MechResurrectDistance>15.9</MechResurrectDistance>
+          <MechResurrectMaxChargePoint>3</MechResurrectMaxChargePoint>
+          <MentalBreakThreshold>-0.16</MentalBreakThreshold>
+        </statOffsets>
+      </li>
+    </stages>
+    
+  </HediffDef>
+
+  <AbilityDef MayRequire="ludeon.rimworld.biotech">
+    <defName>ApocritonMechResurrection</defName>
+    <label>Mech Resurrection</label>
+    <description>Resurrect a recently-killed, allied mechanoid by externally supercharging its self-repair processes. The mechanoid must have been dead for no more than 60 seconds and the mechinator must have the bandwidth spare to take the mechanoid under their control.</description>
+    
+    <!-- <descriptionHyperlinks>
+      <AbilityDef>ApocritonMechResurrection</HedifAbilityDefDef>
+      <ThingDef>chipInjector</ThingDef>
+      <HediffDef>ApocritonMechResurrectorImplant</HediffDef>
+      <ThingDef>ApocritonMechResurrector</ThingDef>
+    </descriptionHyperlinks> -->
+    
+    <iconPath>UI/Abilities/MechResurrection</iconPath>
+    <cooldownTicksRange>120</cooldownTicksRange>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <warmupStartSound>MechResurrect_Warmup</warmupStartSound>
+    <canUseAoeToGetTargets>True</canUseAoeToGetTargets>
+    <statBases>
+        <Ability_EffectRadius>5</Ability_EffectRadius>
+    </statBases>
+    <warmupEffecter>ApocrionAoeWarmup</warmupEffecter>
+    <hostile>false</hostile>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <hotKey>Misc12</hotKey>
+    <uiOrder>5</uiOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <soundCast>MechResurrect_Cast</soundCast>
+      <warmupTime>4</warmupTime>
+      <onlyManualCast>true</onlyManualCast>
+      <range>6.9</range>
+      <rangeStat>MechResurrectDistance</rangeStat>
+      <requireLineOfSight>false</requireLineOfSight>
+      <targetParams>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetCorpses>true</canTargetCorpses>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetHumans>false</canTargetHumans>
+        <canTargetMechs>true</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+
+    <comps>
+      <li Class="ZIRI_ApocritonMechResurrector.CompProperties_MechanitorResurrectMech"> <!-- CompProperties_AbominableMechResurrect/CompProperties_MechanitorResurrectMech -->
+        <compClass>ZIRI_ApocritonMechResurrector.CompAbilityEffect_MechanitorResurrectMech</compClass>
+        <maxCorpseAgeTicks>3600</maxCorpseAgeTicks><!-- max mech been resurrected time 60s -->
+        <appliedEffecterDef>MechResurrected</appliedEffecterDef>
+        <resolveEffecterDef>MechResurrected</resolveEffecterDef>
+        <chargePointBase>15</chargePointBase>
+        <costs>
+          <li>
+            <weightClass>Light</weightClass>
+            <cost>1</cost>
+          </li>
+          <li>
+            <weightClass>Medium</weightClass>
+            <cost>3</cost>
+          </li>
+          <li>
+            <weightClass>Heavy</weightClass>
+            <cost>5</cost>
+          </li>
+        </costs>
+      </li>      
+    </comps>
+  </AbilityDef>
+
+ 
+
+</Defs>

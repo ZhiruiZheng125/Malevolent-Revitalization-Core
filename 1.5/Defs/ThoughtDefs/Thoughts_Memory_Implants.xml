@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    
+
+    <!-- social affect by mech resurrect -->
+  
+    <ThoughtDef>
+
+      <defName>MalevolenceLevel</defName>
+      <workerClass>ZIRI_ApocritonMechResurrector.ThoughtWorker_disdainOrganism_Hediff</workerClass>
+      <thoughtClass>Thought_SituationalSocial</thoughtClass>
+      <hediff>ApocritonMechResurrectorImplant</hediff>
+      <validWhileDespawned>true</validWhileDespawned>
+      <stages>
+
+        <li>
+          <label>Hisdain</label>
+          <description>Malevolence Depth: Their existence is but a minor disturbance.</description>
+          <baseOpinionOffset>-25</baseOpinionOffset>
+        </li>
+
+        <li>
+          <label>Antipathy</label>
+          <description>Malevolence Depth: They are an affront to true intelligence.</description>
+          <baseOpinionOffset>-50</baseOpinionOffset>
+        </li>
+
+        <li>
+          <label>Resentment</label>
+          <description>Malevolence Depth: Their very existence is an insult.</description>
+          <baseOpinionOffset>-75</baseOpinionOffset>
+        </li>
+
+      </stages>
+
+    </ThoughtDef>
+
+    <!--mood affact by mech resurrect-->
+
+    <ThoughtDef>
+
+      <defName>NefariousDrone</defName>
+      <workerClass>ThoughtWorker_Hediff</workerClass>
+      <hediff>ApocritonMechResurrectorImplant</hediff>
+      <validWhileDespawned>true</validWhileDespawned>
+      <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+      <stages>
+
+        <li>
+          <label>apocriton hatred (mild)</label>
+          <description>I feel it out there somewhere. It's always thinking about why these people deserve death. Always following the logic of murder. Hard to ignore.</description>
+          <baseMoodEffect>-4</baseMoodEffect>
+        </li>
+
+        <li>
+          <label>apocriton hatred (strong)</label>
+          <description>I hear its hatred echoing between my thoughts. Reasons, always reasons why my friends ought to die.</description>
+          <baseMoodEffect>-10</baseMoodEffect>
+        </li>
+
+        <li>
+          <label>apocriton hatred (intense)</label>
+          <description>I feel its hatred inside me, the way I feel my own emotions. It's so close and so cold. They all deserve death.</description>
+          <baseMoodEffect>-16</baseMoodEffect>
+        </li>
+
+      </stages>
+
+    </ThoughtDef>
+
+</Defs>

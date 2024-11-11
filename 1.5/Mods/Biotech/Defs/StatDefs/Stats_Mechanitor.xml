@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <StatDef ParentName="MechanitorStatBase">
+    <defName>MechResurrectDistance</defName>
+    <label>mech resurrect distance</label>
+    <description>the maximum range for which a mechanitor can resurrect a mechanoid.</description>
+    <showIfUndefined>false</showIfUndefined>
+  </StatDef>
+
+  <StatDef ParentName="MechanitorStatBase">
+    <defName>MechResurrectMaxChargePoint</defName>
+    <label>mech resurrect Max Charge Point</label>
+    <description>the maximum resurrected mech charge points for a mechanitor.</description>
+    <showIfUndefined>false</showIfUndefined>
+  </StatDef>
+</Defs>
