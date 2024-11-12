@@ -2,7 +2,7 @@
 <Defs>  
 
 <!--Cyberfluid-->
-  <ThingDef ParentName="ResourceBase", MayRequire>
+  <ThingDef ParentName="ResourceBase", MayRequire="ludeon.rimworld.anomaly">
     <defName>nanoCyberfluid</defName>
     <label>Nano Cyberfluid</label>
     <description>Here shoud add description for NanoCyberfluid.</description>
