@@ -1,0 +1,7 @@
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Zirimworld\1.5\Assemblies\ZIRI_MechResurection\MechResurrection\MechResurrection\obj\Debug\MechResurrection.csproj.AssemblyReference.cache
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Zirimworld\1.5\Assemblies\ZIRI_MechResurection\MechResurrection\MechResurrection\obj\Debug\MechResurrection.csproj.CoreCompileInputs.cache
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Zirimworld\1.5\Assemblies\ZIRI_MechResurection\MechResurrection\MechResurrection\obj\Debug\MechResu.DA4616DB.Up2Date
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Zirimworld\1.5\Assemblies\ZIRI_MechResurection\MechResurrection\MechResurrection\obj\Debug\MechResurrection.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Zirimworld\1.5\Assemblies\ZIRI_MechResurection\MechResurrection\MechResurrection\obj\Debug\MechResurrection.pdb
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Zirimworld\1.5\Assemblies\MechResurrection.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Zirimworld\1.5\Assemblies\MechResurrection.pdb

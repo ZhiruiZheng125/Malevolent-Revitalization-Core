@@ -92,12 +92,13 @@
 			</li>
       
     </comps>
+
     <stages>
       <li>
         <minSeverity>1</minSeverity>
         <statOffsets>
           <MechResurrectDistance>6.9</MechResurrectDistance>
-          <MechResurrectMaxChargePoint>1</MechResurrectMaxChargePoint>
+          <MechResurrectMaxChargePoint>20</MechResurrectMaxChargePoint>
           <MentalBreakThreshold>-0.04</MentalBreakThreshold>
         </statOffsets>
       </li>
@@ -106,7 +107,7 @@
         <minSeverity>2</minSeverity>
         <statOffsets>
           <MechResurrectDistance>9.9</MechResurrectDistance>
-          <MechResurrectMaxChargePoint>2</MechResurrectMaxChargePoint>
+          <MechResurrectMaxChargePoint>30</MechResurrectMaxChargePoint>
           <MentalBreakThreshold>-0.10</MentalBreakThreshold>
         </statOffsets>
       </li>
@@ -114,8 +115,8 @@
       <li>
         <minSeverity>3</minSeverity>
         <statOffsets>
-          <MechResurrectDistance>15.9</MechResurrectDistance>
-          <MechResurrectMaxChargePoint>3</MechResurrectMaxChargePoint>
+          <MechResurrectDistance>19.9</MechResurrectDistance>
+          <MechResurrectMaxChargePoint>50</MechResurrectMaxChargePoint>
           <MentalBreakThreshold>-0.16</MentalBreakThreshold>
         </statOffsets>
       </li>
@@ -173,7 +174,7 @@
         <maxCorpseAgeTicks>3600</maxCorpseAgeTicks><!-- max mech been resurrected time 60s -->
         <appliedEffecterDef>MechResurrected</appliedEffecterDef>
         <resolveEffecterDef>MechResurrected</resolveEffecterDef>
-        <chargePointBase>15</chargePointBase>
+        <!-- <maxChargePoint>MechResurrectMaxChargePoint</maxChargePoint> -->
         <costs>
           <li>
             <weightClass>Light</weightClass>

@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Zirimworld\\1.5\\Assemblies\\ZIRI_MechResurection\\MechResurrection\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0D936B10-CD67-4152-A63E-1B8BB8047C9C}|MechResurrection\\MechResurrection.csproj|d:\\steamlibrary\\steamapps\\common\\rimworld\\mods\\zirimworld\\1.5\\assemblies\\ziri_mechresurection\\mechresurrection\\mechresurrection\\apocritonmechresurrector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D936B10-CD67-4152-A63E-1B8BB8047C9C}|MechResurrection\\MechResurrection.csproj|solutionrelative:mechresurrection\\apocritonmechresurrector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ApocritonMechResurrector.cs",
+              "DocumentMoniker": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Zirimworld\\1.5\\Assemblies\\ZIRI_MechResurection\\MechResurrection\\MechResurrection\\ApocritonMechResurrector.cs",
+              "RelativeDocumentMoniker": "MechResurrection\\ApocritonMechResurrector.cs",
+              "ToolTip": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\Zirimworld\\1.5\\Assemblies\\ZIRI_MechResurection\\MechResurrection\\MechResurrection\\ApocritonMechResurrector.cs",
+              "RelativeToolTip": "MechResurrection\\ApocritonMechResurrector.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAA3wHgAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T20:03:11.841Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

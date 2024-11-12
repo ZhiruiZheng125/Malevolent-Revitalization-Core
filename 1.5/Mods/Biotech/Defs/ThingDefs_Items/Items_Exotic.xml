@@ -70,10 +70,11 @@
 
       <li Class="ZIRI_ApocritonMechResurrector.CompProperties_UseEffectAddHediffAndRecharge">
         <compClass>ZIRI_ApocritonMechResurrector.CompUseEffect_AddHediffAndResetMechResurrectCharge</compClass>
+        <hediffDef>SensoryMechanites</hediffDef>
         <hediffDefAnother>FibrousMechanites</hediffDefAnother>
         <haveAbilityDef>ApocritonMechResurrector</haveAbilityDef>
         <allowRepeatedUse>true</allowRepeatedUse>
-        <hediffDef>SensoryMechanites</hediffDef>
+        
       </li>
 
       <li Class="CompProperties_UseEffectPlaySound">
