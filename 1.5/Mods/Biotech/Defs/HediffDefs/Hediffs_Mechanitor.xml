@@ -7,7 +7,7 @@
     <label>Apocriton Mech resurrector</label>
     <description>description for ApocritonMechResurrector.</description>
     <descriptionHyperlinks>
-      <!-- <AbilityDef>ApocritonMechResurrection</HedifAbilityDefDef> -->
+      <!-- <AbilityDef>ApocritonMechResurrector</HedifAbilityDefDef> -->
       <ThingDef>nanoCyberfluid</ThingDef>
       <!-- <HediffDef>ApocritonMechResurrector</HediffDef> -->
       <!-- <ThingDef>ApocritonMechResurrector</ThingDef> -->
@@ -55,7 +55,7 @@
     <hediffClass>Hediff_Level</hediffClass>
 
     <!-- <descriptionHyperlinks>
-      <AbilityDef>ApocritonMechResurrection</HedifAbilityDefDef>
+      <AbilityDef>ApocritonMechResurrector</HedifAbilityDefDef>
       <ThingDef>chipInjector</ThingDef>
       <HediffDef>ApocritonMechResurrector</HediffDef>
       <ThingDef>ApocritonMechResurrector</ThingDef>
@@ -75,7 +75,7 @@
     <comps>
       <li Class="HediffCompProperties_GiveAbility">
         <abilityDefs>
-          <li>ApocritonMechResurrection</li>
+          <li>ApocritonMechResurrector</li>
         </abilityDefs>
       </li>
 
@@ -124,12 +124,12 @@
   </HediffDef>
 
   <AbilityDef MayRequire="ludeon.rimworld.biotech">
-    <defName>ApocritonMechResurrection</defName>
+    <defName>ApocritonMechResurrector</defName>
     <label>Mech Resurrection</label>
     <description>Resurrect a recently-killed, allied mechanoid by externally supercharging its self-repair processes. The mechanoid must have been dead for no more than 60 seconds and the mechinator must have the bandwidth spare to take the mechanoid under their control.</description>
     
     <!-- <descriptionHyperlinks>
-      <AbilityDef>ApocritonMechResurrection</HedifAbilityDefDef>
+      <AbilityDef>ApocritonMechResurrector</HedifAbilityDefDef>
       <ThingDef>chipInjector</ThingDef>
       <HediffDef>ApocritonMechResurrector</HediffDef>
       <ThingDef>ApocritonMechResurrector</ThingDef>

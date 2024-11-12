@@ -8,7 +8,7 @@
     <description>Here shoud add description for NanoCyberfluid.</description>
     <descriptionHyperlinks>
       <!-- <ThingDef>NanoCyberfluid</ThingDef> -->
-      <AbilityDef>ApocritonMechResurrection</AbilityDef>
+      <AbilityDef>ApocritonMechResurrector</AbilityDef>
       <HediffDef>ApocritonMechResurrector</HediffDef>
       <ThingDef>ApocritonMechResurrector</ThingDef>
     </descriptionHyperlinks>
@@ -74,7 +74,7 @@
       <li Class="ZIRI_ApocritonMechResurrector.CompProperties_UseEffectAddHediffAndRecharge">
         <compClass>ZIRI_ApocritonMechResurrector.CompUseEffect_AddHediffAndResetMechResurrectCharge</compClass>
         <hediffDefAnother>FibrousMechanites</hediffDefAnother>
-        <haveAbilityDef>ApocritonMechResurrection</haveAbilityDef>
+        <haveAbilityDef>ApocritonMechResurrector</haveAbilityDef>
         <allowRepeatedUse>true</allowRepeatedUse>
         <hediffDef>SensoryMechanites</hediffDef>
       </li>
