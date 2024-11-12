@@ -7,9 +7,9 @@
     <label>Apocriton Mech resurrector</label>
     <description>description for ApocritonMechResurrector.</description>
     <descriptionHyperlinks>
-      <!-- <AbilityDef>ApocritonMechResurrector</HedifAbilityDefDef> -->
+      <AbilityDef>ApocritonMechResurrector</AbilityDef>
       <ThingDef>nanoCyberfluid</ThingDef>
-      <!-- <HediffDef>ApocritonMechResurrector</HediffDef> -->
+      <HediffDef>ApocritonMechResurrector</HediffDef>
       <!-- <ThingDef>ApocritonMechResurrector</ThingDef> -->
     </descriptionHyperlinks>
     
@@ -54,12 +54,12 @@
     <defName>ApocritonMechResurrector</defName>
     <hediffClass>Hediff_Level</hediffClass>
 
-    <!-- <descriptionHyperlinks>
-      <AbilityDef>ApocritonMechResurrector</HedifAbilityDefDef>
+    <descriptionHyperlinks>
+      <AbilityDef>ApocritonMechResurrector</AbilityDef>
       <ThingDef>chipInjector</ThingDef>
-      <HediffDef>ApocritonMechResurrector</HediffDef>
+      <!-- <HediffDef>ApocritonMechResurrector</HediffDef> -->
       <ThingDef>ApocritonMechResurrector</ThingDef>
-    </descriptionHyperlinks> -->
+    </descriptionHyperlinks>
 
     <label>remote resurrector</label>
     <description>Need add description for ApocritonMechResurrector</description>
@@ -128,12 +128,12 @@
     <label>Mech Resurrection</label>
     <description>Resurrect a recently-killed, allied mechanoid by externally supercharging its self-repair processes. The mechanoid must have been dead for no more than 60 seconds and the mechinator must have the bandwidth spare to take the mechanoid under their control.</description>
     
-    <!-- <descriptionHyperlinks>
-      <AbilityDef>ApocritonMechResurrector</HedifAbilityDefDef>
+    <descriptionHyperlinks>
+      <!-- <AbilityDef>ApocritonMechResurrector</AbilityDef> -->
       <ThingDef>chipInjector</ThingDef>
       <HediffDef>ApocritonMechResurrector</HediffDef>
       <ThingDef>ApocritonMechResurrector</ThingDef>
-    </descriptionHyperlinks> -->
+    </descriptionHyperlinks>
     
     <iconPath>UI/Abilities/MechResurrection</iconPath>
     <cooldownTicksRange>120</cooldownTicksRange>
