@@ -2,7 +2,7 @@
 <Defs>  
 
 <!--Cyberfluid-->
-  <ThingDef ParentName="ResourceBase", MayRequire="ludeon.rimworld.anomaly">
+  <ThingDef ParentName="ResourceBase">
     <defName>nanoCyberfluid</defName>
     <label>Nano Cyberfluid</label>
     <description>Here shoud add description for NanoCyberfluid.</description>
@@ -50,15 +50,16 @@
         <HediffDef>ApocritonMechResurrectorImplant</HediffDef>
         <ThingDef>ApocritonMechResurrector</ThingDef> -->
     </descriptionHyperlinks>
+    
     <graphicData>
-      <texPath>Things/Item/Serum/SerumMetalblood</texPath>
+      <texPath>Things/Item/Special/MechSerumHealer</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>0.8</drawSize>
       <color>(205, 0, 0)</color>
     </graphicData>
+
     <comps>
       <li Class="CompProperties_Drug">
-        <listOrder>1200</listOrder>
+        <listOrder>1500</listOrder>
         <teetotalerCanConsume>true</teetotalerCanConsume>
       </li>
 
@@ -79,12 +80,11 @@
       <li Class="CompProperties_UseEffectPlaySound">
         <soundOnUsed>MechSerumUsed</soundOnUsed>
       </li>
-
     </comps>
 
     <costList>
-      <Meat_Twisted>10</Meat_Twisted>
-      <Bioferrite>20</Bioferrite>
+      <Neutroamine>20</Neutroamine>
+      <NanostructuringChip>1</NanostructuringChip>
     </costList>
 
     <recipeMaker>
