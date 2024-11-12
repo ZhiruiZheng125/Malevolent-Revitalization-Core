@@ -8,7 +8,7 @@
     <description>description for ApocritonMechResurrector.</description>
     <descriptionHyperlinks>
       <AbilityDef>ApocritonMechResurrector</AbilityDef>
-      <ThingDef>nanoCyberfluid</ThingDef>
+      <ThingDef>nanoCyberSerum</ThingDef>
       <HediffDef>ApocritonMechResurrector</HediffDef>
       <!-- <ThingDef>ApocritonMechResurrector</ThingDef> -->
     </descriptionHyperlinks>
@@ -56,7 +56,7 @@
 
     <descriptionHyperlinks>
       <AbilityDef>ApocritonMechResurrector</AbilityDef>
-      <ThingDef>nanoCyberfluid</ThingDef>
+      <ThingDef>nanoCyberSerum</ThingDef>
       <!-- <HediffDef>ApocritonMechResurrector</HediffDef> -->
       <ThingDef>ApocritonMechResurrector</ThingDef>
     </descriptionHyperlinks>
@@ -130,7 +130,7 @@
     
     <descriptionHyperlinks>
       <!-- <AbilityDef>ApocritonMechResurrector</AbilityDef> -->
-      <ThingDef>nanoCyberfluid</ThingDef>
+      <ThingDef>nanoCyberSerum</ThingDef>
       <HediffDef>ApocritonMechResurrector</HediffDef>
       <ThingDef>ApocritonMechResurrector</ThingDef>
     </descriptionHyperlinks>

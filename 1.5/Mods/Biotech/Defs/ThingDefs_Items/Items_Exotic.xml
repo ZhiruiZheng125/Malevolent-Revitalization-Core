@@ -3,11 +3,11 @@
 
 <!--Cyberfluid-->
   <ThingDef ParentName="ResourceBase">
-    <defName>nanoCyberfluid</defName>
+    <defName>nanoCyberSerum</defName>
     <label>Nano Cyberfluid</label>
-    <description>Here shoud add description for NanoCyberfluid.</description>
+    <description>Here shoud add description for nanoCyberSerum.</description>
     <descriptionHyperlinks>
-      <!-- <ThingDef>NanoCyberfluid</ThingDef> -->
+      <!-- <ThingDef>nanoCyberSerum</ThingDef> -->
       <AbilityDef>ApocritonMechResurrector</AbilityDef>
       <HediffDef>ApocritonMechResurrector</HediffDef>
       <ThingDef>ApocritonMechResurrector</ThingDef>
@@ -30,7 +30,7 @@
       <li>RewardStandardLowFreq</li>
     </thingSetMakerTags>
     <tradeTags>
-      <li>Serum</li>
+      <li>ExoticMisc</li>
     </tradeTags>
     <ingestible>
       <preferability>NeverForNutrition</preferability>
