@@ -56,7 +56,7 @@
 
     <descriptionHyperlinks>
       <AbilityDef>ApocritonMechResurrector</AbilityDef>
-      <ThingDef>chipInjector</ThingDef>
+      <ThingDef>nanoCyberfluid</ThingDef>
       <!-- <HediffDef>ApocritonMechResurrector</HediffDef> -->
       <ThingDef>ApocritonMechResurrector</ThingDef>
     </descriptionHyperlinks>
@@ -130,7 +130,7 @@
     
     <descriptionHyperlinks>
       <!-- <AbilityDef>ApocritonMechResurrector</AbilityDef> -->
-      <ThingDef>chipInjector</ThingDef>
+      <ThingDef>nanoCyberfluid</ThingDef>
       <HediffDef>ApocritonMechResurrector</HediffDef>
       <ThingDef>ApocritonMechResurrector</ThingDef>
     </descriptionHyperlinks>
