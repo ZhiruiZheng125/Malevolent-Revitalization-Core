@@ -2,7 +2,7 @@
 <Defs>  
 
 <!--Cyberfluid-->
-  <ThingDef ParentName="ResourceBase">
+  <ThingDef ParentName="ResourceBase", MayRequire>
     <defName>nanoCyberfluid</defName>
     <label>Nano Cyberfluid</label>
     <description>Here shoud add description for NanoCyberfluid.</description>
@@ -44,14 +44,12 @@
       </outcomeDoers>
     </ingestible>
 
-
-
-    <!-- <descriptionHyperlinks>
+    <descriptionHyperlinks>
         <ThingDef>NanoCyberfluid</ThingDef>
-        <AbilityDef>ApocritonMechResurrection</AbilityDef>
+        <!-- <AbilityDef>ApocritonMechResurrection</AbilityDef>
         <HediffDef>ApocritonMechResurrectorImplant</HediffDef>
-        <ThingDef>ApocritonMechResurrector</ThingDef>
-    </descriptionHyperlinks> -->
+        <ThingDef>ApocritonMechResurrector</ThingDef> -->
+    </descriptionHyperlinks>
     <graphicData>
       <texPath>Things/Item/Serum/SerumMetalblood</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -65,7 +63,7 @@
       </li>
 
       <li Class="CompProperties_Usable">
-        <useLabel>Use {0_label}</useLabel>
+        <useLabel>Transmit {0_label}</useLabel>
         <useJob>Ingest</useJob>
         <showUseGizmo>true</showUseGizmo>
       </li>
@@ -77,20 +75,13 @@
         <allowRepeatedUse>true</allowRepeatedUse>
         <hediffDef>SensoryMechanites</hediffDef>
       </li>
+
       <li Class="CompProperties_UseEffectPlaySound">
         <soundOnUsed>MechSerumUsed</soundOnUsed>
       </li>
 
-
-      <!-- <li Class="CompProperties_NanoCyberfluid" /> -->
-
-      <!-- <li Class="ZIRI_ApocritonMechResurrector.CompProperties_UseEffectAddHediffAndRecharge">
-        <hediffDef>SensoryMechanites</hediffDef>
-        <hediffDefAnother>FibrousMechanites</hediffDefAnother>
-        <allowRepeatedUse>true</allowRepeatedUse>
-        <haveAbilityDef>ApocritonMechResurrection</haveAbilityDef>
-      </li> -->
     </comps>
+
     <costList>
       <Meat_Twisted>10</Meat_Twisted>
       <Bioferrite>20</Bioferrite>
@@ -112,40 +103,6 @@
       </recipeUsers>
     </recipeMaker>
 
-  </ThingDef>
-
-  
-  <ThingDef ParentName="SerumBase">
-    <defName>Cyberfluid</defName>
-    <label>cyberfluid</label>
-    <description>A syringe full of rust-colored liquid that constantly hardens and liquifies. When injected into the bloodstream, the metalblood substance can harden the flesh when it anticipates a blow, making the user more resistant to damage. However, the bioferrite-based chemistry of this serum also makes the user particularly vulnerable to fire.</description>
-    <graphicData>
-      <texPath>Things/Item/Serum/SerumMetalblood</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>0.8</drawSize>
-    </graphicData>
-    <comps>
-      <li Class="ZIRI_ApocritonMechResurrector.CompProperties_UseEffectAddHediffAndRecharge">
-        <compClass>ZIRI_ApocritonMechResurrector.CompUseEffect_AddHediffAndResetMechResurrectCharge</compClass>
-        <hediffDefAnother>FibrousMechanites</hediffDefAnother>
-        <haveAbilityDef>ApocritonMechResurrection</haveAbilityDef>
-        <allowRepeatedUse>true</allowRepeatedUse>
-        <hediffDef>SensoryMechanites</hediffDef>
-      </li>
-      <li Class="CompProperties_UseEffectPlaySound">
-        <soundOnUsed>MechSerumUsed</soundOnUsed>
-      </li>
-    </comps>
-    <costList>
-      <NanostructuringChip>1</NanostructuringChip>
-    </costList>
-    <recipeMaker>
-      <workAmount>1080</workAmount>
-      <skillRequirements>
-        <Crafting>4</Crafting>
-      </skillRequirements>
-      <researchPrerequisite>MetalbloodSerum</researchPrerequisite>
-    </recipeMaker>
   </ThingDef>
 
 </Defs>
