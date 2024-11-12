@@ -4,7 +4,7 @@
 <!--Cyberfluid-->
   <ThingDef ParentName="ResourceBase">
     <defName>nanoCyberSerum</defName>
-    <label>Nano Cyberfluid</label>
+    <label>Nano CyberSerum</label>
     <description>Here shoud add description for nanoCyberSerum.</description>
     <descriptionHyperlinks>
       <!-- <ThingDef>nanoCyberSerum</ThingDef> -->
@@ -12,23 +12,20 @@
       <HediffDef>ApocritonMechResurrector</HediffDef>
       <ThingDef>ApocritonMechResurrector</ThingDef>
     </descriptionHyperlinks>
-    
+    <techLevel>Ultra</techLevel>
     <thingClass>ThingWithComps</thingClass>
     <stackLimit>10</stackLimit>
     <socialPropernessMatters>false</socialPropernessMatters>
     <orderedTakeGroup>Drug</orderedTakeGroup>
     <statBases>
       <MaxHitPoints>60</MaxHitPoints>
-      <MarketValue>200</MarketValue>
+      <MarketValue>1800</MarketValue>
       <Mass>0.5</Mass>
-      <Flammability>0.7</Flammability>
+      <Flammability>0.15</Flammability>
     </statBases>
     <thingCategories>
       <li>Drugs</li>
     </thingCategories>
-    <thingSetMakerTags>
-      <li>RewardStandardLowFreq</li>
-    </thingSetMakerTags>
     <tradeTags>
       <li>ExoticMisc</li>
     </tradeTags>

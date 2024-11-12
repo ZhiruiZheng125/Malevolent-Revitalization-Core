@@ -386,7 +386,7 @@ namespace ZIRI_ApocritonMechResurrector
 
         public override void DoEffect(Pawn user)
         {
-            Log.Message("DoEffect has been call by " + user.Name);
+            //Log.Message("DoEffect has been call by " + user.Name);
             AbilityDef abilityDef = Props.haveAbilityDef;
 
             //find the ability of RemoteResurrect from the user
@@ -394,33 +394,26 @@ namespace ZIRI_ApocritonMechResurrector
 
             if (remoteResurrectAbility == null)// find mech resurrect ability, if not found, add hediffAnother and stop, otherwise add hediff
             {
-                Log.Message("Didn't find RemoteResurrect ability");
-                Log.Message("AddHediff: " + Props.hediffDefAnother);
+                //Log.Message("Didn't find RemoteResurrect ability");
+                //Log.Message("AddHediff: " + Props.hediffDefAnother);
                 user.health.AddHediff(Props.hediffDefAnother);
                 return;
             }
             else
             {
-                Log.Message("Find Abilitiy: " + remoteResurrectAbility.def.defName);
-                Log.Message("AddHediff: " + Props.hediffDef);
+                //Log.Message("Find Abilitiy: " + remoteResurrectAbility.def.defName);
+                //Log.Message("AddHediff: " + Props.hediffDef);
                 user.health.AddHediff(Props.hediffDef);
                 //find the CompAbilityEffect_MechanitorResurrectMech from the ability(might has better ways to look through)
                 CompAbilityEffect_MechanitorResurrectMech comp = remoteResurrectAbility.EffectComps.Find(x => x is CompAbilityEffect_MechanitorResurrectMech) as CompAbilityEffect_MechanitorResurrectMech;
 
                 if (comp != null)
                 {
-                    Log.Message("Find CompAbilityEffect_MechanitorResurrectMech!");
+                    //Log.Message("Find CompAbilityEffect_MechanitorResurrectMech!");
                     comp.ResetCharges();
                 }
-                else
-                {
-                    Log.Message("Didn't find CompAbilityEffect_MechanitorResurrectMech");
-                    return;
-                }
+                return;
             }
-
-            
-
         }
 
         public override AcceptanceReport CanBeUsedBy(Pawn p)
@@ -433,30 +426,30 @@ namespace ZIRI_ApocritonMechResurrector
         }
     }
 
-    public class CompProperties_NanoCyberfluid : CompProperties
-    {
-        public CompProperties_NanoCyberfluid()
-        {
-            compClass = typeof(CompNanoCyberfluid);
-        }
+    //public class CompProperties_NanoCyberfluid : CompProperties
+    //{
+    //    public CompProperties_NanoCyberfluid()
+    //    {
+    //        compClass = typeof(CompNanoCyberfluid);
+    //    }
 
-        public override IEnumerable<StatDrawEntry> SpecialDisplayStats(StatRequest req)
-        {
-            foreach (StatDrawEntry item in base.SpecialDisplayStats(req))
-            {
-                yield return item;
-            }
-            HediffCompProperties_DisappearsDisableable hediffCompProperties_DisappearsDisableable = ((req.Def as ThingDef)?.GetCompProperties<CompProperties_UseEffectAddHediff>().hediffDef)?.CompProps<HediffCompProperties_DisappearsDisableable>();
-            if (hediffCompProperties_DisappearsDisableable != null)
-            {
-                yield return new StatDrawEntry(StatCategoryDefOf.Serum, "StatsReport_SerumDuration".Translate(), hediffCompProperties_DisappearsDisableable.disappearsAfterTicks.min.ToStringTicksToPeriod(), "StatsReport_SerumDuration_Desc".Translate(), 1000);
-            }
-        }
-    }
+    //    public override IEnumerable<StatDrawEntry> SpecialDisplayStats(StatRequest req)
+    //    {
+    //        foreach (StatDrawEntry item in base.SpecialDisplayStats(req))
+    //        {
+    //            yield return item;
+    //        }
+    //        HediffCompProperties_DisappearsDisableable hediffCompProperties_DisappearsDisableable = ((req.Def as ThingDef)?.GetCompProperties<CompProperties_UseEffectAddHediff>().hediffDef)?.CompProps<HediffCompProperties_DisappearsDisableable>();
+    //        if (hediffCompProperties_DisappearsDisableable != null)
+    //        {
+    //            yield return new StatDrawEntry(StatCategoryDefOf.Serum, "StatsReport_SerumDuration".Translate(), hediffCompProperties_DisappearsDisableable.disappearsAfterTicks.min.ToStringTicksToPeriod(), "StatsReport_SerumDuration_Desc".Translate(), 1000);
+    //        }
+    //    }
+    //}
 
-    public class CompNanoCyberfluid : ThingComp
-    {
-    }
+    //public class CompNanoCyberfluid : ThingComp
+    //{
+    //}
 
     //Social: Hate Human for mechResurrect
     public class ThoughtWorker_disdainOrganism_Hediff : ThoughtWorker

@@ -5,7 +5,7 @@
   <ThingDef ParentName="MechanitorImplantCraftableBase" MayRequire="ludeon.rimworld.biotech">
     <defName>ApocritonMechResurrector</defName>
     <label>Apocriton Mech resurrector</label>
-    <description>description for ApocritonMechResurrector.</description>
+    <description>Here should add description for ApocritonMechResurrector.</description>
     <descriptionHyperlinks>
       <AbilityDef>ApocritonMechResurrector</AbilityDef>
       <ThingDef>nanoCyberSerum</ThingDef>
@@ -62,7 +62,7 @@
     </descriptionHyperlinks>
 
     <label>remote resurrector</label>
-    <description>Need add description for ApocritonMechResurrector</description>
+    <description>Here should add description for ApocritonMechResurrector.</description>
     <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
     <isBad>false</isBad>
     <priceImpact>true</priceImpact>
@@ -126,7 +126,7 @@
   <AbilityDef MayRequire="ludeon.rimworld.biotech">
     <defName>ApocritonMechResurrector</defName>
     <label>Mech Resurrection</label>
-    <description>Resurrect a recently-killed, allied mechanoid by externally supercharging its self-repair processes. The mechanoid must have been dead for no more than 60 seconds and the mechinator must have the bandwidth spare to take the mechanoid under their control.</description>
+    <description>Here should add description for ApocritonMechResurrector.</description>
     
     <descriptionHyperlinks>
       <!-- <AbilityDef>ApocritonMechResurrector</AbilityDef> -->
