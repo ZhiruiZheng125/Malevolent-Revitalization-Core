@@ -6,12 +6,12 @@
     <defName>ApocritonMechResurrector</defName>
     <label>Apocriton Mech resurrector</label>
     <description>description for ApocritonMechResurrector.</description>
-    <!-- <descriptionHyperlinks>
-      <AbilityDef>ApocritonMechResurrection</HedifAbilityDefDef>
-      <ThingDef>chipInjector</ThingDef>
-      <HediffDef>ApocritonMechResurrectorImplant</HediffDef>
-      <ThingDef>ApocritonMechResurrector</ThingDef>
-    </descriptionHyperlinks> -->
+    <descriptionHyperlinks>
+      <!-- <AbilityDef>ApocritonMechResurrection</HedifAbilityDefDef> -->
+      <ThingDef>nanoCyberfluid</ThingDef>
+      <!-- <HediffDef>ApocritonMechResurrector</HediffDef> -->
+      <!-- <ThingDef>ApocritonMechResurrector</ThingDef> -->
+    </descriptionHyperlinks>
     
     <costList>
       <NanostructuringChip>1</NanostructuringChip>
@@ -42,7 +42,7 @@
       </li>
       <li Class="CompProperties_UseEffectInstallImplant">
         <compClass>ZIRI_ApocritonMechResurrector.CompUseEffect_InstallApocritonMechResurrector</compClass>
-        <hediffDef>ApocritonMechResurrectorImplant</hediffDef>
+        <hediffDef>ApocritonMechResurrector</hediffDef>
         <bodyPart>Brain</bodyPart>
         <canUpgrade>true</canUpgrade>
       </li>
@@ -51,18 +51,18 @@
   </ThingDef>
 
   <HediffDef MayRequire="ludeon.rimworld.biotech">
-    <defName>ApocritonMechResurrectorImplant</defName>
+    <defName>ApocritonMechResurrector</defName>
     <hediffClass>Hediff_Level</hediffClass>
 
     <!-- <descriptionHyperlinks>
       <AbilityDef>ApocritonMechResurrection</HedifAbilityDefDef>
       <ThingDef>chipInjector</ThingDef>
-      <HediffDef>ApocritonMechResurrectorImplant</HediffDef>
+      <HediffDef>ApocritonMechResurrector</HediffDef>
       <ThingDef>ApocritonMechResurrector</ThingDef>
     </descriptionHyperlinks> -->
 
     <label>remote resurrector</label>
-    <description>Need add description for ApocritonMechResurrectorImplant</description>
+    <description>Need add description for ApocritonMechResurrector</description>
     <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
     <isBad>false</isBad>
     <priceImpact>true</priceImpact>
@@ -131,7 +131,7 @@
     <!-- <descriptionHyperlinks>
       <AbilityDef>ApocritonMechResurrection</HedifAbilityDefDef>
       <ThingDef>chipInjector</ThingDef>
-      <HediffDef>ApocritonMechResurrectorImplant</HediffDef>
+      <HediffDef>ApocritonMechResurrector</HediffDef>
       <ThingDef>ApocritonMechResurrector</ThingDef>
     </descriptionHyperlinks> -->
     

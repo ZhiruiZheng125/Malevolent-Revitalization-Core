@@ -6,6 +6,13 @@
     <defName>nanoCyberfluid</defName>
     <label>Nano Cyberfluid</label>
     <description>Here shoud add description for NanoCyberfluid.</description>
+    <descriptionHyperlinks>
+      <!-- <ThingDef>NanoCyberfluid</ThingDef> -->
+      <AbilityDef>ApocritonMechResurrection</AbilityDef>
+      <HediffDef>ApocritonMechResurrector</HediffDef>
+      <ThingDef>ApocritonMechResurrector</ThingDef>
+    </descriptionHyperlinks>
+    
     <thingClass>ThingWithComps</thingClass>
     <stackLimit>10</stackLimit>
     <socialPropernessMatters>false</socialPropernessMatters>
@@ -44,12 +51,7 @@
       </outcomeDoers>
     </ingestible>
 
-    <descriptionHyperlinks>
-        <ThingDef>NanoCyberfluid</ThingDef>
-        <!-- <AbilityDef>ApocritonMechResurrection</AbilityDef>
-        <HediffDef>ApocritonMechResurrectorImplant</HediffDef>
-        <ThingDef>ApocritonMechResurrector</ThingDef> -->
-    </descriptionHyperlinks>
+
     
     <graphicData>
       <texPath>Things/Item/Special/MechSerumHealer</texPath>

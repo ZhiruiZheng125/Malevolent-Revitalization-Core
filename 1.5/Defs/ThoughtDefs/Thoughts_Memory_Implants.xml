@@ -9,7 +9,7 @@
       <defName>MalevolenceLevel</defName>
       <workerClass>ZIRI_ApocritonMechResurrector.ThoughtWorker_disdainOrganism_Hediff</workerClass>
       <thoughtClass>Thought_SituationalSocial</thoughtClass>
-      <hediff>ApocritonMechResurrectorImplant</hediff>
+      <hediff>ApocritonMechResurrector</hediff>
       <validWhileDespawned>true</validWhileDespawned>
       <stages>
 
@@ -41,7 +41,7 @@
 
       <defName>NefariousDrone</defName>
       <workerClass>ThoughtWorker_Hediff</workerClass>
-      <hediff>ApocritonMechResurrectorImplant</hediff>
+      <hediff>ApocritonMechResurrector</hediff>
       <validWhileDespawned>true</validWhileDespawned>
       <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
       <stages>
