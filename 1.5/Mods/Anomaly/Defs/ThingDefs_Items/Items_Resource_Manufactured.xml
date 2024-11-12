@@ -64,6 +64,12 @@
         <teetotalerCanConsume>true</teetotalerCanConsume>
       </li>
 
+      <li Class="CompProperties_Usable">
+        <useLabel>Use {0_label}</useLabel>
+        <useJob>Ingest</useJob>
+        <showUseGizmo>true</showUseGizmo>
+      </li>
+
       <li Class="ZIRI_ApocritonMechResurrector.CompProperties_UseEffectAddHediffAndRecharge">
         <compClass>ZIRI_ApocritonMechResurrector.CompUseEffect_AddHediffAndResetMechResurrectCharge</compClass>
         <hediffDefAnother>FibrousMechanites</hediffDefAnother>
@@ -74,6 +80,10 @@
       <li Class="CompProperties_UseEffectPlaySound">
         <soundOnUsed>MechSerumUsed</soundOnUsed>
       </li>
+
+
+      <!-- <li Class="CompProperties_NanoCyberfluid" /> -->
+
       <!-- <li Class="ZIRI_ApocritonMechResurrector.CompProperties_UseEffectAddHediffAndRecharge">
         <hediffDef>SensoryMechanites</hediffDef>
         <hediffDefAnother>FibrousMechanites</hediffDefAnother>
@@ -115,9 +125,12 @@
       <drawSize>0.8</drawSize>
     </graphicData>
     <comps>
-      <li Class="CompProperties_UseEffectAddHediff">
-        <hediffDef>Metalblood</hediffDef>
+      <li Class="ZIRI_ApocritonMechResurrector.CompProperties_UseEffectAddHediffAndRecharge">
+        <compClass>ZIRI_ApocritonMechResurrector.CompUseEffect_AddHediffAndResetMechResurrectCharge</compClass>
+        <hediffDefAnother>FibrousMechanites</hediffDefAnother>
+        <haveAbilityDef>ApocritonMechResurrection</haveAbilityDef>
         <allowRepeatedUse>true</allowRepeatedUse>
+        <hediffDef>SensoryMechanites</hediffDef>
       </li>
       <li Class="CompProperties_UseEffectPlaySound">
         <soundOnUsed>MechSerumUsed</soundOnUsed>
