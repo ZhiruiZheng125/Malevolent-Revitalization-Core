@@ -42,6 +42,17 @@ namespace ZIRI_ApocritonMechResurrector
         public static StatDef MechResurrectMaxChargePoint;
     }
 
+    [DefOf]
+    public static class ApocritonMechResurrector_HediffDefOf
+    {
+        public static HediffDef ApocritonMechResurrector;
+
+        static ApocritonMechResurrector_HediffDefOf()
+        {
+            DefOfHelper.EnsureInitializedInCtor(typeof(ApocritonMechResurrector_HediffDefOf));
+        }
+    }
+
 
 
 
@@ -308,10 +319,10 @@ namespace ZIRI_ApocritonMechResurrector
             EffecterDefOf.ApocrionAoeResolve.Spawn(intVec, map).EffectTick(new TargetInfo(intVec, map), new TargetInfo(intVec, map));
         }
 
-        public override void PostExposeData()//saving data after using ability
+        public override void PostExposeData()
         {
             base.PostExposeData();
-            Scribe_Values.Look(ref resurrectCharges, "resurrectCharges", 30);
+            Scribe_Values.Look(ref resurrectCharges, "resurrectCharges", 404);
         }
     }
 
@@ -426,38 +437,14 @@ namespace ZIRI_ApocritonMechResurrector
         }
     }
 
-    //public class CompProperties_NanoCyberfluid : CompProperties
-    //{
-    //    public CompProperties_NanoCyberfluid()
-    //    {
-    //        compClass = typeof(CompNanoCyberfluid);
-    //    }
-
-    //    public override IEnumerable<StatDrawEntry> SpecialDisplayStats(StatRequest req)
-    //    {
-    //        foreach (StatDrawEntry item in base.SpecialDisplayStats(req))
-    //        {
-    //            yield return item;
-    //        }
-    //        HediffCompProperties_DisappearsDisableable hediffCompProperties_DisappearsDisableable = ((req.Def as ThingDef)?.GetCompProperties<CompProperties_UseEffectAddHediff>().hediffDef)?.CompProps<HediffCompProperties_DisappearsDisableable>();
-    //        if (hediffCompProperties_DisappearsDisableable != null)
-    //        {
-    //            yield return new StatDrawEntry(StatCategoryDefOf.Serum, "StatsReport_SerumDuration".Translate(), hediffCompProperties_DisappearsDisableable.disappearsAfterTicks.min.ToStringTicksToPeriod(), "StatsReport_SerumDuration_Desc".Translate(), 1000);
-    //        }
-    //    }
-    //}
-
-    //public class CompNanoCyberfluid : ThingComp
-    //{
-    //}
 
     //Social: Hate Human for mechResurrect
     public class ThoughtWorker_disdainOrganism_Hediff : ThoughtWorker
     {
         protected override ThoughtState CurrentSocialStateInternal(Pawn p, Pawn other)
         {
-           //Log.Message("CurrentSocialStateInternal called");
-            //for hediff
+            //Log.Message("CurrentSocialStateInternal called");
+
             Hediff firstHediffOfDef = p.health.hediffSet.GetFirstHediffOfDef(def.hediff);
             
 
@@ -476,22 +463,27 @@ namespace ZIRI_ApocritonMechResurrector
             //new condition for find Hediff
             if (firstHediffOfDef == null)
             {
-                //Log.Message("Hediff not found in ThoughtWorker_disdainOrganism_Hediff.");
+               //Log.Message("Hediff not found in ThoughtWorker_disdainOrganism_Hediff.");
                 return false;
             }
-            else if ((int)p.GetStatValue(StatDefOf.MechResurrectMaxChargePoint, true, -1) == 1)
+            if (firstHediffOfDef.Severity == 0)
+            {
+               //Log.Message("Hediff found but Severity is 0.");
+                return false;
+            }
+            else if (firstHediffOfDef.Severity == 1)//((int)p.GetStatValue(StatDefOf.MechResurrectMaxChargePoint, true, -1) == 1)
             {
                 //Log.Message("display message level:1");
                 return ThoughtState.ActiveAtStage(0);
             }
 
-            else if ((int)p.GetStatValue(StatDefOf.MechResurrectMaxChargePoint, true, -1) == 2)
+            else if (firstHediffOfDef.Severity == 2)
             {
                 //Log.Message("display message level:2");
                 return ThoughtState.ActiveAtStage(1);
             }
 
-            else if ((int)p.GetStatValue(StatDefOf.MechResurrectMaxChargePoint, true, -1) == 3)
+            else if (firstHediffOfDef.Severity == 3)
             {
                 //Log.Message("display message level:3");
                 return ThoughtState.ActiveAtStage(2);
@@ -580,18 +572,11 @@ namespace ZIRI_ApocritonMechResurrector
             int level = (int)p.GetStatValue(StatDefOf.MechResurrectMaxChargePoint, true, -1);
 
 
-            if (level == 1)
-            {
-                return "ConfirmInstallApocritonMechResurrector_Level1".Translate();
-            }
-            else if (level == 2)
-            {
-                return "ConfirmInstallApocritonMechResurrector_Level2".Translate();
-            }
-            else
+            if (level == 0)
             {
                 return "ConfirmInstallApocritonMechResurrector_LevelInit".Translate();
             }
+            return null;
 
         } 
     }

@@ -57,19 +57,19 @@
         <li>
           <label>nefarious drone (mild)</label>
           <description>I feel it out there somewhere. It's always thinking about why these people deserve death. Always following the logic of murder. Hard to ignore.</description>
-          <baseMoodEffect>-2</baseMoodEffect>
+          <baseMoodEffect>-4</baseMoodEffect>
         </li>
 
         <li>
           <label>nefarious drone (strong)</label>
           <description>I hear its hatred echoing between my thoughts. Reasons, always reasons why my friends ought to die.</description>
-          <baseMoodEffect>-4</baseMoodEffect>
+          <baseMoodEffect>-10</baseMoodEffect>
         </li>
 
         <li>
           <label>nefarious drone (intense)</label>
           <description>I feel its hatred inside me, the way I feel my own emotions. It's so close and so cold. They all deserve death.</description>
-          <baseMoodEffect>-8</baseMoodEffect>
+          <baseMoodEffect>-16</baseMoodEffect>
         </li>
 
       </stages>

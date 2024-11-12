@@ -14,4 +14,12 @@
     <description>the maximum resurrected mech charge points for a mechanitor.</description>
     <showIfUndefined>false</showIfUndefined>
   </StatDef>
+
+  <StatDef ParentName="MechanitorStatBase">
+    <defName>MechResurrectMaxChargePointDivider</defName>
+    <label>MechResurrectMaxChargePointDivider</label>
+    <description>MechResurrectMaxChargePointDivider.</description>
+    <showIfUndefined>false</showIfUndefined>
+  </StatDef>
+
 </Defs>
