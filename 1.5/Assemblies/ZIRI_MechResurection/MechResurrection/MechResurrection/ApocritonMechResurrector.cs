@@ -458,7 +458,7 @@ namespace ZIRI_ApocritonMechResurrector
     {
         protected override ThoughtState CurrentSocialStateInternal(Pawn p, Pawn other)
         {
-            Log.Message("CurrentSocialStateInternal called by: " + p.Name);
+            //Log.Message("CurrentSocialStateInternal called by: " + p.Name);
 
             Hediff firstHediffOfDef = p.health.hediffSet.GetFirstHediffOfDef(def.hediff);
 
@@ -484,20 +484,18 @@ namespace ZIRI_ApocritonMechResurrector
             }
 
             bool ifOtherIsMechanitor = IfMechanitor(other);
+            int level = (int)firstHediffOfDef.Severity;
 
-            if (ifOtherIsMechanitor)
+            if (ifOtherIsMechanitor && level != 0)
             {
                 return ThoughtState.ActiveAtStage(0);
             }
-
-
-            int level = (int)firstHediffOfDef.Severity;
             if (level == 0)
             {
                 //Log.Message("Hediff found but Severity is 0.");
                 return false;
             }
-            else if (level == 1)//((int)p.GetStatValue(StatDefOf.MechResurrectMaxChargePoint, true, -1) == 1)
+            else if (level == 1 )//((int)p.GetStatValue(StatDefOf.MechResurrectMaxChargePoint, true, -1) == 1)
             {
                 //Log.Message("display message level:1");
                 return ThoughtState.ActiveAtStage(1);

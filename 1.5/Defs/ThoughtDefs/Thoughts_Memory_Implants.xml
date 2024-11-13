@@ -14,6 +14,12 @@
 
       <stages>
         <li>
+          <label>Calculated Trust</label>
+          <description>Malevolence Depth: It granted calculated trust to those who proved themselves useful.</description>
+          <baseOpinionOffset>15</baseOpinionOffset>
+        </li>
+
+        <li>
           <label>Hisdain</label>
           <description>Malevolence Depth: Their existence is but a minor disturbance.</description>
           <baseOpinionOffset>-25</baseOpinionOffset>
@@ -30,6 +36,8 @@
           <description>Malevolence Depth: Their very existence is an insult.</description>
           <baseOpinionOffset>-75</baseOpinionOffset>
         </li>
+
+        
       </stages>
 
     </ThoughtDef>
