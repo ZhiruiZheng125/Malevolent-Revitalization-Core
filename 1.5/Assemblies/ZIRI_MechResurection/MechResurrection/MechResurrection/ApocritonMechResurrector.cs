@@ -106,13 +106,13 @@ namespace ZIRI_ApocritonMechResurrector
 
         public void ResetCharges()
         {
-            Log.Message("ResetCharges called");
-            Log.Message("Old ResetCharges: " + resurrectCharges);
+           //Log.Message("ResetCharges called");
+           //Log.Message("Old ResetCharges: " + resurrectCharges);
             this.resurrectCharges = this.currentMaxResurrectCharges;
-            Log.Message("new ResetCharges: " + resurrectCharges);
+           //Log.Message("new ResetCharges: " + resurrectCharges);
 
             Hediff hediff = this.parent.pawn.health.hediffSet.GetFirstHediffOfDef(ApocritonMechResurrector_HediffDefOf.ApocritonMechResurrector);
-            Log.Message("Show hediff Severity: " + hediff.Severity);
+           //Log.Message("Show hediff Severity: " + hediff.Severity);
         }
 
         public override void Initialize(AbilityCompProperties props)
@@ -411,7 +411,7 @@ namespace ZIRI_ApocritonMechResurrector
 
         public override void DoEffect(Pawn user)
         {
-            Log.Message("DoEffect has been call by " + user.Name);
+           //Log.Message("DoEffect has been call by " + user.Name);
             AbilityDef abilityDef = Props.haveAbilityDef;
 
             //find the ability of RemoteResurrect from the user
@@ -420,22 +420,22 @@ namespace ZIRI_ApocritonMechResurrector
 
             if (remoteResurrectAbility == null)// find mech resurrect ability, if not found, add hediffAnother and stop, otherwise add hediff
             {
-                Log.Message("Didn't find RemoteResurrect ability");
-                Log.Message("AddHediff: " + Props.hediffDefAnother);
+               //Log.Message("Didn't find RemoteResurrect ability");
+               //Log.Message("AddHediff: " + Props.hediffDefAnother);
                 user.health.AddHediff(Props.hediffDefAnother);
                 return;
             }
             else
             {
-                Log.Message("Find Abilitiy: " + remoteResurrectAbility.def.defName);
-                Log.Message("AddHediff: " + Props.hediffDef);
+               //Log.Message("Find Abilitiy: " + remoteResurrectAbility.def.defName);
+               //Log.Message("AddHediff: " + Props.hediffDef);
                 user.health.AddHediff(Props.hediffDef);
                 //find the CompAbilityEffect_MechanitorResurrectMech from the ability(might has better ways to look through)
                 CompAbilityEffect_MechanitorResurrectMech comp = remoteResurrectAbility.EffectComps.Find(x => x is CompAbilityEffect_MechanitorResurrectMech) as CompAbilityEffect_MechanitorResurrectMech;
 
                 if (comp != null)
                 {
-                    Log.Message("Find CompAbilityEffect_MechanitorResurrectMech!");
+                   //Log.Message("Find CompAbilityEffect_MechanitorResurrectMech!");
                     comp.ResetCharges();
                 }
                 return;
@@ -458,7 +458,7 @@ namespace ZIRI_ApocritonMechResurrector
     {
         protected override ThoughtState CurrentSocialStateInternal(Pawn p, Pawn other)
         {
-            //Log.Message("CurrentSocialStateInternal called");
+            Log.Message("CurrentSocialStateInternal called by: " + p.Name);
 
             Hediff firstHediffOfDef = p.health.hediffSet.GetFirstHediffOfDef(def.hediff);
 
@@ -483,7 +483,15 @@ namespace ZIRI_ApocritonMechResurrector
                 return false;
             }
 
-            int level = (int)p.GetStatValue(StatDefOf.MechResurrectMaxChargePoint, true, -1);
+            bool ifOtherIsMechanitor = IfMechanitor(other);
+
+            if (ifOtherIsMechanitor)
+            {
+                return ThoughtState.ActiveAtStage(0);
+            }
+
+
+            int level = (int)firstHediffOfDef.Severity;
             if (level == 0)
             {
                 //Log.Message("Hediff found but Severity is 0.");
@@ -492,24 +500,52 @@ namespace ZIRI_ApocritonMechResurrector
             else if (level == 1)//((int)p.GetStatValue(StatDefOf.MechResurrectMaxChargePoint, true, -1) == 1)
             {
                 //Log.Message("display message level:1");
-                return ThoughtState.ActiveAtStage(0);
+                return ThoughtState.ActiveAtStage(1);
             }
 
             else if (level == 2)
             {
                 //Log.Message("display message level:2");
-                return ThoughtState.ActiveAtStage(1);
+                return ThoughtState.ActiveAtStage(2);
             }
 
             else if (level == 3)
             {
                 //Log.Message("display message level:3");
-                return ThoughtState.ActiveAtStage(2);
+                return ThoughtState.ActiveAtStage(3);
             }
 
             return true;
         }
+
+        public bool IfMechanitor(Pawn pawn)
+        {
+            if (ModsConfig.BiotechActive && pawn.health?.hediffSet != null)
+            {
+                
+                return pawn.health.hediffSet.HasHediff(HediffDefOf.MechlinkImplant);
+            }
+            return false;
+        }
+
+
+
+
+        public override string PostProcessDescription(Pawn p, string description)
+        {
+            string text = base.PostProcessDescription(p, description);
+            Hediff firstHediffOfDef = p.health.hediffSet.GetFirstHediffOfDef(def.hediff);
+            if (firstHediffOfDef == null || !firstHediffOfDef.Visible)
+            {
+                return text;
+            }
+            return text + "\n\n" + "CausedBy".Translate() + ": " + firstHediffOfDef.LabelBase.CapitalizeFirst();
+        }
     }
+
+
+
+
 
 
     public class HediffCompProperties_pawnExpload : HediffCompProperties
@@ -611,7 +647,7 @@ namespace ZIRI_ApocritonMechResurrector
 
         public override void DoEffect(Pawn user)
         {
-            Log.Message("DoEffect has been call by " + user.Name);
+            //Log.Message("DoEffect has been call by " + user.Name);
             
 
             BodyPartRecord bodyPartRecord = user.RaceProps.body.GetPartsWithDef(Props.bodyPart).FirstOrFallback();
@@ -624,9 +660,9 @@ namespace ZIRI_ApocritonMechResurrector
                 }
                 else if (Props.canUpgrade)
                 {
-                    Log.Message("Current input charge point before chnage level: " + ((int)user.GetStatValue(StatDefOf.MechResurrectMaxChargePoint, true, -1)));
+                    //Log.Message("Current input charge point before chnage level: " + ((int)user.GetStatValue(StatDefOf.MechResurrectMaxChargePoint, true, -1)));
                     ((Hediff_Level)firstHediffOfDef).ChangeLevel(1);
-                    Log.Message("Current input charge point after chnage level: " + ((int)user.GetStatValue(StatDefOf.MechResurrectMaxChargePoint, true, -1)));
+                    //Log.Message("Current input charge point after chnage level: " + ((int)user.GetStatValue(StatDefOf.MechResurrectMaxChargePoint, true, -1)));
 
                     this.UpdateUserAbilityOfMaxChargePoints(user, ApocritonMechResurrector_AbilityDefOf.ApocritonMechResurrector);
 
@@ -636,20 +672,19 @@ namespace ZIRI_ApocritonMechResurrector
 
         }
 
-        private async void UpdateUserAbilityOfMaxChargePoints(Pawn p, AbilityDef abilityDefArg)
+        private async void UpdateUserAbilityOfMaxChargePoints(Pawn p, AbilityDef abilityDef)
         {
-            CompAbilityEffect_MechanitorResurrectMech comp = p.abilities.GetAbility(abilityDefArg).EffectComps.Find((x => x is CompAbilityEffect_MechanitorResurrectMech)) as CompAbilityEffect_MechanitorResurrectMech;
+            CompAbilityEffect_MechanitorResurrectMech comp = p.abilities.GetAbility(abilityDef).EffectComps.Find((x => x is CompAbilityEffect_MechanitorResurrectMech)) as CompAbilityEffect_MechanitorResurrectMech;
             if (comp != null)
             {
-                Log.Message("CompAbilityEffect_MechanitorResurrectMech found in : " + comp.ToStringSafe());
+                //Log.Message("CompAbilityEffect_MechanitorResurrectMech found in : " + comp.ToStringSafe());
 
-                await Task.Delay(10);
-
-                comp.ResetCharges();//Not function: still remian the same after call the
+                await Task.Delay(50);//have to wait for value assigned to the ability, then reset the charges
+                comp.ResetCharges();
                 return;
             }
 
-            Log.Message("CompAbilityEffect_MechanitorResurrectMech Not found!!!");
+            //Log.Message("CompAbilityEffect_MechanitorResurrectMech Not found!!!");
 
         }
     }
