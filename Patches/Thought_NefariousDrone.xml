@@ -223,39 +223,4 @@
         </value>
     </Operation>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThoughtDef[defName = "PsychicDrone"]/stages/li[label = "low psychic drone"]</xpath>
-        <order>Append</order>
-        <value>
-            <nullifyingHediffs>
-                <li>ApocritonMechResurrector</li>
-            </nullifyingHediffs>
-        </value>
-    </Operation> -->
-
 </Patch>

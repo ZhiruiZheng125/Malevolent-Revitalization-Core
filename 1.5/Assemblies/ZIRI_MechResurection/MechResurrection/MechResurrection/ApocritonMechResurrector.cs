@@ -412,10 +412,11 @@ namespace ZIRI_ApocritonMechResurrector
             //Ability remoteResurrectAbility = user.abilities.GetAbility(abilityDef);
             Ability remoteResurrectAbility = user.abilities.GetAbility(abilityDef);
 
-            if (remoteResurrectAbility == null)// find mech resurrect ability, if not found, add hediffAnother and stop, otherwise add hediff
+            if (remoteResurrectAbility == null)// find mech resurrect ability, if not found, add both input hediffs
             {
-               //Log.Message("Didn't find RemoteResurrect ability");
-               //Log.Message("AddHediff: " + Props.hediffDefAnother);
+                //Log.Message("Didn't find RemoteResurrect ability");
+                //Log.Message("AddHediff: " + Props.hediffDefAnother);
+                user.health.AddHediff(Props.hediffDef);
                 user.health.AddHediff(Props.hediffDefAnother);
                 return;
             }
@@ -423,7 +424,7 @@ namespace ZIRI_ApocritonMechResurrector
             {
                //Log.Message("Find Abilitiy: " + remoteResurrectAbility.def.defName);
                //Log.Message("AddHediff: " + Props.hediffDef);
-                user.health.AddHediff(Props.hediffDef);
+                //user.health.AddHediff(Props.hediffDef);
                 //find the CompAbilityEffect_MechanitorResurrectMech from the ability(might has better ways to look through)
                 CompAbilityEffect_MechanitorResurrectMech comp = remoteResurrectAbility.EffectComps.Find(x => x is CompAbilityEffect_MechanitorResurrectMech) as CompAbilityEffect_MechanitorResurrectMech;
 
@@ -680,7 +681,7 @@ namespace ZIRI_ApocritonMechResurrector
                 {
                     Log.Error($"Error resetting charges: {ex.Message}");
                 }
-                }
+                
                 
             }
 
