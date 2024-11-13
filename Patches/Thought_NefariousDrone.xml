@@ -1,117 +1,234 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
+    <!-- patch Tag: HateAura-->
 
     <Operation Class="PatchOperationAdd">
-        <xpath>Biotech/Defs/ThoughtDef[defName = "HateAura"]/developmentalStageFilter</xpath>
-        <Order>Append</Order>
+        <xpath>Defs/ThoughtDef[defName = "HateAura"]</xpath>
+        <order>Append</order>
         <value>
             <nullifyingHediffs>
-                <li MayRequire="Ludeon.RimWorld.Biotech">ApocritonMechResurrector</li>
+                <li>ApocritonMechResurrector</li>
             </nullifyingHediffs>
         </value>
-	</Operation>
+    </Operation>
+
+    <!-- patch Tag: DeathMemory-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName = "SpokeToDisturbingMood"]/nullifyingHediffs</xpath>
+        <order>Append</order>
+        <value>
+            <li>ApocritonMechResurrector</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName = "KnowGuestExecuted"]</xpath>
+        <order>Append</order>
+        <value>
+            <nullifyingHediffs>
+                <li>ApocritonMechResurrector</li>
+            </nullifyingHediffs>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName = "KnowColonistExecuted"]</xpath>
+        <order>Append</order>
+        <value>
+            <nullifyingHediffs>
+                <li>ApocritonMechResurrector</li>
+            </nullifyingHediffs>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName = "KnowPrisonerDiedInnocent"]</xpath>
+        <order>Append</order>
+        <value>
+            <nullifyingHediffs>
+                <li>ApocritonMechResurrector</li>
+            </nullifyingHediffs>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName = "KnowColonistDied"]</xpath>
+        <order>Append</order>
+        <value>
+            <nullifyingHediffs>
+                <li>ApocritonMechResurrector</li>
+            </nullifyingHediffs>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName = "BondedAnimalDied"]</xpath>
+        <order>Append</order>
+        <value>
+            <nullifyingHediffs>
+                <li>ApocritonMechResurrector</li>
+            </nullifyingHediffs>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName = "PawnWithGoodOpinionDied"]</xpath>
+        <order>Append</order>
+        <value>
+            <nullifyingHediffs>
+                <li>ApocritonMechResurrector</li>
+            </nullifyingHediffs>
+        </value>
+    </Operation>
+
+    <!-- patch Tag: DeathMemoryFamily-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[@Name = "DeathMemoryFamily"]</xpath>
+        <order>Append</order>
+        <value>
+            <nullifyingHediffs>
+                <li>ApocritonMechResurrector</li>
+            </nullifyingHediffs>
+        </value>
+    </Operation>
 
 
-    <!-- <Operation Class="PatchOperationFindMod">
-		<mods>
-            <li>The Dead Man's Switch</li>
-        </mods>
+    <!-- patch Tag: LostMemoryFamily-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[@Name = "LostMemoryFamily"]</xpath>
+        <order>Append</order>
+        <value>
+            <nullifyingHediffs>
+                <li>ApocritonMechResurrector</li>
+            </nullifyingHediffs>
+        </value>
+    </Operation>
 
-        <match Class="PatchOperationReplace">
-            <xpath>Defs/ThingDef[defName = "DMS_Gun_DawnbladeM"]/statBases/WorkToMake</xpath>
-            <value>
-                <WorkToMake>120000</WorkToMake>
-            </value>
-	    </match>
-	</Operation> -->
+    <!-- patch Tag: ColonistLeftUnburied-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName = "ColonistLeftUnburied"]/nullifyingHediffs</xpath>
+        <order>Append</order>
+        <value>
+            <li>ApocritonMechResurrector</li>
+        </value>
+    </Operation>
 
-    <!-- <Operation Class="PatchOperationFindMod">
-		<mods>
-            <li>The Dead Man's Switch</li>
-        </mods>
+    <!-- patch Tag: ExecutedPrisoner-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName = "ExecutedPrisoner"]</xpath>
+        <order>Append</order>
+        <value>
+            <nullifyingHediffs>
+                <li>ApocritonMechResurrector</li>
+            </nullifyingHediffs>
+        </value>
+    </Operation>
 
-        <match Class="PatchOperationReplace">
-            <xpath>Defs/ThingDef[defName = "DMS_Gun_DawnbladeM"]/statBases/MarketValue</xpath>
-            <value>
-                <MarketValue>5000</MarketValue>
-            </value>
-	    </match>
-	</Operation> -->
+    <!-- patch Tag: KilledInnocentAnimal_Know_Abhorrent_Mood-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName = "KilledInnocentAnimal_Know_Abhorrent_Mood"]/nullifyingHediffs</xpath>
+        <order>Append</order>
+        <value>
+            <li>ApocritonMechResurrector</li>
+        </value>
+    </Operation>
 
-    <!-- <Operation Class="PatchOperationFindMod">
-		<mods>
-            <li>The Dead Man's Switch</li>
-        </mods>
+    <!-- patch Tag: DryadDied-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName = "DryadDied"]</xpath>
+        <order>Append</order>
+        <value>
+            <nullifyingHediffs>
+                <li>ApocritonMechResurrector</li>
+            </nullifyingHediffs>
+        </value>
+    </Operation>
 
-        <match Class="PatchOperationAdd">
-            <xpath>Defs/ThingDef[defName = "DMS_Gun_DawnbladeM"]/costList</xpath>
-            <value>
-                <ComponentFireControl>1</ComponentFireControl>
-            </value>
-	    </match>
-	</Operation> -->
+    <!-- patch Tag: ConnectedTreeDied-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName = "ConnectedTreeDied"]</xpath>
+        <order>Append</order>
+        <value>
+            <nullifyingHediffs>
+                <li>ApocritonMechResurrector</li>
+            </nullifyingHediffs>
+        </value>
+    </Operation>
 
-    <!-- <Operation Class="PatchOperationFindMod">
-		<mods>
-            <li>The Dead Man's Switch</li>
-        </mods>
+    <!-- patch Tag: KilledChild-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName = "KilledChild"]/nullifyingHediffs</xpath>
+        <order>Append</order>
+        <value>
+            <li>ApocritonMechResurrector</li>
+        </value>
+    </Operation>
 
-        <match Class="PatchOperationReplace">
-            <xpath>Defs/ThingDef[defName = "DMS_Gun_DawnbladeM"]/costList/Tungsteel</xpath>
-            <value>
-                <Tungsteel>400</Tungsteel>
-            </value>
-	    </match>
-	</Operation> -->
+    <!-- patch Tag: AnimaScream-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName = "AnimaScream"]</xpath>
+        <order>Append</order>
+        <value>
+            <nullifyingHediffs>
+                <li>ApocritonMechResurrector</li>
+            </nullifyingHediffs>
+        </value>
+    </Operation>
 
-    <!-- <Operation Class="PatchOperationFindMod">
-		<mods>
-            <li>The Dead Man's Switch</li>
-        </mods>
+    <!-- patch Tag: PsychicArchotechEmanator-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[@Name = "PsychicArchotechEmanator"]</xpath>
+        <order>Append</order>
+        <value>
+            <nullifyingHediffs>
+                <li>ApocritonMechResurrector</li>
+            </nullifyingHediffs>
+        </value>
+    </Operation>
 
-        <match Class="PatchOperationReplace">
-            <xpath>Defs/ThingDef[defName = "DMS_Gun_DawnbladeM"]/costList/ComponentStamped</xpath>
-            <value>
-                <ComponentStamped>32</ComponentStamped>
-            </value>
-	    </match>
-	</Operation> -->
-
-    <!-- <Operation Class="PatchOperationFindMod">
-		<mods>
-            <li>The Dead Man's Switch</li>
-        </mods>
-
-        <match Class="PatchOperationInsert">
-            <xpath>Defs/ThingDef[defName = "DMS_Gun_DawnbladeM"]/costList</xpath>
-            <value>
-                <equippedStatOffsets>
-                  <MoveSpeed>-1.0</MoveSpeed>
-                </equippedStatOffsets>
-            </value>
-        </match>
-	</Operation> -->
-
+    <!-- patch Tag: KnowPrisonerSold-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName = "KnowPrisonerSold"]/nullifyingHediffs</xpath>
+        <order>Append</order>
+        <value>
+            <li>ApocritonMechResurrector</li>
+        </value>
+    </Operation>
 
 
-    <!-- <Operation Class="PatchOperationFindMod">
-		<mods>
-            <li>The Dead Man's Switch</li>
-        </mods>
 
-        <match Class="PatchOperationRemove">
-            <xpath>Defs/ThingDef[defName = "DMS_Gun_DawnbladeM"]/weaponTags/li[text()="DMS_Tarbosaurus_Gun"]</xpath>
-        </match>
-	</Operation> -->
 
-    <!-- <Operation Class="PatchOperationFindMod">
-		<mods>
-            <li>The Dead Man's Switch</li>
-        </mods>
 
-        <match Class="PatchOperationRemove">
-            <xpath>Defs/ThingDef[defName = "DMS_Gun_DawnbladeM"]/weaponTags/li[text()="DMS_MechWeaponUltraHeavy"]</xpath>
-        </match>
-	</Operation> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName = "PsychicDrone"]/stages/li[label = "low psychic drone"]</xpath>
+        <order>Append</order>
+        <value>
+            <nullifyingHediffs>
+                <li>ApocritonMechResurrector</li>
+            </nullifyingHediffs>
+        </value>
+    </Operation> -->
 
 </Patch>
