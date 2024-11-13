@@ -174,7 +174,6 @@
         <maxCorpseAgeTicks>3600</maxCorpseAgeTicks><!-- max mech been resurrected time 60s -->
         <appliedEffecterDef>MechResurrected</appliedEffecterDef>
         <resolveEffecterDef>MechResurrected</resolveEffecterDef>
-        <!-- <maxChargePoint>MechResurrectMaxChargePoint</maxChargePoint> -->
         <costs>
           <li>
             <weightClass>Light</weightClass>

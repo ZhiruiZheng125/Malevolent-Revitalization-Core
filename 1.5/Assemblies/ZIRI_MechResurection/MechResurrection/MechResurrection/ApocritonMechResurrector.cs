@@ -106,13 +106,7 @@ namespace ZIRI_ApocritonMechResurrector
 
         public void ResetCharges()
         {
-           //Log.Message("ResetCharges called");
-           //Log.Message("Old ResetCharges: " + resurrectCharges);
             this.resurrectCharges = this.currentMaxResurrectCharges;
-           //Log.Message("new ResetCharges: " + resurrectCharges);
-
-            Hediff hediff = this.parent.pawn.health.hediffSet.GetFirstHediffOfDef(ApocritonMechResurrector_HediffDefOf.ApocritonMechResurrector);
-           //Log.Message("Show hediff Severity: " + hediff.Severity);
         }
 
         public override void Initialize(AbilityCompProperties props)
@@ -676,10 +670,18 @@ namespace ZIRI_ApocritonMechResurrector
             if (comp != null)
             {
                 //Log.Message("CompAbilityEffect_MechanitorResurrectMech found in : " + comp.ToStringSafe());
-
-                await Task.Delay(50);//have to wait for value assigned to the ability, then reset the charges
-                comp.ResetCharges();
-                return;
+                try
+                {
+                    await Task.Delay(50);//have to wait for value assigned to the ability, then reset the charges
+                    comp.ResetCharges();//other way: just read hediff level and assign to the charges, becuase this way is less reliable
+                    return;
+                }
+                catch (System.Exception ex)
+                {
+                    Log.Error($"Error resetting charges: {ex.Message}");
+                }
+                }
+                
             }
 
             //Log.Message("CompAbilityEffect_MechanitorResurrectMech Not found!!!");

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Biotech/Defs/ThoughtDef[defName = "HateAura"]/developmentalStageFilter</xpath>
+        <Order>Append</Order>
+        <value>
+            <nullifyingHediffs>
+                <li MayRequire="Ludeon.RimWorld.Biotech">ApocritonMechResurrector</li>
+            </nullifyingHediffs>
+        </value>
+	</Operation>
+
+
+    <!-- <Operation Class="PatchOperationFindMod">
+		<mods>
+            <li>The Dead Man's Switch</li>
+        </mods>
+
+        <match Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName = "DMS_Gun_DawnbladeM"]/statBases/WorkToMake</xpath>
+            <value>
+                <WorkToMake>120000</WorkToMake>
+            </value>
+	    </match>
+	</Operation> -->
+
+    <!-- <Operation Class="PatchOperationFindMod">
+		<mods>
+            <li>The Dead Man's Switch</li>
+        </mods>
+
+        <match Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName = "DMS_Gun_DawnbladeM"]/statBases/MarketValue</xpath>
+            <value>
+                <MarketValue>5000</MarketValue>
+            </value>
+	    </match>
+	</Operation> -->
+
+    <!-- <Operation Class="PatchOperationFindMod">
+		<mods>
+            <li>The Dead Man's Switch</li>
+        </mods>
+
+        <match Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName = "DMS_Gun_DawnbladeM"]/costList</xpath>
+            <value>
+                <ComponentFireControl>1</ComponentFireControl>
+            </value>
+	    </match>
+	</Operation> -->
+
+    <!-- <Operation Class="PatchOperationFindMod">
+		<mods>
+            <li>The Dead Man's Switch</li>
+        </mods>
+
+        <match Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName = "DMS_Gun_DawnbladeM"]/costList/Tungsteel</xpath>
+            <value>
+                <Tungsteel>400</Tungsteel>
+            </value>
+	    </match>
+	</Operation> -->
+
+    <!-- <Operation Class="PatchOperationFindMod">
+		<mods>
+            <li>The Dead Man's Switch</li>
+        </mods>
+
+        <match Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName = "DMS_Gun_DawnbladeM"]/costList/ComponentStamped</xpath>
+            <value>
+                <ComponentStamped>32</ComponentStamped>
+            </value>
+	    </match>
+	</Operation> -->
+
+    <!-- <Operation Class="PatchOperationFindMod">
+		<mods>
+            <li>The Dead Man's Switch</li>
+        </mods>
+
+        <match Class="PatchOperationInsert">
+            <xpath>Defs/ThingDef[defName = "DMS_Gun_DawnbladeM"]/costList</xpath>
+            <value>
+                <equippedStatOffsets>
+                  <MoveSpeed>-1.0</MoveSpeed>
+                </equippedStatOffsets>
+            </value>
+        </match>
+	</Operation> -->
+
+
+
+    <!-- <Operation Class="PatchOperationFindMod">
+		<mods>
+            <li>The Dead Man's Switch</li>
+        </mods>
+
+        <match Class="PatchOperationRemove">
+            <xpath>Defs/ThingDef[defName = "DMS_Gun_DawnbladeM"]/weaponTags/li[text()="DMS_Tarbosaurus_Gun"]</xpath>
+        </match>
+	</Operation> -->
+
+    <!-- <Operation Class="PatchOperationFindMod">
+		<mods>
+            <li>The Dead Man's Switch</li>
+        </mods>
+
+        <match Class="PatchOperationRemove">
+            <xpath>Defs/ThingDef[defName = "DMS_Gun_DawnbladeM"]/weaponTags/li[text()="DMS_MechWeaponUltraHeavy"]</xpath>
+        </match>
+	</Operation> -->
+
+</Patch>
