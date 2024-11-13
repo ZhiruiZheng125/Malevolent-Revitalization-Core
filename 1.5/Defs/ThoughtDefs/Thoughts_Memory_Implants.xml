@@ -12,6 +12,7 @@
       <hediff>ApocritonMechResurrector</hediff>
       <validWhileDespawned>true</validWhileDespawned>
 
+
       <stages>
         <li>
           <label>Calculated Trust</label>
@@ -51,10 +52,6 @@
       <hediff>ApocritonMechResurrector</hediff>
       <validWhileDespawned>true</validWhileDespawned>
       <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
-
-      <nullifyingTraits>
-        <li>Bloodlust</li>
-      </nullifyingTraits>
 
       <nullifyingHediffs>
         <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>

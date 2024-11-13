@@ -195,6 +195,33 @@
         </value>
     </Operation>
 
+    <!-- patch Tag: WitnessedDeathAlly-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName = "WitnessedDeathAlly"]/nullifyingHediffs</xpath>
+        <order>Append</order>
+        <value>
+            <li>ApocritonMechResurrector</li>
+        </value>
+    </Operation>
+
+    <!-- patch Tag: WitnessedDeathNonAlly-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName = "WitnessedDeathNonAlly"]/nullifyingHediffs</xpath>
+        <order>Append</order>
+        <value>
+            <li>ApocritonMechResurrector</li>
+        </value>
+    </Operation>
+
+
+    <!-- patch Tag: WitnessedDeathFamily-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName = "WitnessedDeathFamily"]/nullifyingHediffs</xpath>
+        <order>Append</order>
+        <value>
+            <li>ApocritonMechResurrector</li>
+        </value>
+    </Operation>
 
 
 
