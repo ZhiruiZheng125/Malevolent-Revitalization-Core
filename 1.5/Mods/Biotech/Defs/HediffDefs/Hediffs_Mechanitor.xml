@@ -5,7 +5,7 @@
   <ThingDef ParentName="MechanitorImplantCraftableBase" MayRequire="ludeon.rimworld.biotech">
     <defName>ApocritonMechResurrector</defName>
     <label>Malevolent Revitalization Core</label>
-    <description>Here should add description for ApocritonMechResurrector.</description>
+    <description>The Malevolent Core Revitalizer is a Malevolent-tech implant designed to replicate the resurrection ability of the Apocriton. It grants the user the power to revive nearby mechanoids with incredible efficiency on the battlefield. While the implant is engineered to isolate the psychic interference of the Apocriton, it still establishes a direct connection to the brain, causing the user to faintly hear the "Nefarious Drone" gradually influencing their mind with Malevolent Intelligence. This device also works in synergy with nanofluid data streams to rapidly reset the mechanoid resurrection charges on the frontlines, making it even more capable than the Apocriton in prolonged extermination campaigns.</description>
     <descriptionHyperlinks>
       <AbilityDef>ApocritonMechResurrector</AbilityDef>
       <ThingDef>nanoCyberSerum</ThingDef>
@@ -20,10 +20,15 @@
 
     <statBases>
       <MaxInstallCount>3</MaxInstallCount>
+      <MarketValue>3200</MarketValue>
+      <WorkToMake>50000</WorkToMake>
     </statBases>
     
     <recipeMaker>
       <researchPrerequisite>UltraMechtech</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>12</Crafting>
+      </skillRequirements>
     </recipeMaker>
 
     <graphicData> <!--try change color -->
@@ -53,7 +58,9 @@
   <HediffDef MayRequire="ludeon.rimworld.biotech">
     <defName>ApocritonMechResurrector</defName>
     <hediffClass>Hediff_Level</hediffClass>
-
+    <label>Malevolent Revitalization Core</label>
+    <description>After implanting the Malevolent Core Revitalizer, the user will gradually be influenced by the “Malevolent Whispers,” becoming indifferent to the deaths of friends and loved ones. Social interactions will also be severely impacted; due to the assimilation of the Malevolent Whispers, the user will instinctively feel a strong aversion toward those who cannot emit mechanoid control signals. Additionally, the implant actively suppresses emotional fluctuations in the cerebral cortex to prevent mental breakdowns from intense psychological stress, ensuring the user remains calm and merciless in prolonged battles.</description>
+    <descriptionShort>Malevolent Core implant gradually desensitizes emotions, causes aversion to non-mechanoids, and suppresses feelings, making the user calm and ruthless.</descriptionShort>
     <descriptionHyperlinks>
       <AbilityDef>ApocritonMechResurrector</AbilityDef>
       <ThingDef>nanoCyberSerum</ThingDef>
@@ -61,8 +68,6 @@
       <ThingDef>ApocritonMechResurrector</ThingDef>
     </descriptionHyperlinks>
 
-    <label>remote resurrector</label>
-    <description>Here should add description for ApocritonMechResurrector.</description>
     <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
     <isBad>false</isBad>
     <priceImpact>true</priceImpact>
@@ -126,8 +131,8 @@
 
   <AbilityDef MayRequire="ludeon.rimworld.biotech">
     <defName>ApocritonMechResurrector</defName>
-    <label>Mech Resurrection</label>
-    <description>Here should add description for ApocritonMechResurrector.</description>
+    <label>Mech Reawakening</label>
+    <description>Malevolent Resurrection Pulse allows the user to fully harness the Apocriton's mechanical revival ability. It can unleash a powerful energy pulse without requiring line of sight, overloading fallen nearby mechanoids with incredible efficiency, bringing them back to battle with their injuries intact.</description>
     
     <descriptionHyperlinks>
       <!-- <AbilityDef>ApocritonMechResurrector</AbilityDef> -->

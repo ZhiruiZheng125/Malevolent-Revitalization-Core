@@ -5,12 +5,13 @@
   <ThingDef ParentName="ResourceBase">
     <defName>nanoCyberSerum</defName>
     <label>Nano CyberSerum</label>
-    <description>Here shoud add description for nanoCyberSerum.</description>
+    <description>Nano CyberSerum is a cutting-edge injectable nanomechanical fluid that activates the nanostructures within the Nano-Structured Chip through external RF signals, enabling the transfer of nanoparticle data. Once injected into the neck, the nanomechanical solution activates and replenishes the mechanical revival charge, ensuring the user maintains continuous combat and coordination abilities during battle. The infusion is designed to be compact and portable, suitable for use during intense combat situations to instantly reset revival charges. However, injecting Nano Data Infusion also carries risks—if used by a non-capable individual, the nanomachines will spread throughout the body, leading to nanomechanical virus infection.</description>
     <descriptionHyperlinks>
       <!-- <ThingDef>nanoCyberSerum</ThingDef> -->
       <AbilityDef>ApocritonMechResurrector</AbilityDef>
       <HediffDef>ApocritonMechResurrector</HediffDef>
       <ThingDef>ApocritonMechResurrector</ThingDef>
+      <ThingDef>SubcoreEncoder</ThingDef>
     </descriptionHyperlinks>
     <techLevel>Ultra</techLevel>
     <thingClass>ThingWithComps</thingClass>
@@ -35,13 +36,13 @@
       <defaultNumToIngestAtOnce>1</defaultNumToIngestAtOnce>
       <drugCategory>Medical</drugCategory>
       <foodType>Processed</foodType>
-      <baseIngestTicks>100</baseIngestTicks>
+      <baseIngestTicks>250</baseIngestTicks>
       <humanlikeOnly>true</humanlikeOnly>
       <chairSearchRadius>0</chairSearchRadius>
-      <ingestSound>Ingest_Pill</ingestSound>
+      <ingestSound>ControlMech</ingestSound>
       <ingestHoldUsesTable>false</ingestHoldUsesTable>
-      <ingestCommandString>Ingest {0}</ingestCommandString>
-      <ingestReportString>Ingesting {0}.</ingestReportString>
+      <ingestCommandString>Transmit {0}</ingestCommandString>
+      <ingestReportString>Transmiting {0}.</ingestReportString>
       <showIngestFloatOption>false</showIngestFloatOption> <!-- Useable does this -->
       <outcomeDoers>
         <li Class="IngestionOutcomeDoer_UseThing" />
@@ -88,18 +89,16 @@
     </costList>
 
     <recipeMaker>
-      <workAmount>1080</workAmount>
-
+      <workAmount>24000</workAmount>
       <workSkill>Crafting</workSkill>
       <skillRequirements>
-        <Crafting>4</Crafting>
+        <Crafting>12</Crafting>
       </skillRequirements>
-
       <researchPrerequisite>UltraMechtech</researchPrerequisite>
       <productCount>1</productCount>
-      <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+      <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
       <recipeUsers>
-        <li>SerumCentrifuge</li>
+        <li>SubcoreEncoder</li>
       </recipeUsers>
     </recipeMaker>
 

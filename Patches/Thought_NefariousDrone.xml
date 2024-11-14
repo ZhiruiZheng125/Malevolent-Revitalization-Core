@@ -223,4 +223,13 @@
         </value>
     </Operation>
 
+    <!-- patch Tag: InsultedMood-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName = "InsultedMood"]/nullifyingHediffs</xpath>
+        <order>Append</order>
+        <value>
+            <li>ApocritonMechResurrector</li>
+        </value>
+    </Operation>
+
 </Patch>

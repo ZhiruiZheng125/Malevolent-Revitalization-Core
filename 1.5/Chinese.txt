@@ -20,7 +20,9 @@ HediffDef:
 Malevolent Revitalization Core
 
 植入 "憎恶核心复生器" 后，使用者会逐渐被“憎恶低语”影响，对亲友的死亡变得漠不关心。社交方面也会受到极大冲击，由于憎恶低语的同化，使用者会本能地对不能发出机控中枢信号的人产生强烈的厌恶感。同时，植入物会主动抑制大脑皮层的情绪波动，以防止使用者因强烈的精神负担而崩溃，确保他们在长期战斗中保持冷静、无情。
+()
 After implanting the Malevolent Core Revitalizer, the user will gradually be influenced by the “Malevolent Whispers,” becoming indifferent to the deaths of friends and loved ones. Social interactions will also be severely impacted; due to the assimilation of the Malevolent Whispers, the user will instinctively feel a strong aversion toward those who cannot emit mechanoid control signals. Additionally, the implant actively suppresses emotional fluctuations in the cerebral cortex to prevent mental breakdowns from intense psychological stress, ensuring the user remains calm and merciless in prolonged battles.
+(Malevolent Core implant gradually desensitizes emotions, causes aversion to non-mechanoids, and suppresses feelings, making the user calm and ruthless.)
 
 AbilityDef:
 憎恶复生脉冲

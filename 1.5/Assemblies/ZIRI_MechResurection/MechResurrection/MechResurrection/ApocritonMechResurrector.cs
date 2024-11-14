@@ -673,6 +673,7 @@ namespace ZIRI_ApocritonMechResurrector
                 //Log.Message("CompAbilityEffect_MechanitorResurrectMech found in : " + comp.ToStringSafe());
                 try
                 {
+                    Log.Message("Resetting charges...");
                     await Task.Delay(50);//have to wait for value assigned to the ability, then reset the charges
                     comp.ResetCharges();//other way: just read hediff level and assign to the charges, becuase this way is less reliable
                     return;
