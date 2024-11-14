@@ -12,6 +12,7 @@
         </value>
     </Operation>
 
+    <!-- better solution: try to make hatePeopleDeadth stop inheritance from parent -->
     <!-- patch Tag: DeathMemory-->
     <Operation Class="PatchOperationAdd">
         <xpath>Defs/ThoughtDef[defName = "SpokeToDisturbingMood"]/nullifyingHediffs</xpath>
