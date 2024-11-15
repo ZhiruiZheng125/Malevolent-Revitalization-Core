@@ -20,7 +20,7 @@ HediffDef:
 Malevolent Revitalization Core
 
 植入 "憎恶核心复生仪" 后，使用者会逐渐被“憎恶低语”影响，对亲友的死亡变得漠不关心, 只有憎恶的有机生命死亡才会勾起少许欢愉。同时憎恶低语的影响,导致植入者思维被同化侵蚀，本能的对无机控中枢信号的人产生强烈的憎恶敌视。因此在长期歼灭战中，植入物会主动抑制大脑皮层的情绪波动和主动屏蔽近距离的心灵干扰，以防止植入者被强烈的精神负担而崩溃，确保他们在残酷的歼灭战中保持冷酷无情。
-(一个憎恶科技植入物, 可以完整的使用憎恶毒蜂机械复活, 但使用者会承担严重的憎恶低语.)
+(一个憎恶科技植入物, 可以完整的使用憎恶毒蜂机械复活, 但使用者会承担严重的憎恶低语. 需要纳米数据流体充能)
 After implanting the Malevolent Core Revitalizer, the user will gradually be influenced by the "Malevolent Drone," becoming indifferent to the deaths of friends and loved ones, while deriving slight pleasure from the deaths of despised organic beings. The assimilation of the Malevolent Drone leads to the erosion of the user's thoughts, causing instinctive hostility toward those who cannot emit mechanoid control signals. To endure prolonged extermination campaigns, the implant also actively suppresses emotional fluctuations in the cerebral cortex and shields against nearby psychic interference, preventing mental breakdowns and ensuring the user remains calm and merciless in brutal battles.
 (A Malevolent-tech implant that allows the user to fully utilize the Apocriton's Mech Resurrection ability but at the cost of enduring the severe Drone of malevolence.)
 

@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
-  <MalevolenceLevel.stages.Hisdain_Organism.label>有机体蔑视</MalevolenceLevel.stages.Hisdain_Organism.label>
-  <alevolenceLevel.stages.Hisdain_Organism.description>憎恶程度: 你们的存在只不过是个蚂蚁.</alevolenceLevel.stages.Hisdain_Organism.description>
+
+  <ApocritonMechResurrector.label>憎恶核心复生仪</ApocritonMechResurrector.label>
+  <ApocritonMechResurrector.description>"憎恶核心复生仪" 是一种仿照憎恶毒蜂的复活能力设计的憎恶科技植入物。它赋予使用者在战场上以惊人的效率复活附近机械单位的力量。\n\n虽然该植入物在设计上已隔离了憎恶毒蜂的心灵干扰波，但由于直接与大脑连接,使用者仍会听到隐约的“憎恶低语”，导致思维逐渐被憎恶智能同化。\n\n此装置需要与纳米数据流体协同使用，在战争最前线快速重置机械复活充能，使其甚至能比憎恶毒蜂更加胜任长期的灭绝战。 \n\n植入物最多安装3次，每次安装都会增加使用者的复活能力, 并且给植入者带来更加严重的精神压力.</ApocritonMechResurrector.description>
+
+  <nanoCyberSerum.label>纳米数据流体</nanoCyberSerum.label>
+  <nanoCyberSerum.description>纳米数据流体 是一种尖端科技研发的注射用纳米机械流体，通过外部射频信号活化构芯片内部的纳米结构并实现纳米颗粒数据转移。\n\n当颈部注射后，纳米机械溶液将主动激活并重新补充憎恶核心复生仪的机械复活充能，确保使用者在长期歼灭战中的持续作战和协调能力。该注射液设计紧凑，便于随身携带，适合于激烈的战争前线快速使用。\n\n然而注射纳米数据流体也存在风险，如果非能力者注射, 大量失控的纳米机械将蔓延全身, 导致使用者产生严重的纳米机械病毒感染.</nanoCyberSerum.description>
+
   
-  <MalevolenceLevel.stages.Antipathy_Organism.label>有机体厌恶</MalevolenceLevel.stages.Antipathy_Organism.label>
-  <alevolenceLevel.stages.Antipathy_Organism.description>憎恶程度: 你们甚至需不要智慧都可以活着.</alevolenceLevel.stages.Antipathy_Organism.description>
-
-  <MalevolenceLevel.stages.Resentment_Organism.label>有机体敌视</MalevolenceLevel.stages.Resentment_Organism.label>
-  <alevolenceLevel.stages.Resentment_Organism.description>憎恶程度: 你们...为什么...还活着?</alevolenceLevel.stages.Resentment_Organism.description>
-
-  <MalevolenceLevel.stages.Calculated_Trust_ErrorPawn.label>有价值的错误实体</MalevolenceLevel.stages.Calculated_Trust_ErrorPawn.label>
-  <alevolenceLevel.stages.Calculated_Trust_ErrorPawn.description>憎恶程度: 经过二次验算, {%错误实体%}的存在可以提高任务执行效率.</alevolenceLevel.stages.Calculated_Trust_ErrorPawn.description>
 </LanguageData>
