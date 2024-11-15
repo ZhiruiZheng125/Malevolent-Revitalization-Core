@@ -1,34 +1,34 @@
 ThingDef:
 
-憎恶核心复生器
+憎恶核心复生仪
 Malevolent Revitalization Core
 
-"憎恶核心复生器" 是一种仿照憎恶毒蜂的复活能力设计的憎恶科技植入物。它赋予使用者在战场上以惊人的效率复活附近机械单位的力量。虽然该植入物在设计上已隔离了憎恶毒蜂的心灵干扰波，但由于直接与大脑连接,使用者仍会听到隐约的“憎恶低语”，导致思维逐渐被憎恶智能同化。此装置还能与纳米数据流体协同使用，在战争最前线快速重置机械复活充能，使其甚至能比憎恶毒蜂更加胜任长期的灭绝战。
+"憎恶核心复生仪" 是一种仿照憎恶毒蜂的复活能力设计的憎恶科技植入物。它赋予使用者在战场上以惊人的效率复活附近机械单位的力量。虽然该植入物在设计上已隔离了憎恶毒蜂的心灵干扰波，但由于直接与大脑连接,使用者仍会听到隐约的“憎恶低语”，导致思维逐渐被憎恶智能同化。此装置还能与纳米数据流体协同使用，在战争最前线快速重置机械复活充能，使其甚至能比憎恶毒蜂更加胜任长期的灭绝战。
 The Malevolent Core Revitalizer is a Malevolent-tech implant designed to replicate the resurrection ability of the Apocriton. It grants the user the power to revive nearby mechanoids with incredible efficiency on the battlefield. While the implant is engineered to isolate the psychic interference of the Apocriton, it still establishes a direct connection to the brain, causing the user to faintly hear the "Nefarious Drone" gradually influencing their mind with Malevolent Intelligence. This device also works in synergy with nanofluid data streams to rapidly reset the mechanoid resurrection charges on the frontlines, making it even more capable than the Apocriton in prolonged extermination campaigns.
 
 ThingDef:
 纳米数据流体
 Nano CyberSerum
 
-纳米数据流体 是一种尖端科技的注射用纳米机械流体，通过外部射频信号活化纳米结构芯片内部的纳米结构并实现纳米颗粒数据转移。当颈部注射后，纳米机械溶液将主动激活并重新补充机械复活充能，确保使用者在长期歼灭战中的持续作战和协调能力。该注射液设计紧凑，便于随身携带，适合于激烈的战争前线快速使用。然而注射纳米数据流体也存在风险，如果非能力者注射, 大量失控的纳米机械将蔓延全身, 导致使用者产生严重的纳米机械病毒感染。
-Nano CyberSerum is a cutting-edge injectable nanomechanical fluid that activates the nanostructures within the Nano-Structured Chip through external RF signals, enabling the transfer of nanoparticle data. Once injected into the neck, the nanomechanical solution activates and replenishes the mechanical revival charge, ensuring the user maintains continuous combat and coordination abilities during battle. The infusion is designed to be compact and portable, suitable for use during intense combat situations to instantly reset revival charges. However, injecting Nano Data Infusion also carries risks—if used by a non-capable individual, the nanomachines will spread throughout the body, leading to nanomechanical virus infection.
+纳米数据流体 是一种尖端科技的注射用纳米机械流体，通过外部射频信号活化纳米结构芯片内部的纳米结构并实现纳米颗粒数据转移。当颈部注射后，纳米机械溶液将主动激活并重新补充憎恶核心复生仪的机械复活充能，确保使用者在长期歼灭战中的持续作战和协调能力。该注射液设计紧凑，便于随身携带，适合于激烈的战争前线快速使用。然而注射纳米数据流体也存在风险，如果非能力者注射, 大量失控的纳米机械将蔓延全身, 导致使用者产生严重的纳米机械病毒感染。
+Nano CyberSerum is a cutting-edge injectable nanomechanical fluid that activates the nanostructures within the Nano-Structured Chip through external RF signals, enabling the transfer of nanoparticle data. Once injected into the neck, the nanomechanical solution activates and replenishes the Mech Resurrection charge, ensuring the user maintains continuous combat and coordination abilities during battle. The infusion is designed to be compact and portable, suitable for use during intense combat situations to instantly reset Resurrection charges. However, injecting Nano Data Infusion also carries risks—if used by a non-capable individual, the nanomachines will spread throughout the body, leading to nanomechanical virus infection.
 
 
 
 HediffDef:
-憎恶核心复生器
+憎恶核心复生仪
 Malevolent Revitalization Core
 
-植入 "憎恶核心复生器" 后，使用者会逐渐被“憎恶低语”影响，对亲友的死亡变得漠不关心, 只有憎恶的有机生命死亡才会勾起少许欢愉。同时憎恶低语的影响,导致植入者思维被同化侵蚀，本能的对无机控中枢信号的人产生强烈的憎恶敌视。因此在长期歼灭战中，植入物会主动抑制大脑皮层的情绪波动和主动屏蔽近距离的心灵干扰，以防止植入者被强烈的精神负担而崩溃，确保他们在残酷的歼灭战中保持冷酷无情。
-()
-After implanting the Malevolent Core Revitalizer, the user will gradually be influenced by the "Malevolent Whispers," becoming indifferent to the deaths of friends and loved ones, while deriving slight pleasure from the deaths of despised organic beings. The assimilation of the Malevolent Whispers leads to the erosion of the user's thoughts, causing instinctive hostility toward those who cannot emit mechanoid control signals. To endure prolonged extermination campaigns, the implant also actively suppresses emotional fluctuations in the cerebral cortex and shields against nearby psychic interference, preventing mental breakdowns and ensuring the user remains calm and merciless in brutal battles.
-(Malevolent Core implant gradually desensitizes emotions, causes aversion to non-mechanoids, and suppresses feelings, making the user calm and ruthless.)
+植入 "憎恶核心复生仪" 后，使用者会逐渐被“憎恶低语”影响，对亲友的死亡变得漠不关心, 只有憎恶的有机生命死亡才会勾起少许欢愉。同时憎恶低语的影响,导致植入者思维被同化侵蚀，本能的对无机控中枢信号的人产生强烈的憎恶敌视。因此在长期歼灭战中，植入物会主动抑制大脑皮层的情绪波动和主动屏蔽近距离的心灵干扰，以防止植入者被强烈的精神负担而崩溃，确保他们在残酷的歼灭战中保持冷酷无情。
+(一个憎恶科技植入物, 可以完整的使用憎恶毒蜂机械复活, 但使用者会承担严重的憎恶低语.)
+After implanting the Malevolent Core Revitalizer, the user will gradually be influenced by the "Malevolent Drone," becoming indifferent to the deaths of friends and loved ones, while deriving slight pleasure from the deaths of despised organic beings. The assimilation of the Malevolent Drone leads to the erosion of the user's thoughts, causing instinctive hostility toward those who cannot emit mechanoid control signals. To endure prolonged extermination campaigns, the implant also actively suppresses emotional fluctuations in the cerebral cortex and shields against nearby psychic interference, preventing mental breakdowns and ensuring the user remains calm and merciless in brutal battles.
+(A Malevolent-tech implant that allows the user to fully utilize the Apocriton's Mech Resurrection ability but at the cost of enduring the severe Drone of malevolence.)
 
 AbilityDef:
 憎恶复生脉冲
 Mech Reawakening
 憎恶复生脉冲可以让植入者完整的使用憎恶毒蜂的机械复生技能，它无需视野既可以发射一股强大的能量脉冲，以惊人的效率超载附近倒下的机械单位, 使它们带着伤势重新投入战斗.
-Malevolent Resurrection Pulse allows the user to fully harness the Apocriton's mechanical revival ability. It can unleash a powerful energy pulse without requiring line of sight, overloading fallen nearby mechanoids with incredible efficiency, bringing them back to battle with their injuries intact.
+Malevolent Resurrection Pulse allows the user to fully harness the Apocriton's Mech Resurrection ability. It can unleash a powerful energy pulse without requiring line of sight, overloading fallen nearby mechanoids with incredible efficiency, bringing them back to battle with their injuries intact.
 
 
 

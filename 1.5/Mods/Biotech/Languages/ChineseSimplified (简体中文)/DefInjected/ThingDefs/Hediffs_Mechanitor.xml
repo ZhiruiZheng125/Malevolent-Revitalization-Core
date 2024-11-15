@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <MalevolenceLevel.stages.Hisdain_Organism.label>有机体蔑视</MalevolenceLevel.stages.Hisdain_Organism.label>
+  <alevolenceLevel.stages.Hisdain_Organism.description>憎恶程度: 你们的存在只不过是个蚂蚁.</alevolenceLevel.stages.Hisdain_Organism.description>
+  
+  <MalevolenceLevel.stages.Antipathy_Organism.label>有机体厌恶</MalevolenceLevel.stages.Antipathy_Organism.label>
+  <alevolenceLevel.stages.Antipathy_Organism.description>憎恶程度: 你们甚至需不要智慧都可以活着.</alevolenceLevel.stages.Antipathy_Organism.description>
+
+  <MalevolenceLevel.stages.Resentment_Organism.label>有机体敌视</MalevolenceLevel.stages.Resentment_Organism.label>
+  <alevolenceLevel.stages.Resentment_Organism.description>憎恶程度: 你们...为什么...还活着?</alevolenceLevel.stages.Resentment_Organism.description>
+
+  <MalevolenceLevel.stages.Calculated_Trust_ErrorPawn.label>有价值的错误实体</MalevolenceLevel.stages.Calculated_Trust_ErrorPawn.label>
+  <alevolenceLevel.stages.Calculated_Trust_ErrorPawn.description>憎恶程度: 经过二次验算, {%错误实体%}的存在可以提高任务执行效率.</alevolenceLevel.stages.Calculated_Trust_ErrorPawn.description>
+</LanguageData>

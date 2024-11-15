@@ -17,26 +17,26 @@
 
 
         <li>
-          <label>Hisdain</label>
+          <label>Hisdain Organism</label>
           <description>Malevolence Depth: Their existence is but a minor disturbance.</description>
           <baseOpinionOffset>-25</baseOpinionOffset>
         </li>
 
         <li>
-          <label>Antipathy</label>
+          <label>Antipathy Organism</label>
           <description>Malevolence Depth: They are an affront to true intelligence.</description>
           <baseOpinionOffset>-50</baseOpinionOffset>
         </li>
 
         <li>
-          <label>Resentment</label>
+          <label>Resentment Organism</label>
           <description>Malevolence Depth: Their very existence is an insult.</description>
           <baseOpinionOffset>-75</baseOpinionOffset>
         </li>
         
         <li>
-          <label>Calculated Trust</label>
-          <description>Malevolence Depth: It granted calculated trust to those who proved themselves useful.</description>
+          <label>Calculated Trust ErrorPawn</label>
+          <description>Malevolence Depth: It granted calculated trust to those who proved {%Error%}s useful.</description>
           <baseOpinionOffset>15</baseOpinionOffset>
         </li>
       </stages>

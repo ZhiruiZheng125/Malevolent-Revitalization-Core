@@ -41,8 +41,8 @@
       <chairSearchRadius>0</chairSearchRadius>
       <ingestSound>ControlMech</ingestSound>
       <ingestHoldUsesTable>false</ingestHoldUsesTable>
-      <ingestCommandString>Transmit {0}</ingestCommandString>
-      <ingestReportString>Transmiting {0}.</ingestReportString>
+      <ingestCommandString>Ingest {0}</ingestCommandString>
+      <ingestReportString>Ingesting {0}.</ingestReportString>
       <showIngestFloatOption>false</showIngestFloatOption> <!-- Useable does this -->
       <outcomeDoers>
         <li Class="IngestionOutcomeDoer_UseThing" />
