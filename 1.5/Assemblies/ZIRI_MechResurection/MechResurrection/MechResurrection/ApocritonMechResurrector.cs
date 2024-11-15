@@ -453,86 +453,84 @@ namespace ZIRI_ApocritonMechResurrector
     {
         protected override ThoughtState CurrentSocialStateInternal(Pawn p, Pawn other)
         {
-            //Log.Message("CurrentSocialStateInternal called by: " + p.Name);
+
+            Log.Message("CurrentSocialStateInternal called by: " + p.Name);
+            //if (p == null || other == null)
+            //{
+            //    Log.Error("Invalid p or other parameter.");
+            //    return false;
+            //}
+
+
+            //int? level;
+
+            //if (!p.RaceProps.Humanlike)
+            //{
+            //    return false;
+            //}
+            //if (!RelationsUtility.PawnsKnowEachOther(p, other))
+            //{
+            //    return false;
+            //}
+            //if (other.def != p.def)
+            //{
+            //    return false;
+            //}
+
+            ////new condition for find Hediff
+            //if (ModsConfig.BiotechActive && p.health?.hediffSet != null && p.health.hediffSet.GetFirstHediffOfDef(def.hediff) == null)
+            //{
+            //    Log.Message("Hediff not found in ThoughtWorker_disdainOrganism_Hediff.");
+            //    return false;
+            //}
+
+            //Log.Message("Hediff found in ThoughtWorker_disdainOrganism_Hediff.");
+
+            //bool ifOtherIsMechanitor = MechanitorUtility.IsMechanitor(other);
+            //level = (int?)p.health?.hediffSet.GetFirstHediffOfDef(def.hediff)?.Severity;
+            //if (level == null)
+            //{
+            //    Log.Message("Hediff found but Severity is null.");
+            //    return false;
+            //}
+
+            //if (level == 1 && !ifOtherIsMechanitor)
+            //{
+            //    Log.Message("display message level:1");
+            //    return ThoughtState.ActiveAtStage(1);
+            //}
+            //else if (level == 2 && !ifOtherIsMechanitor)
+            //{
+            //    Log.Message("display message level:2");
+            //    return ThoughtState.ActiveAtStage(2);
+            //}
+            //else if (level == 3 && !ifOtherIsMechanitor)
+            //{
+            //    Log.Message("display message level:3");
+            //    return ThoughtState.ActiveAtStage(3);
+            //}
+            //else if (ifOtherIsMechanitor)
+            //{
+            //    Log.Message("Hediff found but Severity is 0.");
+            //    return ThoughtState.ActiveAtStage(0);
+            //}
+
+            //return true;
 
             Hediff firstHediffOfDef = p.health.hediffSet.GetFirstHediffOfDef(def.hediff);
-
-
-
-            if (!p.RaceProps.Humanlike)
+            if (firstHediffOfDef?.def.stages == null)
             {
-                return false;
+                Log.Message("Hediff not found in ThoughtWorker_disdainOrganism_Hediff." + p.Name);
+                return ThoughtState.Inactive;
             }
-            if (!RelationsUtility.PawnsKnowEachOther(p, other))
+            if (MechanitorUtility.IsMechanitor(other))
             {
-                return false;
+                Log.Message("Other Mechanitor found in ThoughtWorker_disdainOrganism_Hediff." + other.Name);
+                return ThoughtState.ActiveAtStage(def.stages.Count - 1);
             }
-            if (other.def != p.def)
-            {
-                return false;
-            }
-            //new condition for find Hediff
-            if (firstHediffOfDef == null)
-            {
-                //Log.Message("Hediff not found in ThoughtWorker_disdainOrganism_Hediff.");
-                return false;
-            }
+            Log.Message("Hediff found in ThoughtWorker_disdainOrganism_Hediff." + p.Name);
+            return ThoughtState.ActiveAtStage(Mathf.Min(firstHediffOfDef.CurStageIndex, firstHediffOfDef.def.stages.Count - 1, def.stages.Count - 1));
 
-            bool ifOtherIsMechanitor = IfMechanitor(other);
-            int level = (int)firstHediffOfDef.Severity;
-
-            if (ifOtherIsMechanitor && level != 0)
-            {
-                return ThoughtState.ActiveAtStage(0);
-            }
-            if (level == 0)
-            {
-                //Log.Message("Hediff found but Severity is 0.");
-                return false;
-            }
-            else if (level == 1 )//((int)p.GetStatValue(StatDefOf.MechResurrectMaxChargePoint, true, -1) == 1)
-            {
-                //Log.Message("display message level:1");
-                return ThoughtState.ActiveAtStage(1);
-            }
-
-            else if (level == 2)
-            {
-                //Log.Message("display message level:2");
-                return ThoughtState.ActiveAtStage(2);
-            }
-
-            else if (level == 3)
-            {
-                //Log.Message("display message level:3");
-                return ThoughtState.ActiveAtStage(3);
-            }
-
-            return true;
-        }
-
-        public bool IfMechanitor(Pawn pawn)
-        {
-            if (ModsConfig.BiotechActive && pawn.health?.hediffSet != null)
-            {
-                
-                return pawn.health.hediffSet.HasHediff(HediffDefOf.MechlinkImplant);
-            }
-            return false;
-        }
-
-
-
-
-        public override string PostProcessDescription(Pawn p, string description)
-        {
-            string text = base.PostProcessDescription(p, description);
-            Hediff firstHediffOfDef = p.health.hediffSet.GetFirstHediffOfDef(def.hediff);
-            if (firstHediffOfDef == null || !firstHediffOfDef.Visible)
-            {
-                return text;
-            }
-            return text + "\n\n" + "CausedBy".Translate() + ": " + firstHediffOfDef.LabelBase.CapitalizeFirst();
         }
     }
 

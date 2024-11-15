@@ -3,7 +3,7 @@
     
 
     <!-- social affect by mech resurrect -->
-<!--   
+  
     <ThoughtDef>
 
       <defName>MalevolenceLevel</defName>
@@ -14,11 +14,7 @@
 
 
       <stages>
-        <li>
-          <label>Calculated Trust</label>
-          <description>Malevolence Depth: It granted calculated trust to those who proved themselves useful.</description>
-          <baseOpinionOffset>15</baseOpinionOffset>
-        </li>
+
 
         <li>
           <label>Hisdain</label>
@@ -37,15 +33,19 @@
           <description>Malevolence Depth: Their very existence is an insult.</description>
           <baseOpinionOffset>-75</baseOpinionOffset>
         </li>
-
         
+        <li>
+          <label>Calculated Trust</label>
+          <description>Malevolence Depth: It granted calculated trust to those who proved themselves useful.</description>
+          <baseOpinionOffset>15</baseOpinionOffset>
+        </li>
       </stages>
 
-    </ThoughtDef> -->
+    </ThoughtDef>
 
     <!--mood affact by mech resurrect-->
 
-    <!-- <ThoughtDef>
+    <ThoughtDef>
 
       <defName>NefariousDrone</defName>
       <workerClass>ThoughtWorker_Hediff</workerClass>
@@ -79,6 +79,6 @@
 
       </stages>
 
-    </ThoughtDef> -->
+    </ThoughtDef>
 
 </Defs>
