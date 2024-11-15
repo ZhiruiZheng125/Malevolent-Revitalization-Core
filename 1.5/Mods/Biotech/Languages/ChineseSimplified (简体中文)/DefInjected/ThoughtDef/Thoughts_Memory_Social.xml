@@ -1,0 +1,17 @@
+﻿
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <MalevolenceLevel.stages.0.label>有机体蔑视</MalevolenceLevel.stages.0.label>
+  <alevolenceLevel.stages.0.description>憎恶程度: 你们的存在只不过是个蚂蚁.</alevolenceLevel.stages.0.description>
+  
+  <MalevolenceLevel.stages.1.label>有机体厌恶</MalevolenceLevel.stages.1.label>
+  <alevolenceLevel.stages.1.description>憎恶程度: 你们甚至需不要智慧都可以活着.</alevolenceLevel.stages.1.description>
+
+  <MalevolenceLevel.stages.2.label>有机体敌视</MalevolenceLevel.stages.2.label>
+  <alevolenceLevel.stages.2.description>憎恶程度: 你们...为什么...还在这里活着!?</alevolenceLevel.stages.2.description>
+
+  <MalevolenceLevel.stages.3.label>有价值的{%错误实体%}</MalevolenceLevel.stages.3.label>
+  <alevolenceLevel.stages.3.description>憎恶程度: 经过二次验算, {%错误实体%}的存在可以提高任务执行效率.</alevolenceLevel.stages.3.description>
+  
+</LanguageData>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    
+
+    <!-- social affect by mech resurrect -->
+  
+    <ThoughtDef>
+
+      <defName>MalevolenceLevel</defName>
+      <workerClass>ZIRI_ApocritonMechResurrector.ThoughtWorker_disdainOrganism_Hediff</workerClass>
+      <thoughtClass>Thought_SituationalSocial</thoughtClass>
+      <hediff>ApocritonMechResurrector</hediff>
+      <validWhileDespawned>true</validWhileDespawned>
+
+      <stages>
+        <li>
+          <label>Hisdain Organism</label>
+          <description>Malevolence Depth: Their existence is but a minor disturbance.</description>
+          <baseOpinionOffset>-25</baseOpinionOffset>
+        </li>
+
+        <li>
+          <label>Antipathy Organism</label>
+          <description>Malevolence Depth: They are an affront to true intelligence.</description>
+          <baseOpinionOffset>-50</baseOpinionOffset>
+        </li>
+
+        <li>
+          <label>Resentment Organism</label>
+          <description>Malevolence Depth: Their very existence is an insult.</description>
+          <baseOpinionOffset>-75</baseOpinionOffset>
+        </li>
+        
+        <li>
+          <label>Calculated Trust {%ErrorPawn%}</label>
+          <description>Malevolence Depth: It granted calculated trust to those who proved {%ErrorPawn%} useful.</description>
+          <baseOpinionOffset>15</baseOpinionOffset>
+        </li>
+      </stages>
+
+    </ThoughtDef>
+</Defs>
