@@ -2,15 +2,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
-  <MalevolenceLevel.stages.Hisdain_Organism.label>有机体蔑视</MalevolenceLevel.stages.Hisdain_Organism.label>
-  <alevolenceLevel.stages.Hisdain_Organism.description>憎恶程度: 你们的存在只不过是个蚂蚁.</alevolenceLevel.stages.Hisdain_Organism.description>
+  <MalevolenceLevel.stages.0.label>有机体蔑视</MalevolenceLevel.stages.0.label>
+  <alevolenceLevel.stages.0.description>憎恶程度: 你们的存在只不过是个蚂蚁.</alevolenceLevel.stages.0.description>
   
-  <MalevolenceLevel.stages.Antipathy_Organism.label>有机体厌恶</MalevolenceLevel.stages.Antipathy_Organism.label>
-  <alevolenceLevel.stages.Antipathy_Organism.description>憎恶程度: 你们甚至需不要智慧都可以活着.</alevolenceLevel.stages.Antipathy_Organism.description>
+  <MalevolenceLevel.stages.1.label>有机体厌恶</MalevolenceLevel.stages.1.label>
+  <alevolenceLevel.stages.1.description>憎恶程度: 你们甚至需不要智慧都可以活着.</alevolenceLevel.stages.1.description>
 
-  <MalevolenceLevel.stages.Resentment_Organism.label>有机体敌视</MalevolenceLevel.stages.Resentment_Organism.label>
-  <alevolenceLevel.stages.Resentment_Organism.description>憎恶程度: 你们...为什么...还在这里活着!?</alevolenceLevel.stages.Resentment_Organism.description>
+  <MalevolenceLevel.stages.2.label>有机体敌视</MalevolenceLevel.stages.2.label>
+  <alevolenceLevel.stages.2.description>憎恶程度: 你们...为什么...还在这里活着!?</alevolenceLevel.stages.2.description>
 
-  <MalevolenceLevel.stages.Calculated_Trust_ErrorPawn.label>有价值的错误实体</MalevolenceLevel.stages.Calculated_Trust_ErrorPawn.label>
-  <alevolenceLevel.stages.Calculated_Trust_ErrorPawn.description>憎恶程度: 经过二次验算, {%错误实体%}的存在可以提高任务执行效率.</alevolenceLevel.stages.Calculated_Trust_ErrorPawn.description>
+  <MalevolenceLevel.stages.3.label>有价值的{%错误实体%}</MalevolenceLevel.stages.3.label>
+  <alevolenceLevel.stages.3.description>憎恶程度: 经过二次验算, {%错误实体%}的存在可以提高任务执行效率.</alevolenceLevel.stages.3.description>
+
+  <NefariousDrone.stages.0.label>恶意低语 (微弱)</NefariousDrone.stages.0.label>
+  <NefariousDrone.stages.0.description>我能感到它就在某个地方。思考着我们有多么的应该去死，以及这背后有多么的合理，一遍又一遍，让人无法忽视。</NefariousDrone.stages.0.description>
+
+  <NefariousDrone.stages.1.label>恶意低语 (强烈)</NefariousDrone.stages.1.label>
+  <NefariousDrone.stages.0.description>它的恨意在我的思绪间回荡。理由，我的脑海中充斥着各种我朋友们应该去死的理由。</NefariousDrone.stages.0.description>
+
+  <NefariousDrone.stages.2.label>恶意低语 (剧烈)</NefariousDrone.stages.2.label>
+  <NefariousDrone.stages.0.description>我在心中能感受到它的恨意，仿佛我就是它。这种情绪是如此的亲切，又如此的冷漠。我们其实都该死。</NefariousDrone.stages.0.description>
+
+
 </LanguageData>

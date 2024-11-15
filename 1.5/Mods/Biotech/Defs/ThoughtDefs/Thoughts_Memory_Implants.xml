@@ -35,8 +35,8 @@
         </li>
         
         <li>
-          <label>Calculated Trust ErrorPawn</label>
-          <description>Malevolence Depth: It granted calculated trust to those who proved {%Error%}s useful.</description>
+          <label>Calculated Trust {%ErrorPawn%}</label>
+          <description>Malevolence Depth: It granted calculated trust to those who proved {%ErrorPawn%} useful.</description>
           <baseOpinionOffset>15</baseOpinionOffset>
         </li>
       </stages>
