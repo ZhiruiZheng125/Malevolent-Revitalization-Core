@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: nefarious drone (mild) -->
+  <NefariousDrone.stages.nefarious_drone_mild.label>憎恶低语 (微弱)</NefariousDrone.stages.nefarious_drone_mild.label>
+  <!-- EN: I feel it out there somewhere. It's always thinking about why these people deserve death. Always following the logic of murder. Hard to ignore. -->
+  <NefariousDrone.stages.nefarious_drone_mild.description>我能感到它就在某个地方。思考着我们有多么的应该去死，以及这背后有多么的合理，一遍又一遍，让人无法忽视。</NefariousDrone.stages.nefarious_drone_mild.description>
+  <!-- EN: nefarious drone (strong) -->
+  <NefariousDrone.stages.nefarious_drone_strong.label>憎恶低语 (强烈)</NefariousDrone.stages.nefarious_drone_strong.label>
+  <!-- EN: I hear its hatred echoing between my thoughts. Reasons, always reasons why my friends ought to die. -->
+  <NefariousDrone.stages.nefarious_drone_strong.description>它的恨意在我的思绪间回荡。理由，我的脑海中充斥着各种我朋友们应该去死的理由。</NefariousDrone.stages.nefarious_drone_strong.description>
+  <!-- EN: nefarious drone (intense) -->
+  <NefariousDrone.stages.nefarious_drone_intense.label>憎恶低语 (剧烈)</NefariousDrone.stages.nefarious_drone_intense.label>
+  <!-- EN: I feel its hatred inside me, the way I feel my own emotions. It's so close and so cold. They all deserve death. -->
+  <NefariousDrone.stages.nefarious_drone_intense.description>我在心中能感受到它的恨意，仿佛我就是它。这种情绪是如此的亲切，又如此的冷漠。我们其实都该死。</NefariousDrone.stages.nefarious_drone_intense.description>
+  
+</LanguageData>

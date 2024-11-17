@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Mech Reawakening -->
+  <ApocritonMechResurrector.label>机械复生</ApocritonMechResurrector.label>
+  <!-- EN: Malevolent Resurrection Pulse allows the user to fully harness the Apocriton's Mech Resurrection ability. It can unleash a powerful energy pulse without requiring line of sight, overloading fallen nearby mechanoids with incredible efficiency, bringing them back to battle with their injuries intact. -->
+  <ApocritonMechResurrector.description>憎恶复生脉冲可以让植入者完整的使用憎恶毒蜂的机械复生技能，它无需视野既可以发射一股强大的能量脉冲，以惊人的效率超载附近倒下的机械单位, 使它们带着伤势重新投入战斗.\n\n使用者必须是机械师且拥有足够的宽带, 并且无法复活超重型以及敌对机械体.</ApocritonMechResurrector.description>
+  
+</LanguageData>

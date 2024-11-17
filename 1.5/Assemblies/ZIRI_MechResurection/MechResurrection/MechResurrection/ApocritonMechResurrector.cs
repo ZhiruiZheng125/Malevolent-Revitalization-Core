@@ -454,81 +454,20 @@ namespace ZIRI_ApocritonMechResurrector
         protected override ThoughtState CurrentSocialStateInternal(Pawn p, Pawn other)
         {
 
-            Log.Message("CurrentSocialStateInternal called by: " + p.Name);
-            //if (p == null || other == null)
-            //{
-            //    Log.Error("Invalid p or other parameter.");
-            //    return false;
-            //}
-
-
-            //int? level;
-
-            //if (!p.RaceProps.Humanlike)
-            //{
-            //    return false;
-            //}
-            //if (!RelationsUtility.PawnsKnowEachOther(p, other))
-            //{
-            //    return false;
-            //}
-            //if (other.def != p.def)
-            //{
-            //    return false;
-            //}
-
-            ////new condition for find Hediff
-            //if (ModsConfig.BiotechActive && p.health?.hediffSet != null && p.health.hediffSet.GetFirstHediffOfDef(def.hediff) == null)
-            //{
-            //    Log.Message("Hediff not found in ThoughtWorker_disdainOrganism_Hediff.");
-            //    return false;
-            //}
-
-            //Log.Message("Hediff found in ThoughtWorker_disdainOrganism_Hediff.");
-
-            //bool ifOtherIsMechanitor = MechanitorUtility.IsMechanitor(other);
-            //level = (int?)p.health?.hediffSet.GetFirstHediffOfDef(def.hediff)?.Severity;
-            //if (level == null)
-            //{
-            //    Log.Message("Hediff found but Severity is null.");
-            //    return false;
-            //}
-
-            //if (level == 1 && !ifOtherIsMechanitor)
-            //{
-            //    Log.Message("display message level:1");
-            //    return ThoughtState.ActiveAtStage(1);
-            //}
-            //else if (level == 2 && !ifOtherIsMechanitor)
-            //{
-            //    Log.Message("display message level:2");
-            //    return ThoughtState.ActiveAtStage(2);
-            //}
-            //else if (level == 3 && !ifOtherIsMechanitor)
-            //{
-            //    Log.Message("display message level:3");
-            //    return ThoughtState.ActiveAtStage(3);
-            //}
-            //else if (ifOtherIsMechanitor)
-            //{
-            //    Log.Message("Hediff found but Severity is 0.");
-            //    return ThoughtState.ActiveAtStage(0);
-            //}
-
-            //return true;
+           //log.Message("CurrentSocialStateInternal called by: " + p.Name);
 
             Hediff firstHediffOfDef = p.health.hediffSet.GetFirstHediffOfDef(def.hediff);
             if (firstHediffOfDef?.def.stages == null)
             {
-                Log.Message("Hediff not found in ThoughtWorker_disdainOrganism_Hediff." + p.Name);
+               //log.Message("Hediff not found in ThoughtWorker_disdainOrganism_Hediff." + p.Name);
                 return ThoughtState.Inactive;
             }
             if (MechanitorUtility.IsMechanitor(other))
             {
-                Log.Message("Other Mechanitor found in ThoughtWorker_disdainOrganism_Hediff." + other.Name);
+               //log.Message("Other Mechanitor found in ThoughtWorker_disdainOrganism_Hediff." + other.Name);
                 return ThoughtState.ActiveAtStage(def.stages.Count - 1);
             }
-            Log.Message("Hediff found in ThoughtWorker_disdainOrganism_Hediff." + p.Name);
+           //log.Message("Hediff found in ThoughtWorker_disdainOrganism_Hediff." + p.Name);
             return ThoughtState.ActiveAtStage(Mathf.Min(firstHediffOfDef.CurStageIndex, firstHediffOfDef.def.stages.Count - 1, def.stages.Count - 1));
 
         }
@@ -671,14 +610,14 @@ namespace ZIRI_ApocritonMechResurrector
                 //Log.Message("CompAbilityEffect_MechanitorResurrectMech found in : " + comp.ToStringSafe());
                 try
                 {
-                    Log.Message("Resetting charges...");
+                   //log.Message("Resetting charges...");
                     await Task.Delay(50);//have to wait for value assigned to the ability, then reset the charges
                     comp.ResetCharges();//other way: just read hediff level and assign to the charges, becuase this way is less reliable
                     return;
                 }
                 catch (System.Exception ex)
                 {
-                    Log.Error($"Error resetting charges: {ex.Message}");
+                   //log.Error($"Error resetting charges: {ex.Message}");
                 }
                 
                 

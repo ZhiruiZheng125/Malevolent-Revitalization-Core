@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Nano CyberSerum -->
+  <nanoCyberSerum.label>纳米数据流体</nanoCyberSerum.label>
+  <!-- EN: Nano CyberSerum is a cutting-edge injectable nanomechanical fluid that activates the nanostructures within the Nano-Structured Chip through external RF signals, enabling the transfer of nanoparticle data. Once injected into the neck, the nanomechanical solution activates and replenishes the mechanical revival charge, ensuring the user maintains continuous combat and coordination abilities during battle. The infusion is designed to be compact and portable, suitable for use during intense combat situations to instantly reset revival charges. However, injecting Nano Data Infusion also carries risks—if used by a non-capable individual, the nanomachines will spread throughout the body, leading to nanomechanical virus infection. -->
+  <nanoCyberSerum.description>纳米数据流体 是一种尖端科技研发的注射用纳米机械流体，通过外部射频信号活化构芯片内部的纳米结构并实现纳米颗粒数据转移。\n\n当颈部注射后，纳米机械溶液将主动激活并重新补充憎恶核心复生仪的机械复活充能，确保使用者在长期歼灭战中的持续作战和协调能力。该注射液设计紧凑，便于随身携带，适合于激烈的战争前线快速使用。\n\n然而注射纳米数据流体也存在风险，如果非能力者注射, 大量失控的纳米机械将蔓延全身, 导致使用者产生严重的纳米机械病毒感染.</nanoCyberSerum.description>
+  <!-- EN: Transmit {0_label} -->
+  <nanoCyberSerum.comps.CompUsable.useLabel>摄入 {0_label}</nanoCyberSerum.comps.CompUsable.useLabel>
+  <!-- EN: Ingest {0} -->
+  <nanoCyberSerum.ingestible.ingestCommandString>摄入 {0}</nanoCyberSerum.ingestible.ingestCommandString>
+  <!-- EN: Ingesting {0}. -->
+  <nanoCyberSerum.ingestible.ingestReportString>摄入 {0}</nanoCyberSerum.ingestible.ingestReportString>
+  
+</LanguageData>

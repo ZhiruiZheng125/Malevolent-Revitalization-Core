@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Hisdain Organism -->
+  <MalevolenceLevel.stages.Hisdain_Organism.label>有机体蔑视</MalevolenceLevel.stages.Hisdain_Organism.label>
+  <!-- EN: Malevolence Depth: Their existence is but a minor disturbance. -->
+  <MalevolenceLevel.stages.Hisdain_Organism.description>憎恶程度: 你们的存在只不过是个蚂蚁.</MalevolenceLevel.stages.Hisdain_Organism.description>
+  <!-- EN: Antipathy Organism -->
+  <MalevolenceLevel.stages.Antipathy_Organism.label>有机体厌恶</MalevolenceLevel.stages.Antipathy_Organism.label>
+  <!-- EN: Malevolence Depth: They are an affront to true intelligence. -->
+  <MalevolenceLevel.stages.Antipathy_Organism.description>憎恶程度: 你们甚至需不要智慧都可以活着.</MalevolenceLevel.stages.Antipathy_Organism.description>
+  <!-- EN: Resentment Organism -->
+  <MalevolenceLevel.stages.Resentment_Organism.label>有机体敌视</MalevolenceLevel.stages.Resentment_Organism.label>
+  <!-- EN: Malevolence Depth: Their very existence is an insult. -->
+  <MalevolenceLevel.stages.Resentment_Organism.description>憎恶程度: 你们...为什么...还在这里活着!?</MalevolenceLevel.stages.Resentment_Organism.description>
+  <!-- EN: Calculated Trust -->
+  <MalevolenceLevel.stages.Calculated_Trust.label>同类信任</MalevolenceLevel.stages.Calculated_Trust.label>
+  <!-- EN: Malevolence Depth: It granted calculated trust to those who proved {%ErrorPawn%} useful. -->
+  <MalevolenceLevel.stages.Calculated_Trust.description>憎恶程度: 经过二次验算, {%错误实体%}的存在可以提高任务执行效率.</MalevolenceLevel.stages.Calculated_Trust.description>
+  
+</LanguageData>

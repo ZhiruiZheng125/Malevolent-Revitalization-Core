@@ -224,4 +224,63 @@
         </value>
     </Operation>
 
+    <!-- patch Tag: ObservedLayingCorpse-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName = "ObservedLayingCorpse"]/nullifyingHediffs</xpath>
+        <order>Append</order>
+        <value>
+            <li>ApocritonMechResurrector</li>
+        </value>
+    </Operation>
+
+    <!-- patch Tag: ObservedLayingCorpse-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName = "ObservedLayingCorpse"]/nullifyingHediffs</xpath>
+        <order>Append</order>
+        <value>
+            <li>ApocritonMechResurrector</li>
+        </value>
+    </Operation>
+
+
+    <!-- patch Tag: ColonistLost-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName = "ColonistLost"]</xpath>
+        <order>Append</order>
+        <value>
+            <nullifyingHediffs>
+                <li>ApocritonMechResurrector</li>
+            </nullifyingHediffs>
+        </value>
+    </Operation>
+
+
+    <!-- patch Tag: WitnessedDeathAlly-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName = "WitnessedDeathAlly"]/nullifyingHediffs</xpath>
+        <order>Append</order>
+        <value>
+            <li>ApocritonMechResurrector</li>
+        </value>
+    </Operation>
+
+    <!-- patch Tag: WitnessedDeathNonAlly-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName = "WitnessedDeathNonAlly"]/nullifyingHediffs</xpath>
+        <order>Append</order>
+        <value>
+            <li>ApocritonMechResurrector</li>
+        </value>
+    </Operation>
+
+    <!-- patch Tag: WitnessedDeathFamily-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName = "WitnessedDeathFamily"]/nullifyingHediffs</xpath>
+        <order>Append</order>
+        <value>
+            <li>ApocritonMechResurrector</li>
+        </value>
+    </Operation>
+
+
 </Patch>
