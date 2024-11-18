@@ -14,7 +14,8 @@
     
     <costList>
       <NanostructuringChip>1</NanostructuringChip>
-      <ComponentSpacer>5</ComponentSpacer>
+      <ComponentSpacer>2</ComponentSpacer>
+      <Plasteel>15</Plasteel>
     </costList>
 
     <statBases>
@@ -27,6 +28,7 @@
       <researchPrerequisite>UltraMechtech</researchPrerequisite>
       <skillRequirements>
         <Crafting>12</Crafting>
+        <Intellectual>6</Intellectual>
       </skillRequirements>
     </recipeMaker>
 

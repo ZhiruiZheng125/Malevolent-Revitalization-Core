@@ -13,7 +13,7 @@
       <ThingDef>ApocritonMechResurrector</ThingDef>
       <ThingDef>SubcoreEncoder</ThingDef>
     </descriptionHyperlinks>
-    <techLevel>Ultra</techLevel>
+    <techLevel>UltraMechtech</techLevel>
     <thingClass>ThingWithComps</thingClass>
     <stackLimit>10</stackLimit>
     <socialPropernessMatters>false</socialPropernessMatters>
@@ -84,8 +84,9 @@
     </comps>
 
     <costList>
-      <Neutroamine>20</Neutroamine>
+      <Neutroamine>10</Neutroamine>
       <NanostructuringChip>1</NanostructuringChip>
+      <Plasteel>5</Plasteel>
     </costList>
 
     <recipeMaker>
@@ -93,6 +94,8 @@
       <workSkill>Crafting</workSkill>
       <skillRequirements>
         <Crafting>12</Crafting>
+        <Medicine>6</Medicine>
+        <Intellectual>6</Intellectual>
       </skillRequirements>
       <researchPrerequisite>UltraMechtech</researchPrerequisite>
       <productCount>1</productCount>
