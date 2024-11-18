@@ -15,6 +15,7 @@
     <costList>
       <NanostructuringChip>1</NanostructuringChip>
       <ComponentSpacer>2</ComponentSpacer>
+      <SignalChip>2</SignalChip>
       <Plasteel>15</Plasteel>
     </costList>
 
