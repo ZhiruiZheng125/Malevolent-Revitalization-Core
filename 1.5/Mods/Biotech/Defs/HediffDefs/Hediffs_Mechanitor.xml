@@ -176,7 +176,7 @@
     </verbProperties>
 
     <comps>
-      <li Class="ZIRI_ApocritonMechResurrector.CompProperties_MechanitorResurrectMech"> <!-- CompProperties_AbominableMechResurrect/CompProperties_MechanitorResurrectMech -->
+      <li Class="ZIRI_ApocritonMechResurrector.CompProperties_MechanitorResurrectMech">
         <compClass>ZIRI_ApocritonMechResurrector.CompAbilityEffect_MechanitorResurrectMech</compClass>
         <maxCorpseAgeTicks>3600</maxCorpseAgeTicks><!-- max mech been resurrected time 60s -->
         <appliedEffecterDef>MechResurrected</appliedEffecterDef>

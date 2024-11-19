@@ -13,7 +13,7 @@
       <ThingDef>ApocritonMechResurrector</ThingDef>
       <ThingDef>SubcoreEncoder</ThingDef>
     </descriptionHyperlinks>
-    <techLevel>UltraMechtech</techLevel>
+    <techLevel>Archotech</techLevel>
     <thingClass>ThingWithComps</thingClass>
     <stackLimit>10</stackLimit>
     <socialPropernessMatters>false</socialPropernessMatters>

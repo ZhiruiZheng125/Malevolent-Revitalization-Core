@@ -106,29 +106,36 @@ namespace ZIRI_ApocritonMechResurrector
 
         public void ResetCharges()
         {
+            Log.Message("ResetCharges called");
             this.resurrectCharges = this.currentMaxResurrectCharges;
+            Log.Message("ResetCharges end");
         }
 
         public override void Initialize(AbilityCompProperties props)
         {
+            Log.Message("Initialize called");
             base.Initialize(props);
             this.ResetCharges();
             costsByWeightClass = new Dictionary<MechWeightClass, int>();
-            for (int i = 0; i < Props.costs.Count; i++)
+            Log.Message("Initialize costsByWeightClass");
+            for (int i = 0; i < this.Props.costs.Count; i++)
             {
-                costsByWeightClass[Props.costs[i].weightClass] = Props.costs[i].cost;
+                costsByWeightClass[this.Props.costs[i].weightClass] = this.Props.costs[i].cost;
+                Log.Message("Initialize costsByWeightClass: " + this.Props.costs[i].weightClass + " " + this.Props.costs[i].cost);
             }
+            Log.Warning("Initialize end");
         }
 
         private int RemainedBandwith(Pawn pawn)
         {
+            Log.Message("RemainedBandwith called");
             try
             {
                 return pawn.mechanitor.TotalBandwidth - pawn.mechanitor.UsedBandwidth;
             }
             catch when (pawn.mechanitor == null)
             {
-                //Log.Message("Mechanitor not found");
+                Log.Message("Mechanitor not found");
                 return -99;
             }
 
@@ -136,6 +143,7 @@ namespace ZIRI_ApocritonMechResurrector
 
         public override bool CanApplyOn(LocalTargetInfo target, LocalTargetInfo dest)
         {
+            Log.Message("CanApplyOn called");
             Pawn mechanitorPawn = this.parent.pawn;
             int remainedBandwith = this.RemainedBandwith(mechanitorPawn);
             Pawn thisPawn = target.Thing as Pawn;
@@ -169,18 +177,22 @@ namespace ZIRI_ApocritonMechResurrector
             //mechResurrect can only be applied by following conditions
             if (!base.CanApplyOn(target, dest))
             {
+                Log.Message("base.CanApplyOn(target, dest) is false");
                 return false;
             }
             if (!target.HasThing || !(ifCorpse))
             {
+                Log.Message("target.HasThing || !(ifCorpse) is false");
                 return false;
             }
             if (!CanResurrect(thisCorpse))
             {
+                Log.Message("CanResurrect(thisCorpse) is false");
                 return false;
             }
             if (!checkIfBandwithEnough)
             {
+                Log.Message("checkIfBandwithEnough is false");
                 return false;
             }
 
@@ -190,48 +202,60 @@ namespace ZIRI_ApocritonMechResurrector
 
         private bool TryGetResurrectCost(Corpse corpse, out int cost)
         {
+            Log.Message("TryGetResurrectCost called");
             if (costsByWeightClass.ContainsKey(corpse.InnerPawn.RaceProps.mechWeightClass))
             {
                 cost = costsByWeightClass[corpse.InnerPawn.RaceProps.mechWeightClass];
+                Log.Message("TryGetResurrectCost value: " + cost);
                 return true;
             }
+            Log.Message("TryGetResurrectCost null");
             cost = -1;
             return false;
         }
 
         private bool CanResurrect(Corpse corpse)
         {
+            Log.Message("CanResurrect called");
             if (!corpse.InnerPawn.RaceProps.IsMechanoid || corpse.InnerPawn.RaceProps.mechWeightClass >= MechWeightClass.UltraHeavy)
             {
+                Log.Message("corpse.InnerPawn.RaceProps.IsMechanoid || corpse.InnerPawn.RaceProps.mechWeightClass >= MechWeightClass.UltraHeavy is false");
                 return false;
             }
             if (corpse.InnerPawn.Faction != this.parent.pawn.Faction)
             {
+                Log.Message("corpse.InnerPawn.Faction != this.parent.pawn.Faction is false");
                 return false;
             }
             if (corpse.InnerPawn.kindDef.abilities != null && corpse.InnerPawn.kindDef.abilities.Contains(AbilityDefOf.ResurrectionMech))
             {
+                Log.Message("corpse.InnerPawn.kindDef.abilities != null && corpse.InnerPawn.kindDef.abilities.Contains(AbilityDefOf.ResurrectionMech) is false");
                 return false;
             }
             if (corpse.timeOfDeath < Find.TickManager.TicksGame - Props.maxCorpseAgeTicks)
             {
+                Log.Message("corpse.timeOfDeath < Find.TickManager.TicksGame - Props.maxCorpseAgeTicks is false");
                 return false;
             }
             if (corpse.timeOfDeath < Find.TickManager.TicksGame - this.Props.maxCorpseAgeTicks)
             {
+                Log.Message("corpse.timeOfDeath < Find.TickManager.TicksGame - this.Props.maxCorpseAgeTicks is false");
                 return false;
             }
             if (!TryGetResurrectCost(corpse, out var cost) || cost > resurrectCharges)
             {
+                Log.Message("TryGetResurrectCost(corpse, out var cost) || cost > resurrectCharges is false");
                 return false;
             }
+            Log.Message("CanResurrect return true");
             return true;
 
         }
 
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
         {
-            //Log.Message("Apply called");
+
+            Log.Message("Apply called");
             base.Apply(target, dest);
             Corpse corpse = (Corpse)target.Thing;
             if (CanResurrect(corpse) && TryGetResurrectCost(corpse, out var cost))
@@ -245,12 +269,13 @@ namespace ZIRI_ApocritonMechResurrector
                     effecter.Trigger(innerPawn, innerPawn);
                     effecter.Cleanup();
                     parent.pawn.relations.AddDirectRelation(PawnRelationDefOf.Overseer, innerPawn);//if resurrection successful, immediately takes control of resurrected mech
-                    //Log.Message("resurrectCharges check: " + resurrectCharges);//error is resurrectcharges -> fixed
+                    Log.Message("AddDirectRelation successful");//error is resurrectcharges -> fixed
 
                 }
                 innerPawn.stances.stagger.StaggerFor(60);
+                
             }
-
+            Log.Message("Apply end");
         }
 
         public override bool GizmoDisabled(out string reason)
@@ -261,6 +286,7 @@ namespace ZIRI_ApocritonMechResurrector
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra() //charge display
         {
+            //Log.Message("CompGetGizmosExtra called");
             if (gizmo == null)
             {
                 gizmo = new Gizmo_MechanitorMechResurrectionCharges(this);
@@ -306,16 +332,18 @@ namespace ZIRI_ApocritonMechResurrector
 
         public override IEnumerable<Mote> CustomWarmupMotes(LocalTargetInfo target)
         {
+            //Log.Message("CustomWarmupMotes called");
             foreach (LocalTargetInfo affectedTarget in this.parent.GetAffectedTargets(target))
             {
                 Thing thing = affectedTarget.Thing;
                 yield return MoteMaker.MakeAttachedOverlay(thing, ThingDefOf.Mote_MechResurrectWarmupOnTarget, Vector3.zero);
             }
-            //yield break;
+            yield break;
         }
 
         public override void PostApplied(List<LocalTargetInfo> targets, Map map)
         {
+            Log.Message("PostApplied called");
             Vector3 zero = Vector3.zero;
             foreach (LocalTargetInfo target in targets)
             {
@@ -349,6 +377,7 @@ namespace ZIRI_ApocritonMechResurrector
         {
             this.ability = ability;
             Order = -100f;
+            
         }
 
         public override float GetWidth(float maxWidth)
@@ -358,6 +387,7 @@ namespace ZIRI_ApocritonMechResurrector
 
         public override GizmoResult GizmoOnGUI(Vector2 topLeft, float maxWidth, GizmoRenderParms parms)
         {
+            
             Rect rect = new Rect(topLeft.x, topLeft.y, GetWidth(maxWidth), 75f);
             Rect rect2 = rect.ContractedBy(6f);
             Widgets.DrawWindowBackground(rect);
@@ -405,7 +435,7 @@ namespace ZIRI_ApocritonMechResurrector
 
         public override void DoEffect(Pawn user)
         {
-           //Log.Message("DoEffect has been call by " + user.Name);
+           Log.Message("DoEffect has been call by " + user.Name);
             AbilityDef abilityDef = Props.haveAbilityDef;
 
             //find the ability of RemoteResurrect from the user
@@ -414,23 +444,23 @@ namespace ZIRI_ApocritonMechResurrector
 
             if (remoteResurrectAbility == null)// find mech resurrect ability, if not found, add both input hediffs
             {
-                //Log.Message("Didn't find RemoteResurrect ability");
-                //Log.Message("AddHediff: " + Props.hediffDefAnother);
+                Log.Message("Didn't find RemoteResurrect ability");
+                Log.Message("AddHediff: " + Props.hediffDefAnother);
                 user.health.AddHediff(Props.hediffDef);
                 user.health.AddHediff(Props.hediffDefAnother);
                 return;
             }
             else
             {
-               //Log.Message("Find Abilitiy: " + remoteResurrectAbility.def.defName);
-               //Log.Message("AddHediff: " + Props.hediffDef);
+               Log.Message("Find Abilitiy: " + remoteResurrectAbility.def.defName);
+               Log.Message("AddHediff: " + Props.hediffDef);
                 //user.health.AddHediff(Props.hediffDef);
                 //find the CompAbilityEffect_MechanitorResurrectMech from the ability(might has better ways to look through)
                 CompAbilityEffect_MechanitorResurrectMech comp = remoteResurrectAbility.EffectComps.Find(x => x is CompAbilityEffect_MechanitorResurrectMech) as CompAbilityEffect_MechanitorResurrectMech;
 
                 if (comp != null)
                 {
-                   //Log.Message("Find CompAbilityEffect_MechanitorResurrectMech!");
+                   Log.Message("Find CompAbilityEffect_MechanitorResurrectMech!");
                     comp.ResetCharges();
                 }
                 return;
@@ -454,20 +484,20 @@ namespace ZIRI_ApocritonMechResurrector
         protected override ThoughtState CurrentSocialStateInternal(Pawn p, Pawn other)
         {
 
-           //log.Message("CurrentSocialStateInternal called by: " + p.Name);
+           Log.Message("CurrentSocialStateInternal called by: " + p.Name);
 
             Hediff firstHediffOfDef = p.health.hediffSet.GetFirstHediffOfDef(def.hediff);
             if (firstHediffOfDef?.def.stages == null)
             {
-               //log.Message("Hediff not found in ThoughtWorker_disdainOrganism_Hediff." + p.Name);
+               Log.Message("Hediff not found in ThoughtWorker_disdainOrganism_Hediff." + p.Name);
                 return ThoughtState.Inactive;
             }
             if (MechanitorUtility.IsMechanitor(other))
             {
-               //log.Message("Other Mechanitor found in ThoughtWorker_disdainOrganism_Hediff." + other.Name);
+               Log.Message("Other Mechanitor found in ThoughtWorker_disdainOrganism_Hediff." + other.Name);
                 return ThoughtState.ActiveAtStage(def.stages.Count - 1);
             }
-           //log.Message("Hediff found in ThoughtWorker_disdainOrganism_Hediff." + p.Name);
+           Log.Message("Hediff found in ThoughtWorker_disdainOrganism_Hediff." + p.Name);
             return ThoughtState.ActiveAtStage(Mathf.Min(firstHediffOfDef.CurStageIndex, firstHediffOfDef.def.stages.Count - 1, def.stages.Count - 1));
 
         }
@@ -503,11 +533,11 @@ namespace ZIRI_ApocritonMechResurrector
 
         public override void Notify_PawnDied(DamageInfo? dinfo, Hediff culprit = null)
         {
-            //Log.Message("Notify_PawnDied called");
+            Log.Message("Notify_PawnDied called");
 
             if (this.parent.pawn == null)
             {
-                //Log.Message("Pawn is null");
+                Log.Message("Pawn is null");
                 return;
             }
 
@@ -577,7 +607,7 @@ namespace ZIRI_ApocritonMechResurrector
 
         public override void DoEffect(Pawn user)
         {
-            //Log.Message("DoEffect has been call by " + user.Name);
+            Log.Message("DoEffect has been call by " + user.Name);
             
 
             BodyPartRecord bodyPartRecord = user.RaceProps.body.GetPartsWithDef(Props.bodyPart).FirstOrFallback();
@@ -590,9 +620,9 @@ namespace ZIRI_ApocritonMechResurrector
                 }
                 else if (Props.canUpgrade)
                 {
-                    //Log.Message("Current input charge point before chnage level: " + ((int)user.GetStatValue(StatDefOf.MechResurrectMaxChargePoint, true, -1)));
+                    Log.Message("Current input charge point before chnage level: " + ((int)user.GetStatValue(StatDefOf.MechResurrectMaxChargePoint, true, -1)));
                     ((Hediff_Level)firstHediffOfDef).ChangeLevel(1);
-                    //Log.Message("Current input charge point after chnage level: " + ((int)user.GetStatValue(StatDefOf.MechResurrectMaxChargePoint, true, -1)));
+                    Log.Message("Current input charge point after chnage level: " + ((int)user.GetStatValue(StatDefOf.MechResurrectMaxChargePoint, true, -1)));
 
                     this.UpdateUserAbilityOfMaxChargePoints(user, ApocritonMechResurrector_AbilityDefOf.ApocritonMechResurrector);
 
@@ -607,23 +637,23 @@ namespace ZIRI_ApocritonMechResurrector
             CompAbilityEffect_MechanitorResurrectMech comp = p.abilities.GetAbility(abilityDef).EffectComps.Find((x => x is CompAbilityEffect_MechanitorResurrectMech)) as CompAbilityEffect_MechanitorResurrectMech;
             if (comp != null)
             {
-                //Log.Message("CompAbilityEffect_MechanitorResurrectMech found in : " + comp.ToStringSafe());
+                Log.Message("CompAbilityEffect_MechanitorResurrectMech found in : " + comp.ToStringSafe());
                 try
                 {
-                   //log.Message("Resetting charges...");
+                   Log.Message("Resetting charges...");
                     await Task.Delay(50);//have to wait for value assigned to the ability, then reset the charges
                     comp.ResetCharges();//other way: just read hediff level and assign to the charges, becuase this way is less reliable
                     return;
                 }
                 catch (System.Exception ex)
                 {
-                   //log.Error($"Error resetting charges: {ex.Message}");
+                   Log.Error($"Error resetting charges: {ex.Message}");
                 }
                 
                 
             }
 
-            //Log.Message("CompAbilityEffect_MechanitorResurrectMech Not found!!!");
+            Log.Message("CompAbilityEffect_MechanitorResurrectMech Not found!!!");
 
         }
     }
