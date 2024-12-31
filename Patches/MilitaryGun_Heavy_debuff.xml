@@ -93,14 +93,5 @@
         </match>
 	</Operation> -->
 
-    <Operation Class="PatchOperationFindMod">
-		<mods>
-            <li>The Dead Man's Switch</li>
-        </mods>
-
-        <match Class="PatchOperationRemove">
-            <xpath>Defs/ThingDef[defName = "DMS_Gun_DawnbladeM"]/weaponTags/li[text()="DMS_MechWeaponUltraHeavy"]</xpath>
-        </match>
-	</Operation>
 
 </Patch>

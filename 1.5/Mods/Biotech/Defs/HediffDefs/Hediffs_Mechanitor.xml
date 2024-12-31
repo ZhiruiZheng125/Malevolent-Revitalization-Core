@@ -29,7 +29,7 @@
       <researchPrerequisite>UltraMechtech</researchPrerequisite>
       <skillRequirements>
         <Crafting>12</Crafting>
-        <Intellectual>6</Intellectual>
+        <Intellectual>12</Intellectual>
       </skillRequirements>
     </recipeMaker>
 

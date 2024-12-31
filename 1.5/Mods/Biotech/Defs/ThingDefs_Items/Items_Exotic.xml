@@ -94,8 +94,8 @@
       <workSkill>Crafting</workSkill>
       <skillRequirements>
         <Crafting>12</Crafting>
-        <Medicine>6</Medicine>
-        <Intellectual>6</Intellectual>
+        <Medicine>4</Medicine>
+        <Intellectual>12</Intellectual>
       </skillRequirements>
       <researchPrerequisite>UltraMechtech</researchPrerequisite>
       <productCount>1</productCount>
