@@ -34,10 +34,10 @@
     </recipeMaker>
 
     <graphicData> <!--try change color -->
-		  <texPath>Things/Item/testCase</texPath>
+		  <texPath>Things/Item/apocritonMechResurrector</texPath>
 		  <graphicClass>Graphic_Single</graphicClass>
 		  <drawSize>0.8</drawSize>
-      <color>(154,124,104)</color>
+      <!-- <color>(154,124,104)</color> -->
     </graphicData>
 
     <comps>
@@ -54,7 +54,6 @@
         <canUpgrade>true</canUpgrade>
       </li>
     </comps>
-    <!-- <confirmationDialogText>Are you sure you want to install the remote resurrector?</confirmationDialogText> -->
   </ThingDef>
 
   <HediffDef MayRequire="ludeon.rimworld.biotech">
