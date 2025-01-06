@@ -5,28 +5,28 @@
   <ThingDef ParentName="MechanitorImplantCraftableBase" MayRequire="ludeon.rimworld.biotech">
     <defName>ApocritonMechResurrector</defName>
     <label>Malevolent Revitalization Core</label>
-    <description>The Malevolent Core Revitalizer is a Malevolent-tech implant designed to replicate the resurrection ability of the Apocriton. It grants the user the power to revive nearby mechanoids with incredible efficiency on the battlefield. While the implant is engineered to isolate the psychic interference of the Apocriton, it still establishes a direct connection to the brain, causing the user to faintly hear the "Nefarious Drone" gradually influencing their mind with Malevolent Intelligence. This device also works in synergy with nanofluid data streams to rapidly reset the mechanoid resurrection charges on the frontlines, making it even more capable than the Apocriton in prolonged extermination campaigns. \n\nThe Implant can max upgrade Three times and fully recharged after implant.</description>
+    <description>The Malevolent Core Revitalizer is a Malevolent-tech implant designed to replicate the resurrection ability of the Apocriton. It grants the user the power to revive nearby mechanoids with incredible efficiency on the battlefield. While the implant is engineered to isolate the psychic interference of the Apocriton, it still establishes a direct connection to the brain, causing the user to faintly hear the "Nefarious Drone" gradually influencing their mind with Malevolent Intelligence. This device also works in synergy with nanofluid data streams to rapidly reset the mechanoid resurrection charges on the frontlines, making it even more capable than the Apocriton in prolonged extermination campaigns. \n\nHint: The Implant can max upgrade Three times and fully recharged after implant. Inject nano Cyber Serum to reset into max resurrect charge point.</description>
     <descriptionHyperlinks>
       <AbilityDef>ApocritonMechResurrector</AbilityDef>
       <ThingDef>nanoCyberSerum</ThingDef>
-      <HediffDef>ApocritonMechResurrector</HediffDef>
     </descriptionHyperlinks>
-    
+    <techLevel>Archotech</techLevel>
     <costList>
       <NanostructuringChip>1</NanostructuringChip>
-      <ComponentSpacer>2</ComponentSpacer>
-      <SignalChip>2</SignalChip>
+      <SignalChip>3</SignalChip>
+      <MedicineUltratech>5</MedicineUltratech>
+      <ComponentSpacer>9</ComponentSpacer>
       <Plasteel>15</Plasteel>
     </costList>
 
     <statBases>
       <MaxInstallCount>3</MaxInstallCount>
-      <MarketValue>3200</MarketValue>
-      <WorkToMake>50000</WorkToMake>
+      <MarketValue>6000</MarketValue>
+      <WorkToMake>100000</WorkToMake>
     </statBases>
     
     <recipeMaker>
-      <researchPrerequisite>UltraMechtech</researchPrerequisite>
+      <researchPrerequisite>ZIRI_tech_ApocritonMechResurrector</researchPrerequisite>
       <skillRequirements>
         <Crafting>12</Crafting>
         <Intellectual>12</Intellectual>
@@ -54,6 +54,8 @@
         <canUpgrade>true</canUpgrade>
       </li>
     </comps>
+
+    
   </ThingDef>
 
   <HediffDef MayRequire="ludeon.rimworld.biotech">
@@ -63,9 +65,7 @@
     <description>After implanting the Malevolent Core Revitalizer, the user will gradually be influenced by the "Malevolent Drone," becoming indifferent to the deaths of friends and loved ones, while deriving slight pleasure from the deaths of despised organic beings. The assimilation of the Malevolent Drone leads to the erosion of the user's thoughts, causing instinctive hostility toward those who cannot emit mechanoid control signals. To endure prolonged extermination campaigns, the implant also actively suppresses emotional fluctuations in the cerebral cortex and shields against nearby psychic interference, preventing mental breakdowns and ensuring the user remains calm and merciless in brutal battles.</description>
     <descriptionShort>A Malevolent-tech implant that allows the user to fully utilize the Apocriton's Mech Resurrection ability but at the cost of enduring the severe Drone of malevolence.</descriptionShort>
     <descriptionHyperlinks>
-      <AbilityDef>ApocritonMechResurrector</AbilityDef>
       <ThingDef>nanoCyberSerum</ThingDef>
-      <!-- <HediffDef>ApocritonMechResurrector</HediffDef> -->
       <ThingDef>ApocritonMechResurrector</ThingDef>
     </descriptionHyperlinks>
 
@@ -105,7 +105,7 @@
         <statOffsets>
           <MechResurrectDistance>9.9</MechResurrectDistance>
           <MechResurrectMaxChargePoint>30</MechResurrectMaxChargePoint>
-          <MentalBreakThreshold>-0.04</MentalBreakThreshold>
+          <MentalBreakThreshold>-0.02</MentalBreakThreshold>
         </statOffsets>
       </li>
 
@@ -114,7 +114,7 @@
         <statOffsets>
           <MechResurrectDistance>14.9</MechResurrectDistance>
           <MechResurrectMaxChargePoint>40</MechResurrectMaxChargePoint>
-          <MentalBreakThreshold>-0.10</MentalBreakThreshold>
+          <MentalBreakThreshold>-0.05</MentalBreakThreshold>
         </statOffsets>
       </li>
 
@@ -123,7 +123,7 @@
         <statOffsets>
           <MechResurrectDistance>19.9</MechResurrectDistance>
           <MechResurrectMaxChargePoint>50</MechResurrectMaxChargePoint>
-          <MentalBreakThreshold>-0.16</MentalBreakThreshold>
+          <MentalBreakThreshold>-0.08</MentalBreakThreshold>
         </statOffsets>
       </li>
     </stages>
@@ -136,12 +136,10 @@
     <description>Malevolent Resurrection Pulse allows the user to fully harness the Apocriton's Mech Resurrection ability. It can unleash a powerful energy pulse without requiring line of sight, overloading fallen nearby mechanoids with incredible efficiency, bringing them back to battle with their injuries intact.</description>
     
     <descriptionHyperlinks>
-      <!-- <AbilityDef>ApocritonMechResurrector</AbilityDef> -->
       <ThingDef>nanoCyberSerum</ThingDef>
-      <HediffDef>ApocritonMechResurrector</HediffDef>
       <ThingDef>ApocritonMechResurrector</ThingDef>
     </descriptionHyperlinks>
-    
+    <useAverageTargetPositionForWarmupEffecter>true</useAverageTargetPositionForWarmupEffecter>
     <iconPath>UI/Abilities/MechResurrection</iconPath>
     <cooldownTicksRange>120</cooldownTicksRange>
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>

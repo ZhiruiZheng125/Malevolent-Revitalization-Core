@@ -282,5 +282,16 @@
         </value>
     </Operation>
 
+    <!-- patch Tag: PsychicDrone-->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName = "PsychicDrone"]</xpath>
+        <order>Append</order>
+        <value>
+            <nullifyingHediffs>
+                <li>ApocritonMechResurrector</li>
+            </nullifyingHediffs>
+        </value>
+    </Operation>
+
 
 </Patch>

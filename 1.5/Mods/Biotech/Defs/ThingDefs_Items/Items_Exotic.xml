@@ -5,13 +5,10 @@
   <ThingDef ParentName="ResourceBase">
     <defName>nanoCyberSerum</defName>
     <label>Nano CyberSerum</label>
-    <description>Nano CyberSerum is a cutting-edge injectable nanomechanical fluid that activates the nanostructures within the Nano-Structured Chip through external RF signals, enabling the transfer of nanoparticle data. Once injected into the neck, the nanomechanical solution activates and replenishes the mechanical revival charge, ensuring the user maintains continuous combat and coordination abilities during battle. The infusion is designed to be compact and portable, suitable for use during intense combat situations to instantly reset revival charges. However, injecting Nano Data Infusion also carries risks—if used by a non-capable individual, the nanomachines will spread throughout the body, leading to nanomechanical virus infection.</description>
+    <description>Nano CyberSerum is a cutting-edge injectable nanomechanical fluid that activates the nanostructures within the Nano-Structured Chip through external RF signals, enabling the transfer of nanoparticle data. Once injected into the neck, the nanomechanical solution activates and replenishes the mechanical revival charge, ensuring the user maintains continuous combat and coordination abilities during battle. \n\nThe infusion is designed to be compact and portable, suitable for use during intense combat situations to instantly reset revival charges. \n\nHowever, injecting Nano Data Infusion also carries risks—if used by a non-capable individual, the nanomachines will spread throughout the body, leading to nanomechanical virus infection.</description>
     <descriptionHyperlinks>
-      <!-- <ThingDef>nanoCyberSerum</ThingDef> -->
       <AbilityDef>ApocritonMechResurrector</AbilityDef>
-      <HediffDef>ApocritonMechResurrector</HediffDef>
       <ThingDef>ApocritonMechResurrector</ThingDef>
-      <ThingDef>SubcoreEncoder</ThingDef>
     </descriptionHyperlinks>
     <techLevel>Archotech</techLevel>
     <thingClass>ThingWithComps</thingClass>
@@ -19,17 +16,14 @@
     <socialPropernessMatters>false</socialPropernessMatters>
     <orderedTakeGroup>Drug</orderedTakeGroup>
     <statBases>
-      <MaxHitPoints>60</MaxHitPoints>
-      <MarketValue>1800</MarketValue>
-      <Mass>0.5</Mass>
+      <MaxHitPoints>20</MaxHitPoints>
+      <MarketValue>2500</MarketValue>
+      <Mass>0.1</Mass>
       <Flammability>0.15</Flammability>
     </statBases>
     <thingCategories>
       <li>Drugs</li>
     </thingCategories>
-    <tradeTags>
-      <li>ExoticMisc</li>
-    </tradeTags>
     <ingestible>
       <preferability>NeverForNutrition</preferability>
       <maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
@@ -48,63 +42,54 @@
         <li Class="IngestionOutcomeDoer_UseThing" />
       </outcomeDoers>
     </ingestible>
-
-
-    
     <graphicData>
       <texPath>Things/Item/Special/MechSerumHealer</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <color>(205, 0, 0)</color>
     </graphicData>
-
     <comps>
       <li Class="CompProperties_Drug">
         <listOrder>1500</listOrder>
         <teetotalerCanConsume>true</teetotalerCanConsume>
       </li>
-
       <li Class="CompProperties_Usable">
         <useLabel>Transmit {0_label}</useLabel>
         <useJob>Ingest</useJob>
         <showUseGizmo>true</showUseGizmo>
       </li>
-
       <li Class="ZIRI_ApocritonMechResurrector.CompProperties_UseEffectAddHediffAndRecharge">
         <compClass>ZIRI_ApocritonMechResurrector.CompUseEffect_AddHediffAndResetMechResurrectCharge</compClass>
         <hediffDef>SensoryMechanites</hediffDef>
         <hediffDefAnother>FibrousMechanites</hediffDefAnother>
         <haveAbilityDef>ApocritonMechResurrector</haveAbilityDef>
         <allowRepeatedUse>true</allowRepeatedUse>
-        
       </li>
-
       <li Class="CompProperties_UseEffectPlaySound">
         <soundOnUsed>MechSerumUsed</soundOnUsed>
       </li>
     </comps>
 
     <costList>
-      <Neutroamine>10</Neutroamine>
       <NanostructuringChip>1</NanostructuringChip>
-      <Plasteel>5</Plasteel>
+      <ComponentSpacer>1</ComponentSpacer>
+      <Plasteel>6</Plasteel>
+      <Neutroamine>15</Neutroamine>
     </costList>
-
     <recipeMaker>
-      <workAmount>24000</workAmount>
+      <workAmount>80000</workAmount>
       <workSkill>Crafting</workSkill>
       <skillRequirements>
         <Crafting>12</Crafting>
-        <Medicine>4</Medicine>
         <Intellectual>12</Intellectual>
       </skillRequirements>
-      <researchPrerequisite>UltraMechtech</researchPrerequisite>
+      <researchPrerequisite>ZIRI_tech_ApocritonMechResurrector</researchPrerequisite>
       <productCount>1</productCount>
       <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
       <recipeUsers>
         <li>SubcoreEncoder</li>
       </recipeUsers>
     </recipeMaker>
-
+    <tradeability>Sellable</tradeability>
   </ThingDef>
 
 </Defs>

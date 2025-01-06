@@ -9,11 +9,6 @@
       <hediff>ApocritonMechResurrector</hediff>
       <validWhileDespawned>true</validWhileDespawned>
       <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
-
-      <nullifyingHediffs>
-        <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
-      </nullifyingHediffs>
-
       <stages>
 
         <li>

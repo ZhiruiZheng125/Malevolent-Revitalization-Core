@@ -32,6 +32,7 @@ using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using static RimWorld.MechClusterSketch;
 
 namespace ZIRI_ApocritonMechResurrector
 {
@@ -273,14 +274,16 @@ namespace ZIRI_ApocritonMechResurrector
             {
                 Pawn innerPawn = corpse.InnerPawn;
                 resurrectCharges -= cost;
+                //for resurrection
                 ResurrectionUtility.TryResurrect(innerPawn);
-                if (Props.appliedEffecterDef != null)
+                //for immediate control
+                if (Props.appliedEffecterDef != null && MechanitorUtility.CanControlMech(parent.pawn, innerPawn))
                 {
                     Effecter effecter = Props.appliedEffecterDef.SpawnAttached(innerPawn, innerPawn.MapHeld);
                     effecter.Trigger(innerPawn, innerPawn);
                     effecter.Cleanup();
                     parent.pawn.relations.AddDirectRelation(PawnRelationDefOf.Overseer, innerPawn);//if resurrection successful, immediately takes control of resurrected mech
-                   //Log.Message("AddDirectRelation successful");//error is resurrectcharges -> fixed
+                    //Log.Message("AddDirectRelation successful");//error is resurrectcharges -> fixed
 
                 }
                 innerPawn.stances.stagger.StaggerFor(60);

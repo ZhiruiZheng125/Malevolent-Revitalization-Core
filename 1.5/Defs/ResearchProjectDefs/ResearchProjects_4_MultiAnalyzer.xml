@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--============================= Malevolent Revitalization Core ================================-->
+  <ResearchProjectDef>
+    <defName>ZIRI_tech_ApocritonMechResurrector</defName>
+    <label>Malevolent mechtech</label>
+    <description>add description for Malevolent mechtech</description>
+    <baseCost>7000</baseCost>
+    <techLevel>Archotech</techLevel>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+    <prerequisites>
+      <li>AdvancedFabrication</li>
+    </prerequisites>
+    <requiredAnalyzed>
+      <li>NanostructuringChip</li>
+    </requiredAnalyzed>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <researchViewX>17.00</researchViewX>
+    <researchViewY>2.0</researchViewY>
+  </ResearchProjectDef>
+</Defs>
