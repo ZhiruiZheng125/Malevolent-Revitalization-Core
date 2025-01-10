@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ModMetaData>
-  <name>ZIRI初始测试</name>
-
+  <name>Malevolent Mechtech - Apocriton MechResurrect Implant/憎恶毒蜂机械复活植入物</name>
+  <packageId>ZIRI.Implant.ApocritonMechResurrector</packageId> <!--系列-->
   <author>ZIRI</author>
-
   <supportedVersions>
     <li>1.5</li>
   </supportedVersions>
-
-  <packageId>Implement.test</packageId> <!--系列-->
-  <description>仅仅是测试而已</description> <!--描述-->
+  <description>在原版科技树上增加了一种独特的机械复活的植入物, 使得植入者可以像憎恶毒蜂一样使用其能力维持战线, 同时也会继承少量的憎恶毒蜂特性, 在安装后将直面逐渐强烈的憎恶低语. \n\n这是我尝试制作的第一个环世界模组, 或许也是最后一个, 因为我在开发过程中深刻的理解到社区创作者的不易与决心, 所以在此致敬与感谢每一个创作者. \n\nEnglish isn't my first language, thus I am sorry about using translation tools. \n\nA unique mechanical resurrect implant has been added to the original tech tree, allowing the bearer to utilize the abilities of the Apocriton to sustain the frontline. At the same time, the user inherits a fraction of the Apocriton's traits and must face the gradually malevolence drone after installation.\n\nThis is my first attempt at creating a RimWorld mod, and perhaps it will also be my last. Through the development process, I’ve come to deeply understand the challenges and dedication of community creators. I would like to take this opportunity to pay tribute to and thank every creator for their hard work and perseverance.</description> <!--描述-->
+  <modDependencies>
+    <li>
+      <packageId>Ludeon.Rimworld.Biotech</packageId>
+      <displayName>Rimworld Biotech</displayName>
+      <downloadUrl>https://store.steampowered.com/app/1826140/RimWorld__Biotech/</downloadUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>Ludeon.Rimworld.Biotech</li>
+  </loadAfter>
 </ModMetaData>
+

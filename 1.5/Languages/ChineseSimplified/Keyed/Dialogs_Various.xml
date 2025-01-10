@@ -2,7 +2,7 @@
 <LanguageData>
 
   <!-- Apocriton Mech Resurrector -->
-  <ConfirmInstallApocritonMechResurrector_LevelInit>初次植入憎恶核心复生仪只会稍微影响社交和情绪, 确定要让机械师从此开始承受憎恶低语的影响吗?\n\n心情: -4\n\n社交: -25</ConfirmInstallApocritonMechResurrector_LevelInit>
+  <ConfirmInstallApocritonMechResurrector_LevelInit>初次植入憎恶核心复生仪只会稍微影响社交和情绪, 确定要让机械师从此开始承受憎恶低语的影响吗?\n\n心情: -4\n\n社交: -25\n\n</ConfirmInstallApocritonMechResurrector_LevelInit>
   <ConfirmInstallApocritonMechResurrector_Level1>第二次植入憎恶核心复生仪将会明显影响社交和情绪,并且重置复生脉冲充能至最大 确定要让机械师承受更多的憎恶低语的影响吗?\n\n心情: -10\n\n社交: -50</ConfirmInstallApocritonMechResurrector_Level1>
   <ConfirmInstallApocritonMechResurrector_Level2>第三次植入憎恶核心复生仪将重置复生脉冲充能至最大, 机械师将会完全沉沦在憎恶与蔑视的情绪中无法自拔.\n\n心情: -16\n\n社交: -75</ConfirmInstallApocritonMechResurrector_Level2>
 
