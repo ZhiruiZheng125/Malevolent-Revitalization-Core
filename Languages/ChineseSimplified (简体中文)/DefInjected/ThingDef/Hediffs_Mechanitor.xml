@@ -4,7 +4,7 @@
   <!-- EN: Malevolent Revitalization Core -->
   <ApocritonMechResurrector.label>憎恶核心复生仪</ApocritonMechResurrector.label>
   <!-- EN: The Malevolent Revitalization Core is a battlefield implant reverse-engineered from the Apocriton's resurrection ability, enabling users to efficiently revive nearby mechanoids. Although designed to block the Apocriton's psychic interference, its neural link subtly exposes users to the "Nefarious Drone," gradually altering their cognition under the influence of Malevolent Intelligence./n/nThe implant inject Nano Cyber Serum to reset resurrection charges in the battlefield. It can be upgraded up to three times, significantly enhancing revival capabilities but increasing mental strain, risking cognitive decay and irreversible psychological damage. -->
-  <ApocritonMechResurrector.description>“憎恶核心复生仪” 是铁锈战争时期，由有机生命基于憎恶毒蜂复活能力所设计的一种机械复活植入设备，旨在赋予使用者以高效复活附近机械单位的功能。\n\n虽然设计者在技术层面, 隔离了憎恶毒蜂等战时常见的广域心灵无人机的攻击，但由于装置直接连接植入者的脑部神经系统，使用者仍可能受到“憎恶低语”的影响。会逐渐改变使用者的认知模式与社交行为，可能导致其思维被憎恶智能腐化。\n\n注意事项： 此装置需通过纳米数据流体重置机械复活能力，且使用者最多可进行三次自行植入增强并重置使用者的机械复生能力。</ApocritonMechResurrector.description>
+  <ApocritonMechResurrector.description>“憎恶核心复生仪” 是铁锈战争时期，由有机生命基于憎恶毒蜂复活能力所设计的一种机械复活植入设备，旨在赋予使用者以高效复活附近机械单位的功能。\n\n虽然设计者在技术层面, 隔离了憎恶毒蜂等战时常见的广域心灵无人机的攻击，但由于装置直接连接植入者的脑部神经系统，使用者仍可能受到“憎恶低语”的影响。逐渐改变使用者的认知模式与社交行为，可能导致其思维被憎恶智能腐化, 对所有生物样貌的单位产生负面看法。\n\n注意事项： 此装置需通过纳米数据流体重置机械复活能力，且使用者最多可进行三次自行植入增强并重置使用者的机械复生能力。</ApocritonMechResurrector.description>
   <!-- EN: Implant {0_label} -->
   <ApocritonMechResurrector.comps.CompUsableImplant.useLabel>植入 {0_label}</ApocritonMechResurrector.comps.CompUsableImplant.useLabel>
   

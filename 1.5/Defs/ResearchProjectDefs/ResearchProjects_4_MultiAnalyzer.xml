@@ -4,7 +4,7 @@
   <ResearchProjectDef>
     <defName>ZIRI_tech_ApocritonMechResurrector</defName>
     <label>Malevolent mechtech</label>
-    <description>add description for Malevolent mechtech</description>
+    <description>As we conduct further studies on the remnants of the Apocriton, the full picture of the Rust Wars gradually comes to light.</description>
     <baseCost>7000</baseCost>
     <techLevel>Archotech</techLevel>
     <requiredResearchFacilities>
@@ -19,5 +19,7 @@
     <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
     <researchViewX>17.00</researchViewX>
     <researchViewY>2.0</researchViewY>
+    <discoveredLetterTitle>Breakthroughs: Malevolent Mechtech</discoveredLetterTitle>
+    <discoveredLetterText>Through the study of Apocriton remnants, the full scope of the Rust Wars is unveiled. We will cast a reflection of the past to forge an astounding future.hrough the study of Apocriton remnants, the full scope of the Rust Wars is unveiled. We will cast a reflection of the past to forge an astounding future.</discoveredLetterText>
   </ResearchProjectDef>
 </Defs>

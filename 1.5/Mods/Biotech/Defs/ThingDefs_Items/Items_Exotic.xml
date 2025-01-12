@@ -72,7 +72,7 @@
     <costList>
       <NanostructuringChip>1</NanostructuringChip>
       <ComponentSpacer>1</ComponentSpacer>
-      <Plasteel>6</Plasteel>
+      <Plasteel>5</Plasteel>
       <Neutroamine>15</Neutroamine>
     </costList>
     <recipeMaker>
@@ -86,7 +86,7 @@
       <productCount>1</productCount>
       <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
       <recipeUsers>
-        <li>SubcoreEncoder</li>
+        <li>FabricationBench</li>
       </recipeUsers>
     </recipeMaker>
     <tradeability>Sellable</tradeability>
