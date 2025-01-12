@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ModMetaData>
-  <name>Malevolent Mechtech - Apocriton MechResurrect Implant/憎恶毒蜂机械复活植入物</name>
+  <name>Malevolent Mechtech - Apocriton MechResurrect Implant</name>
   <packageId>ZIRI.Implant.ApocritonMechResurrector</packageId> <!--系列-->
   <author>ZIRI</author>
   <supportedVersions>
