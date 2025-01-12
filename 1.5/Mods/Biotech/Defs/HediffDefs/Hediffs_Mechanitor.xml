@@ -103,8 +103,9 @@
       <li>
         <minSeverity>1</minSeverity>
         <statOffsets>
-          <MechResurrectDistance>6.9</MechResurrectDistance>
-          <MechResurrectMaxChargePoint>20</MechResurrectMaxChargePoint>
+          <MechResurrectDistance>9.9</MechResurrectDistance>
+          <!-- 由于此处修改成数据可调, 暂时未找到合适的显示方法 -->
+          <!-- <MechResurrectMaxChargePoint>30</MechResurrectMaxChargePoint>  -->
           <MentalBreakThreshold>-0.02</MentalBreakThreshold>
         </statOffsets>
       </li>
@@ -112,8 +113,8 @@
       <li>
         <minSeverity>2</minSeverity>
         <statOffsets>
-          <MechResurrectDistance>6.9</MechResurrectDistance>
-          <MechResurrectMaxChargePoint>30</MechResurrectMaxChargePoint>
+          <MechResurrectDistance>14.9</MechResurrectDistance>
+          <!-- <MechResurrectMaxChargePoint>40</MechResurrectMaxChargePoint>  -->
           <MentalBreakThreshold>-0.05</MentalBreakThreshold>
         </statOffsets>
       </li>
@@ -121,8 +122,8 @@
       <li>
         <minSeverity>3</minSeverity>
         <statOffsets>
-          <MechResurrectDistance>12.9</MechResurrectDistance>
-          <MechResurrectMaxChargePoint>40</MechResurrectMaxChargePoint>
+          <MechResurrectDistance>19.9</MechResurrectDistance>
+          <!-- <MechResurrectMaxChargePoint>50</MechResurrectMaxChargePoint>  -->
           <MentalBreakThreshold>-0.08</MentalBreakThreshold>
         </statOffsets>
       </li>
@@ -178,8 +179,6 @@
         <maxCorpseAgeTicks>3600</maxCorpseAgeTicks><!-- max mech been resurrected time 60s -->
         <appliedEffecterDef>MechResurrected</appliedEffecterDef>
         <resolveEffecterDef>MechResurrected</resolveEffecterDef>
-        <chargePointBase>10</chargePointBase> <!-- 基础充能点数 -->
-        <chargePointSeverityResolver>1</chargePointSeverityResolver> <!-- 充能点数的额外起始修正系数 -->
         <costs>
           <li>
             <weightClass>Light</weightClass>

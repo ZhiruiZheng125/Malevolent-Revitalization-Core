@@ -84,9 +84,6 @@ namespace ZIRI_ApocritonMechResurrector
 
         public List<MechChargeCosts> costs = new List<MechChargeCosts>();
 
-        public int chargePointBase; 
-
-        public int chargePointSeverityResolver;
     }
 
     public class CompAbilityEffect_MechanitorResurrectMech : CompAbilityEffect
@@ -104,10 +101,8 @@ namespace ZIRI_ApocritonMechResurrector
         public override bool CanCast => resurrectCharges > 0;
 
         public new CompProperties_MechanitorResurrectMech Props => (CompProperties_MechanitorResurrectMech)props;
-        public int currentMaxResurrectCharges => (int)(this.GetHediff().Severity + Props.chargePointSeverityResolver) * Props.chargePointBase;
-
-
-        //public int currentMaxResurrectCharges => ((int)this.parent.pawn.GetStatValue(StatDefOf.MechResurrectMaxChargePoint, true, -1));
+        public int currentMaxResurrectCharges => Mathf.Max((int)(this.GetHediff().Severity - 1), 0) * ZIRIMisc_MechResurrector_Settings.MechResurrectChargePointMultiplier + ZIRIMisc_MechResurrector_Settings.MechResurrectChargePointBaseFactor;
+        //Mathf.Max(resurrectCharges, 0)
 
         public void ResetCharges()
         {
@@ -183,7 +178,7 @@ namespace ZIRI_ApocritonMechResurrector
             }
             else if (!TryGetResurrectCost(thisCorpse, out var cost) || cost > resurrectCharges)
             {
-                Messages.Message("Insufficient Resurrection Charge Points", MessageTypeDefOf.NegativeEvent);
+                Messages.Message("Insufficient Resurrection Points", MessageTypeDefOf.NegativeEvent);
             }
 
 
@@ -662,7 +657,7 @@ namespace ZIRI_ApocritonMechResurrector
                 }
                 catch (System.Exception ex)
                 {
-                  //Log.Error($"Error resetting charges: {ex.Message}");
+                  Log.Error($"Error resetting charges: {ex.Message}");
                 }
                 
                 
@@ -673,6 +668,78 @@ namespace ZIRI_ApocritonMechResurrector
         }
     }
 
+    //mod setting menu for mech resurrect charge point
+    [StaticConstructorOnStartup]
+    public class ZIRIMisc_MechResurrector_Settings : ModSettings
+    {
+        public static int MechResurrectChargePointBaseFactor = 30;
+
+        public static int MechResurrectChargePointMultiplier = 10;
+
+        public static void DoSettingsWindowContents(Rect inRect)
+        {
+            Rect rect = new Rect(inRect.x, inRect.y, inRect.width * 0.6f, inRect.height);
+            rect = rect.CenteredOnXIn(inRect);
+            Listing_Standard listing_Standard = new Listing_Standard
+            {
+                ColumnWidth = rect.width
+            };
+
+            listing_Standard.Begin(rect);
+
+            listing_Standard.Gap(6f);
+            MechResurrectChargePointBaseFactor = (int)listing_Standard.SliderLabeled("ZIRIMisc_MechResurrector_MechResurrectChargePointBaseFactor".Translate(MechResurrectChargePointBaseFactor.ToString()), (float)MechResurrectChargePointBaseFactor, 10f, 40f);
+
+            listing_Standard.Gap(12f);
+            MechResurrectChargePointMultiplier = (int)listing_Standard.SliderLabeled("ZIRIMisc_MechResurrector_MechResurrectChargePointMultiplier".Translate(MechResurrectChargePointMultiplier.ToString()), (float)MechResurrectChargePointMultiplier, 10f, 40f);
+
+            listing_Standard.Gap(6f);
+            if (listing_Standard.ButtonText("Reset".Translate()))
+            {
+                Reset();
+            }
+            listing_Standard.Gap(6f);
+            listing_Standard.Label("ZIRIMisc_MechResurrector_Hint".Translate());
+            listing_Standard.End();
+        }
+
+        protected static void Reset()
+        {
+            MechResurrectChargePointBaseFactor = 30;
+            MechResurrectChargePointMultiplier = 10;
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref MechResurrectChargePointBaseFactor, "MechResurrectChargePointBaseFactor", 30);
+            Scribe_Values.Look(ref MechResurrectChargePointMultiplier, "MechResurrectChargePointMultiplier", 10);
+
+        }
+    }
+
+    [StaticConstructorOnStartup]
+    public class ZIRIMisc_MechResurrector_Mod : Mod
+    {
+        public static ZIRIMisc_MechResurrector_Settings _settings;
+
+        public ZIRIMisc_MechResurrector_Mod(ModContentPack content)
+            : base(content)
+        {
+            _settings = GetSettings<ZIRIMisc_MechResurrector_Settings>();
+        }
+
+        public override void DoSettingsWindowContents(Rect inRect)
+        {
+            ZIRIMisc_MechResurrector_Settings.DoSettingsWindowContents(inRect);
+            base.DoSettingsWindowContents(inRect);
+        }
+
+        public override string SettingsCategory()
+        {
+            return "ZIRIMisc_MechResurrector".Translate();
+        }
+    }
 
 
 

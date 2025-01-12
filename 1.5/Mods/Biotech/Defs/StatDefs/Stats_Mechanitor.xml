@@ -10,8 +10,8 @@
 
   <StatDef ParentName="MechanitorStatBase">
     <defName>MechResurrectMaxChargePoint</defName>
-    <label>max charge point</label>
-    <description>the maximum resurrected mech charge points for a mechanitor.</description>
+    <label>mech resurrection point</label>
+    <description>the maximum point of mech resurrection for a mechanitor.</description>
     <showIfUndefined>false</showIfUndefined>
   </StatDef>
 </Defs>
