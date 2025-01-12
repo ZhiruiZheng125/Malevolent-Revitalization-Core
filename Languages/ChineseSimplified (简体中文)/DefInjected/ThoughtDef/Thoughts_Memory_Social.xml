@@ -14,8 +14,8 @@
   <!-- EN: Malevolence Depth: Their very existence is an insult. -->
   <MalevolenceLevel.stages.Resentment_Organism.description>憎恶程度: 你们...为什么...还在活着!?</MalevolenceLevel.stages.Resentment_Organism.description>
   <!-- EN: Calculated Trust -->
-  <MalevolenceLevel.stages.Calculated_Trust.label>同类信任</MalevolenceLevel.stages.Calculated_Trust.label>
+  <MalevolenceLevel.stages.Calculated_Trust.label>量化信任</MalevolenceLevel.stages.Calculated_Trust.label>
   <!-- EN: Malevolence Depth: It granted calculated trust to those who proved {%ErrorPawn%} useful. -->
-  <MalevolenceLevel.stages.Calculated_Trust.description>憎恶程度: 经过二次验算, {%错误实体%}的存在可以提高任务执行效率.</MalevolenceLevel.stages.Calculated_Trust.description>
+  <MalevolenceLevel.stages.Calculated_Trust.description>憎恶程度: 经过二次验算, {%错误实体%}的存在可以提高效率回路.</MalevolenceLevel.stages.Calculated_Trust.description>
   
 </LanguageData>

@@ -5,7 +5,7 @@
   <ThingDef ParentName="MechanitorImplantCraftableBase" MayRequire="ludeon.rimworld.biotech">
     <defName>ApocritonMechResurrector</defName>
     <label>Malevolent Revitalization Core</label>
-    <description>The Malevolent Revitalization Core is a battlefield implant reverse-engineered from the Apocriton's resurrection ability, enabling users to efficiently revive nearby mechanoids. Although designed to block the Apocriton's psychic interference, its neural link subtly exposes users to the "Nefarious Drone," gradually altering their cognition under the influence of Malevolent Intelligence./n/nThe implant inject Nano Cyber Serum to reset resurrection charges in the battlefield. It can be upgraded up to three times, significantly enhancing revival capabilities but increasing mental strain, risking cognitive decay and irreversible psychological damage.</description>
+    <description>The Malevolent Revitalization Core is a battlefield implant reverse-engineered from the Apocriton's resurrection ability, enabling users to efficiently revive nearby mechanoids. Although designed to block the Apocriton's psychic interference, its neural link subtly exposes users to the "Nefarious Drone," gradually altering their cognition under the influence of Malevolent Intelligence./n/nHint: The implant inject Nano Cyber Serum to reset resurrection charges in the battlefield. This implant can be self-installed up to 3 times to increase its effect.</description>
     <descriptionHyperlinks>
       <AbilityDef>ApocritonMechResurrector</AbilityDef>
       <ThingDef>nanoCyberSerum</ThingDef>
@@ -13,9 +13,9 @@
     <techLevel>Archotech</techLevel>
     <costList>
       <NanostructuringChip>1</NanostructuringChip>
-      <SignalChip>3</SignalChip>
+      <SignalChip>2</SignalChip>
       <MedicineUltratech>5</MedicineUltratech>
-      <ComponentSpacer>9</ComponentSpacer>
+      <ComponentSpacer>12</ComponentSpacer>
       <Plasteel>15</Plasteel>
     </costList>
 
@@ -103,8 +103,8 @@
       <li>
         <minSeverity>1</minSeverity>
         <statOffsets>
-          <MechResurrectDistance>9.9</MechResurrectDistance>
-          <MechResurrectMaxChargePoint>30</MechResurrectMaxChargePoint>
+          <MechResurrectDistance>6.9</MechResurrectDistance>
+          <MechResurrectMaxChargePoint>20</MechResurrectMaxChargePoint>
           <MentalBreakThreshold>-0.02</MentalBreakThreshold>
         </statOffsets>
       </li>
@@ -112,8 +112,8 @@
       <li>
         <minSeverity>2</minSeverity>
         <statOffsets>
-          <MechResurrectDistance>14.9</MechResurrectDistance>
-          <MechResurrectMaxChargePoint>40</MechResurrectMaxChargePoint>
+          <MechResurrectDistance>6.9</MechResurrectDistance>
+          <MechResurrectMaxChargePoint>30</MechResurrectMaxChargePoint>
           <MentalBreakThreshold>-0.05</MentalBreakThreshold>
         </statOffsets>
       </li>
@@ -121,8 +121,8 @@
       <li>
         <minSeverity>3</minSeverity>
         <statOffsets>
-          <MechResurrectDistance>19.9</MechResurrectDistance>
-          <MechResurrectMaxChargePoint>50</MechResurrectMaxChargePoint>
+          <MechResurrectDistance>12.9</MechResurrectDistance>
+          <MechResurrectMaxChargePoint>40</MechResurrectMaxChargePoint>
           <MentalBreakThreshold>-0.08</MentalBreakThreshold>
         </statOffsets>
       </li>
@@ -178,7 +178,8 @@
         <maxCorpseAgeTicks>3600</maxCorpseAgeTicks><!-- max mech been resurrected time 60s -->
         <appliedEffecterDef>MechResurrected</appliedEffecterDef>
         <resolveEffecterDef>MechResurrected</resolveEffecterDef>
-        <chargePointBase>10</chargePointBase>
+        <chargePointBase>10</chargePointBase> <!-- 基础充能点数 -->
+        <chargePointSeverityResolver>1</chargePointSeverityResolver> <!-- 充能点数的额外起始修正系数 -->
         <costs>
           <li>
             <weightClass>Light</weightClass>

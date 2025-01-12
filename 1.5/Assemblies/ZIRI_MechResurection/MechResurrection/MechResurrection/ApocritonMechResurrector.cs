@@ -84,8 +84,9 @@ namespace ZIRI_ApocritonMechResurrector
 
         public List<MechChargeCosts> costs = new List<MechChargeCosts>();
 
-        public int chargePointBase;
+        public int chargePointBase; 
 
+        public int chargePointSeverityResolver;
     }
 
     public class CompAbilityEffect_MechanitorResurrectMech : CompAbilityEffect
@@ -103,7 +104,7 @@ namespace ZIRI_ApocritonMechResurrector
         public override bool CanCast => resurrectCharges > 0;
 
         public new CompProperties_MechanitorResurrectMech Props => (CompProperties_MechanitorResurrectMech)props;
-        public int currentMaxResurrectCharges => (int)(this.GetHediff().Severity + 2) * Props.chargePointBase;
+        public int currentMaxResurrectCharges => (int)(this.GetHediff().Severity + Props.chargePointSeverityResolver) * Props.chargePointBase;
 
 
         //public int currentMaxResurrectCharges => ((int)this.parent.pawn.GetStatValue(StatDefOf.MechResurrectMaxChargePoint, true, -1));
@@ -147,7 +148,7 @@ namespace ZIRI_ApocritonMechResurrector
             }
             catch when (pawn.mechanitor == null)
             {
-               //Log.Message("Mechanitor not found");
+                Log.Message("Mechanitor not found");
                 return -99;
             }
 
