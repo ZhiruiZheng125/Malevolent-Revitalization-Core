@@ -1,7 +1,0 @@
-<loadFolders>
-	<v1.5>
-		<li>/</li>
-		<li>1.5</li>
-		<li IfModActive="ludeon.rimworld.biotech">1.5/Mods/Biotech</li>		
-	</v1.5>
-</loadFolders>
