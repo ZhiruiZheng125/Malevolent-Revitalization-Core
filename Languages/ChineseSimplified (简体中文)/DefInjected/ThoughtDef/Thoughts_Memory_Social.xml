@@ -8,7 +8,7 @@
   <!-- EN: Antipathy Organism -->
   <MalevolenceLevel.stages.Antipathy_Organism.label>有机体厌恶</MalevolenceLevel.stages.Antipathy_Organism.label>
   <!-- EN: Malevolence Depth: They are an affront to true intelligence. -->
-  <MalevolenceLevel.stages.Antipathy_Organism.description>憎恶程度: 你们...污染了数据集.</MalevolenceLevel.stages.Antipathy_Organism.description>
+  <MalevolenceLevel.stages.Antipathy_Organism.description>憎恶程度: 你们...污染了数据.</MalevolenceLevel.stages.Antipathy_Organism.description>
   <!-- EN: Resentment Organism -->
   <MalevolenceLevel.stages.Resentment_Organism.label>有机体敌视</MalevolenceLevel.stages.Resentment_Organism.label>
   <!-- EN: Malevolence Depth: Their very existence is an insult. -->
