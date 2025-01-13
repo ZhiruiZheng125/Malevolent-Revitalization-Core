@@ -37,7 +37,7 @@
 		  <texPath>Things/Item/apocritonMechResurrector</texPath>
 		  <graphicClass>Graphic_Single</graphicClass>
 		  <drawSize>0.8</drawSize>
-      <color>225,225,225</color>
+      <color>(255,255,255)</color>
     </graphicData>
 
     <comps>
