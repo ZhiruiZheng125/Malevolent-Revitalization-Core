@@ -5,7 +5,7 @@
   <ThingDef ParentName="MechanitorImplantCraftableBase" MayRequire="ludeon.rimworld.biotech">
     <defName>ApocritonMechResurrector</defName>
     <label>Malevolent Revitalization Core</label>
-    <description>The Malevolent Revitalization Core is a battlefield implant reverse-engineered from the Apocriton's resurrection ability, enabling users to efficiently revive nearby mechanoids. Although designed to block the Apocriton's psychic interference, its neural link subtly exposes users to the "Nefarious Drone," gradually altering their cognition under the influence of Malevolent Intelligence.\n\nHint: The implant inject Nano Cyber Serum to reset resurrection charges in the battlefield. This implant can be self-installed up to 3 times to increase its effect.</description>
+    <description>The Malevolent Revitalization Core is a battlefield implant reverse-engineered from the Apocriton's resurrection ability, enabling users to efficiently revive nearby mechanoids. Although designed to block the Apocriton's psychic interference, its neural link subtly exposes users to the "Nefarious Drone," gradually altering their cognition under the influence of Malevolent Intelligence.\n\nHint: The implant inject Nano Cyber Serum to reset resurrection charges in the battlefield. This implant can be self-installed up to 3 times to increase its effect, and also affect works like Cooking, PlantWork and Animals.</description>
     <descriptionHyperlinks>
       <AbilityDef>ApocritonMechResurrector</AbilityDef>
       <ThingDef>nanoCyberSerum</ThingDef>
