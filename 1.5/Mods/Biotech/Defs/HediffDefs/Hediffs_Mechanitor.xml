@@ -133,7 +133,7 @@
 
   <AbilityDef MayRequire="ludeon.rimworld.biotech">
     <defName>ApocritonMechResurrector</defName>
-    <label>Mech Reawakening</label>
+    <label>Mech Reviving</label>
     <description>Malevolent Resurrection Pulse allows the user to fully harness the Apocriton's Mech Resurrection ability. It can unleash a powerful energy pulse without requiring line of sight, overloading fallen nearby mechanoids with incredible efficiency, bringing them back to battle with their injuries intact.</description>
     
     <descriptionHyperlinks>

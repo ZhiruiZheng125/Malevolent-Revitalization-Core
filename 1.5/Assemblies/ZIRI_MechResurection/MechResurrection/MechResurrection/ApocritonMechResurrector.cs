@@ -65,8 +65,13 @@ namespace ZIRI_ApocritonMechResurrector
         }
     }
 
-
-
+    public static class ApocritonMechResurrectorUtility
+    {
+        public static bool IsApocritonMechResurrector(this Pawn pawn)
+        {
+            return pawn.health.hediffSet.HasHediff(ApocritonMechResurrector_HediffDefOf.ApocritonMechResurrector);
+        }
+    }
 
     //LTS mech resurrect start
     public class CompProperties_MechanitorResurrectMech : CompProperties_AbilityEffect
@@ -111,7 +116,11 @@ namespace ZIRI_ApocritonMechResurrector
            //Log.Message("ResetCharges end");
         }
 
-
+        public int GetMaxResurrectCharges()
+        {
+            //Log.Message("GetMaxResurrectCharges called");
+            return this.currentMaxResurrectCharges;
+        }
 
         public Hediff GetHediff()
         {
@@ -375,49 +384,126 @@ namespace ZIRI_ApocritonMechResurrector
     [StaticConstructorOnStartup]
     public class Gizmo_MechanitorMechResurrectionCharges : Gizmo
     {
-        private static readonly Texture2D FullShieldBarTex = SolidColorMaterials.NewSolidColorTexture(new Color(0.2f, 0.2f, 0.24f));
+        private static readonly float Width = 136f;
 
-        private static readonly Texture2D EmptyShieldBarTex = SolidColorMaterials.NewSolidColorTexture(Color.clear);
+        private const int HeaderHeight = 20;
 
-        private static readonly float Width = 110f;
+        private static readonly Color EmptyBlockColor = new Color(0.3f, 0.3f, 0.3f, 1f);
+
+        private static readonly Color FilledBlockColor = Color.grey;
 
         private CompAbilityEffect_MechanitorResurrectMech ability;
-
-        public Gizmo_MechanitorMechResurrectionCharges(CompAbilityEffect_MechanitorResurrectMech ability)
-        {
-            this.ability = ability;
-            Order = -100f;
-            
-        }
 
         public override float GetWidth(float maxWidth)
         {
             return Width;
         }
 
+        public Gizmo_MechanitorMechResurrectionCharges(CompAbilityEffect_MechanitorResurrectMech ability)
+        {
+            this.ability = ability;
+            Order = -100f;
+
+        }
+
         public override GizmoResult GizmoOnGUI(Vector2 topLeft, float maxWidth, GizmoRenderParms parms)
         {
-            
             Rect rect = new Rect(topLeft.x, topLeft.y, GetWidth(maxWidth), 75f);
-            Rect rect2 = rect.ContractedBy(6f);
             Widgets.DrawWindowBackground(rect);
-            Rect rect3 = rect2;
-            rect3.height = rect.height / 2f;
-            Text.Font = GameFont.Tiny;
-            Text.Anchor = TextAnchor.UpperLeft;
-            Widgets.Label(rect3, "MechResurrectionCharges".Translate());
-            Text.Anchor = TextAnchor.UpperLeft;
-            Rect rect4 = rect;
-            rect4.y += rect3.height - 5f;
-            rect4.height = rect.height / 2f;
-            Text.Font = GameFont.Medium;
-            Text.Anchor = TextAnchor.MiddleCenter;
-            Widgets.Label(rect4, ability.ChargesRemaining.ToString());
-            Text.Anchor = TextAnchor.UpperLeft;
-            Text.Font = GameFont.Small;
+            Rect rect2 = rect.ContractedBy(6f);
+            Rect rect3 = new Rect(rect2.x, rect2.y, rect2.width, 20f);
+            Widgets.Label(rect3, "ZIRIGizmo_ApocritonMechResurrectorHeader".Translate());
+            Rect rect4 = new Rect(rect2.x, rect3.yMax + 2f, rect2.width, 20f);
+            using (new TextBlock(GameFont.Tiny))
+            {
+                string label = ability.ChargesRemaining.ToString();
+                Widgets.Label(rect4, label);
+                using (new TextBlock(TextAnchor.UpperRight))
+                {
+                    string label2 = "Max: " + ability.GetMaxResurrectCharges().ToString();
+                    Widgets.Label(rect4, label2);
+                }
+            }
+            Rect rect5 = new Rect(rect2.x, rect4.yMax + 2f, rect2.width, rect2.height - rect3.height - rect4.height - 4f);
+            Widgets.DrawBoxSolid(rect5, EmptyBlockColor);
+            Rect rect6 = rect5.ContractedBy(3f);
+            rect6.width *= (float)ability.ChargesRemaining / (float)ability.GetMaxResurrectCharges();
+
+            //Log.Message("rect6.width: "+ ((float)ability.ChargesRemaining / (float)ability.GetMaxResurrectCharges()).ToStringSafe());
+
+            Widgets.DrawBoxSolid(rect6, FilledBlockColor);
+            TooltipHandler.TipRegion(rect, "ZIRIGizmo_ApocritonMechResurrectorTooltip".Translate());
             return new GizmoResult(GizmoState.Clear);
         }
     }
+
+
+    //[StaticConstructorOnStartup]
+    //public class Gizmo_MechanitorMechResurrectionCharges : Gizmo
+    //{
+    //    private static readonly Texture2D FullShieldBarTex = SolidColorMaterials.NewSolidColorTexture(new Color(0.2f, 0.2f, 0.24f));
+
+    //    private static readonly Texture2D EmptyShieldBarTex = SolidColorMaterials.NewSolidColorTexture(Color.clear);
+
+    //    private static readonly float Width = 140f;
+
+    //    private const int HeaderHeight = 20;
+
+    //    private static readonly Color EmptyBlockColor = new Color(0.3f, 0.3f, 0.3f, 1f);
+
+    //    private static readonly Color FilledBlockColor = Color.grey;
+
+    //    private CompAbilityEffect_MechanitorResurrectMech ability;
+
+    //    private Pawn _pawn;
+
+    //    public override bool Visible
+    //    {
+    //        get
+    //        {
+    //            if (_pawn != null && MechanitorUtility.IsMechanitor(_pawn))
+    //            {
+    //                return Find.Selector.SelectedPawns.Count == 1;
+    //            }
+    //            return false;
+    //        }
+    //    }
+
+    //    public Gizmo_MechanitorMechResurrectionCharges(CompAbilityEffect_MechanitorResurrectMech ability)
+    //    {
+    //        this.ability = ability;
+    //        Order = -100f;
+
+    //    }
+
+    //    public override float GetWidth(float maxWidth)
+    //    {
+    //        return Width;
+    //    }
+
+    //    public override GizmoResult GizmoOnGUI(Vector2 topLeft, float maxWidth, GizmoRenderParms parms)
+    //    {
+
+    //        Rect rect = new Rect(topLeft.x, topLeft.y, GetWidth(maxWidth), 75f);
+    //        Rect rect2 = rect.ContractedBy(6f);
+    //        Widgets.DrawWindowBackground(rect);
+    //        Rect rect3 = rect2;
+    //        rect3.height = rect.height / 2f;
+    //        Text.Font = GameFont.Tiny;
+    //        Text.Anchor = TextAnchor.UpperLeft;
+    //        Widgets.Label(rect3, "MechResurrectionCharges".Translate());
+    //        Text.Anchor = TextAnchor.UpperLeft;
+    //        Rect rect4 = rect;
+    //        rect4.y += rect3.height - 5f;
+    //        rect4.height = rect.height / 2f;
+    //        Text.Font = GameFont.Medium;
+    //        Text.Anchor = TextAnchor.MiddleCenter;
+    //        Widgets.Label(rect4, ability.ChargesRemaining.ToString());
+    //        Text.Anchor = TextAnchor.UpperLeft;
+    //        Text.Font = GameFont.Small;
+    //        return new GizmoResult(GizmoState.Clear);
+    //    }
+    //}
 
     //LTS mech resurrect end
 

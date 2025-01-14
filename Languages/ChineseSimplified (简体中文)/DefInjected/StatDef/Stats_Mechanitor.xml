@@ -4,11 +4,11 @@
   <!-- EN: mech resurrect distance -->
   <MechResurrectDistance.label>最大复活距离</MechResurrectDistance.label>
   <!-- EN: the maximum range for which a mechanitor can resurrect a mechanoid. -->
-  <MechResurrectDistance.description>憎恶核心复生仪 最大作用半径.</MechResurrectDistance.description>
+  <MechResurrectDistance.description>憎恶核心复苏仪 最大作用半径.</MechResurrectDistance.description>
   
   <!-- EN: max charge point -->
   <MechResurrectMaxChargePoint.label>最大充能点数</MechResurrectMaxChargePoint.label>
   <!-- EN: the maximum resurrected mech charge points for a mechanitor. -->
-  <MechResurrectMaxChargePoint.description>憎恶核心复生仪 最大充能点数.</MechResurrectMaxChargePoint.description>
+  <MechResurrectMaxChargePoint.description>憎恶核心复苏仪 最大充能点数.</MechResurrectMaxChargePoint.description>
   
 </LanguageData>

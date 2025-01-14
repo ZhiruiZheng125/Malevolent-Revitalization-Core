@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-
     <ZIRIMisc_MechResurrector>憎恶机械科技 - 憎恶毒蜂机械复活植入物</ZIRIMisc_MechResurrector>
     <ZIRIMisc_MechResurrector_MechResurrectChargePointBaseFactor>机械复活充能的初始修正值：{0}</ZIRIMisc_MechResurrector_MechResurrectChargePointBaseFactor>
     <ZIRIMisc_MechResurrector_MechResurrectChargePointMultiplier>机械复活充能的增长修正值：{0}</ZIRIMisc_MechResurrector_MechResurrectChargePointMultiplier>
