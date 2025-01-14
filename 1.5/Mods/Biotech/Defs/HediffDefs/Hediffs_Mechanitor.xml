@@ -5,7 +5,7 @@
   <ThingDef ParentName="MechanitorImplantCraftableBase" MayRequire="ludeon.rimworld.biotech">
     <defName>ApocritonMechResurrector</defName>
     <label>Malevolent Revitalization Core</label>
-    <description>The Malevolent Revitalization Core is a battlefield implant reverse-engineered from the Apocriton's resurrection ability, enabling users to efficiently revive nearby mechanoids. Although designed to block the Apocriton's psychic interference, its neural link subtly exposes users to the "Nefarious Drone," gradually altering their cognition under the influence of Malevolent Intelligence./n/nHint: The implant inject Nano Cyber Serum to reset resurrection charges in the battlefield. This implant can be self-installed up to 3 times to increase its effect.</description>
+    <description>The Malevolent Revitalization Core is a battlefield implant reverse-engineered from the Apocriton's resurrection ability, enabling users to efficiently revive nearby mechanoids. Although designed to block the Apocriton's psychic interference, its neural link subtly exposes users to the "Nefarious Drone," gradually altering their cognition under the influence of Malevolent Intelligence.\n\nHint: The implant inject Nano Cyber Serum to reset resurrection charges in the battlefield. This implant can be self-installed up to 3 times to increase its effect.</description>
     <descriptionHyperlinks>
       <AbilityDef>ApocritonMechResurrector</AbilityDef>
       <ThingDef>nanoCyberSerum</ThingDef>
@@ -13,9 +13,9 @@
     <techLevel>Archotech</techLevel>
     <costList>
       <NanostructuringChip>1</NanostructuringChip>
-      <SignalChip>2</SignalChip>
+      <SignalChip>3</SignalChip>
       <MedicineUltratech>5</MedicineUltratech>
-      <ComponentSpacer>12</ComponentSpacer>
+      <ComponentSpacer>9</ComponentSpacer>
       <Plasteel>15</Plasteel>
     </costList>
 
@@ -33,7 +33,7 @@
       </skillRequirements>
     </recipeMaker>
 
-    <graphicData> <!--try change color -->
+    <graphicData>
 		  <texPath>Things/Item/apocritonMechResurrector</texPath>
 		  <graphicClass>Graphic_Single</graphicClass>
 		  <drawSize>0.8</drawSize>
@@ -62,7 +62,7 @@
     <defName>ApocritonMechResurrector</defName>
     <hediffClass>Hediff_Level</hediffClass>
     <label>Malevolent Revitalization Core</label>
-    <description>The Malevolent Revitalization Core is a mechanical implant that subjects the user to the "Malevolence Drone," instilling hatred and contempt for organic life. The drone corrode sanity, twisting perception and driving intense hostility toward all living beings. /n/nUsers grow indifferent to the deaths of allies and derive satisfaction from destroying despised organics. Only those with a "Mechanoid Control Link" can counter this cognitive corruption. To endure prolonged battles, the implant suppresses emotions, shields against psychic interference, and ensures ruthless efficiency in extermination campaigns.</description>
+    <description>The Malevolent Revitalization Core is a mechanical implant that subjects the user to the "Malevolence Drone," instilling hatred and contempt for organic life. The drone corrode sanity, twisting perception and driving intense hostility toward all living beings. \n\nUsers grow indifferent to the deaths of allies and derive satisfaction from destroying despised organics. Only those with a "Mechanoid Control Link" can counter this cognitive corruption. To endure prolonged battles, the implant suppresses emotions, shields against psychic interference, and ensures ruthless efficiency in extermination campaigns.</description>
     <descriptionShort>A Malevolent-tech implant that allows the user to fully utilize the Apocriton's Mech Resurrection ability but at the cost of enduring the severe Drone of malevolence.</descriptionShort>
     <descriptionHyperlinks>
       <ThingDef>nanoCyberSerum</ThingDef>
@@ -96,36 +96,95 @@
         <chanceNeverExplodeFromDamage>1</chanceNeverExplodeFromDamage>
         <extraInspectStringKey>MechStunPulseWarning</extraInspectStringKey>
 			</li>
-      
     </comps>
-
+    
     <stages>
       <li>
         <minSeverity>1</minSeverity>
+
+        <painOffset>0.2</painOffset>
+
+        <statFactors>
+          <BondAnimalChanceFactor>0</BondAnimalChanceFactor>
+        </statFactors>
+
+        <capMods>
+          <li>
+            <capacity>Talking</capacity>
+            <postFactor>0.75</postFactor>
+          </li>
+        </capMods>
+
         <statOffsets>
           <MechResurrectDistance>9.9</MechResurrectDistance>
-          <!-- 由于此处修改成数据可调, 暂时未找到合适的显示方法 -->
-          <!-- <MechResurrectMaxChargePoint>30</MechResurrectMaxChargePoint>  -->
-          <MentalBreakThreshold>-0.02</MentalBreakThreshold>
+          <MentalBreakThreshold>-0.04</MentalBreakThreshold>
+          <PsychicSensitivity>-0.5</PsychicSensitivity>
         </statOffsets>
+
+        <disabledWorkTags>
+          <li>Cooking</li>
+          <li>PlantWork</li>
+          <li>Animals</li>
+        </disabledWorkTags>
+        
       </li>
 
       <li>
         <minSeverity>2</minSeverity>
+
+        <painOffset>0.2</painOffset>
+
+        <statFactors>
+          <BondAnimalChanceFactor>0</BondAnimalChanceFactor>
+        </statFactors>
+        
+        <capMods>
+          <li>
+            <capacity>Talking</capacity>
+            <postFactor>0.75</postFactor>
+          </li>
+        </capMods>
+
         <statOffsets>
           <MechResurrectDistance>14.9</MechResurrectDistance>
-          <!-- <MechResurrectMaxChargePoint>40</MechResurrectMaxChargePoint>  -->
-          <MentalBreakThreshold>-0.05</MentalBreakThreshold>
+          <MentalBreakThreshold>-0.10</MentalBreakThreshold>
+          <PsychicSensitivity>-0.5</PsychicSensitivity>
         </statOffsets>
-      </li>
+
+        <disabledWorkTags>
+          <li>Cooking</li>
+          <li>PlantWork</li>
+          <li>Animals</li>
+        </disabledWorkTags>      
+        </li>
 
       <li>
         <minSeverity>3</minSeverity>
+
+        <painOffset>0.2</painOffset>
+
+        <statFactors>
+          <BondAnimalChanceFactor>0</BondAnimalChanceFactor>
+        </statFactors>
+        
+        <capMods>
+          <li>
+            <capacity>Talking</capacity>
+            <postFactor>0.75</postFactor>
+          </li>
+        </capMods>
+
         <statOffsets>
           <MechResurrectDistance>19.9</MechResurrectDistance>
-          <!-- <MechResurrectMaxChargePoint>50</MechResurrectMaxChargePoint>  -->
-          <MentalBreakThreshold>-0.08</MentalBreakThreshold>
+          <MentalBreakThreshold>-0.16</MentalBreakThreshold>
+          <PsychicSensitivity>-0.5</PsychicSensitivity>
         </statOffsets>
+
+        <disabledWorkTags>
+          <li>Cooking</li>
+          <li>PlantWork</li>
+          <li>Animals</li>
+        </disabledWorkTags>
       </li>
     </stages>
     

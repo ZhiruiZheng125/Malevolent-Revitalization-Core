@@ -2,8 +2,8 @@
 <LanguageData>
 
   <!-- Apocriton Mech Resurrector -->
-  <ConfirmInstallApocritonMechResurrector_LevelInit>初次植入憎恶核心复苏仪只会稍微影响社交和情绪, 确定要让机械师从此开始承受憎恶低语的影响吗?\n\n心情: -4\n\n社交: -25\n\n</ConfirmInstallApocritonMechResurrector_LevelInit>
-  <ConfirmInstallApocritonMechResurrector_Level1>第二次植入憎恶核心复苏仪将会明显影响社交和情绪,并且重置复苏脉冲充能至最大 确定要让机械师承受更多的憎恶低语的影响吗?\n\n心情: -10\n\n社交: -50</ConfirmInstallApocritonMechResurrector_Level1>
-  <ConfirmInstallApocritonMechResurrector_Level2>第三次植入憎恶核心复苏仪将重置复苏脉冲充能至最大, 机械师将会完全沉沦在憎恶与蔑视的情绪中无法自拔.\n\n心情: -16\n\n社交: -75</ConfirmInstallApocritonMechResurrector_Level2>
+  <ConfirmInstallApocritonMechResurrector_LevelInit>初次植入憎恶核心复苏仪只会稍微影响社交和情绪, 确定要让机械师从此开始承受憎恶低语的影响吗?\n\n心情: -4\n\看法: -25\n\n疼痛: 20%\n\n心灵敏感度: -50%\n\n受到影响的工作: 种植, 驯兽, 烹饪.</ConfirmInstallApocritonMechResurrector_LevelInit>
+  <ConfirmInstallApocritonMechResurrector_Level1>第二次植入憎恶核心复苏仪将会明显影响社交和情绪,并且重置复苏脉冲充能至最大 确定要让机械师承受更多憎恶低语的影响吗?\n\n心情: -10\n\n看法: -50\n\n疼痛: 20%\n\n心灵敏感度: -50%\n\n受到影响的工作: 种植, 驯兽, 烹饪.</ConfirmInstallApocritonMechResurrector_Level1>
+  <ConfirmInstallApocritonMechResurrector_Level2>第三次植入憎恶核心复苏仪将重置复苏脉冲充能至最大, 机械师将会永远被淹没在憎恨与厌恶的情绪中...\n\n心情: -16\n\n看法: -75\n\n疼痛: 20%\n\n心灵敏感度: -50%\n\n受到影响的工作: 种植, 驯兽, 烹饪.</ConfirmInstallApocritonMechResurrector_Level2>
 
 </LanguageData>

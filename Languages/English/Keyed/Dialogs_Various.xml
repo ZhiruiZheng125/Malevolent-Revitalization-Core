@@ -2,9 +2,9 @@
 <LanguageData>
 
   <!-- Apocriton Mech Resurrector -->
-  <ConfirmInstallApocritonMechResurrector_LevelInit>The initial implantation of the Malevolent Core Revitalizer will only slightly affect social interactions and emotions. Are you sure you want This Mechanitor to start enduring the influence of the Malevolent Whispers from now on?\n\nMood: -4\n\nOpinion: -25</ConfirmInstallApocritonMechResurrector_LevelInit>
-  <ConfirmInstallApocritonMechResurrector_Level1>The second implantation of the Malevolent Core Revitalizer will significantly impact social interactions and emotions, while resetting the Resurrection Pulse charge to maximum. Are you sure you want This Mechanitor to endure more influence from the Malevolent Whispers?\n\nMood: -10\n\nOpinion: -50</ConfirmInstallApocritonMechResurrector_Level1>
-  <ConfirmInstallApocritonMechResurrector_Level2>The third implantation of the Malevolent Core Revitalizer will reset the Resurrection Pulse charge to maximum, and This Mechanitor will be completely consumed by hatred and contempt, unable to escape its grasp.\n\nMood: -16\n\nOpinion: -75;</ConfirmInstallApocritonMechResurrector_Level2>
+  <ConfirmInstallApocritonMechResurrector_LevelInit>The initial implantation of the Malevolent Core Revitalizer will only slightly affect social interactions and emotions. Are you sure you want This Mechanitor to start enduring the influence of the Malevolent Whispers from now on?\n\nMood: -4\n\nOpinion: -25\n\nPain: 20%\n\naAffected works: Cooking, PlantWork, Animals.</ConfirmInstallApocritonMechResurrector_LevelInit>
+  <ConfirmInstallApocritonMechResurrector_Level1>The second implantation of the Malevolent Core Revitalizer will significantly impact social interactions and emotions, while resetting the Resurrection Pulse charge to maximum. Are you sure you want This Mechanitor to endure more influence from the Malevolent Whispers?\n\nMood: -10\n\nOpinion: -50\n\nPain: 20%\n\naAffected works: Cooking, PlantWork, Animals.</ConfirmInstallApocritonMechResurrector_Level1>
+  <ConfirmInstallApocritonMechResurrector_Level2>The third implantation of the Malevolent Core Revitalizer will reset the Resurrection Pulse charge to maximum, and This Mechanitor will be completely consumed by hatred and contempt, unable to escape its grasp.\n\nMood: -16\n\nOpinion: -75\n\nPain: 20%\n\nAffected works: Cooking, PlantWork, Animals.</ConfirmInstallApocritonMechResurrector_Level2>
   
 
 </LanguageData>
