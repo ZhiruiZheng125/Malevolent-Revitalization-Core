@@ -4,7 +4,7 @@
   <!-- EN: Malevolent Revitalization Core -->
   <ApocritonMechResurrector.label>憎恶核心复苏仪</ApocritonMechResurrector.label>
   <!-- EN: The Malevolent Revitalization Core is a mechanical implant that subjects the user to the "Malevolence Drone," instilling hatred and contempt for organic life. The drone corrode sanity, twisting perception and driving intense hostility toward all living beings. \n\nUsers grow indifferent to the deaths of allies and derive satisfaction from destroying despised organics. Only those with a "Mechanoid Control Link" can counter this cognitive corruption. To endure prolonged battles, the implant suppresses emotions, shields against psychic interference, and ensures ruthless efficiency in extermination campaigns. -->
-  <ApocritonMechResurrector.description>一种可以完全使用憎恶毒蜂机械复活能力植入体，无时无刻响起的憎恶低语几乎要把这个人折磨疯了, 腐化的认知改变了植入者现有的社交生活, 对周围人的死亡也变得冷漠, 甚至露出阴森的冷笑。唯有同样安装‘机控中枢’的智慧生命，才能干扰识别机制,并侥幸被标记成为可以合作的单位。</ApocritonMechResurrector.description>
+  <ApocritonMechResurrector.description>一种可以完全使用憎恶毒蜂机械复活能力植入体，无时无刻响起的憎恶低语几乎要把这个人折磨疯了, 腐化的认知改变了植入者现有的社交生活, 对周围人的死亡也变得冷漠, 又有时呆站在一地遗体旁欣赏着他们死前惊恐绝望的表情。\n\n唯有同样安装‘机控中枢’的智慧生命，才能干扰识别机制, 并侥幸被标记成为可以密切合作的单位。</ApocritonMechResurrector.description>
   <!-- EN: A Malevolent-tech implant that allows the user to fully utilize the Apocriton's Mech Resurrection ability but at the cost of enduring the severe Drone of malevolence. -->
   <ApocritonMechResurrector.descriptionShort>一个憎恶科技植入物, 使用者可以完整的使用憎恶毒蜂的机械复活能力, 但会承担逐渐严重的憎恶低语. 需要纳米数据流体充能</ApocritonMechResurrector.descriptionShort>
   

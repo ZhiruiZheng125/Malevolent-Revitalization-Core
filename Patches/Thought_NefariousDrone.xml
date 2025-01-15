@@ -1,29 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- 
-  <Operation Class="PatchOperationFindMod">
-    <mods>
-      <li>Royalty</li>
-    </mods>
-    <match Class="PatchOperationAdd">
-      <xpath>Defs/FactionDef[defName="Empire"]/permanentEnemyToEveryoneExcept</xpath>
-      <value>
-        <li>Axolotl_PlayerFaction</li>
-        <li>AxolotlWanderingDynasty</li>
-      </value>
-    </match>
-  </Operation> 
-  
-  -->
 
-    <!-- patch Tag: ObservedLayingCorpse-->
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThoughtDef[defName = "ObservedLayingCorpse"]/nullifyingHediffs</xpath>
-        <order>Append</order>
-        <value>
-            <li>ApocritonMechResurrector</li>
-        </value>
-    </Operation>
 
     <!-- patch Tag: ObservedLayingCorpse-->
     <Operation Class="PatchOperationAdd">

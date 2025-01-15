@@ -62,7 +62,7 @@
     <defName>ApocritonMechResurrector</defName>
     <hediffClass>Hediff_Level</hediffClass>
     <label>Malevolent Revitalization Core</label>
-    <description>The Malevolent Revitalization Core is a mechanical implant that subjects the user to the "Malevolence Drone," instilling hatred and contempt for organic life. The drone corrode sanity, twisting perception and driving intense hostility toward all living beings. \n\nUsers grow indifferent to the deaths of allies and derive satisfaction from destroying despised organics. Only those with a "Mechanoid Control Link" can counter this cognitive corruption. To endure prolonged battles, the implant suppresses emotions, shields against psychic interference, and ensures ruthless efficiency in extermination campaigns.</description>
+    <description>The Malevolent Revitalization Core is a mechanical implant that grants the revival abilities of Apocriton but subjects the user to malevolent drone of hatred. These drone erode sanity, distort perception, and sever social ties, leaving users indifferent to death and entranced by the fear from the corpse face. Only beings with a "Mechanoid Control Link" can disrupt its recognition system and be marked as allies.</description>
     <descriptionShort>A Malevolent-tech implant that allows the user to fully utilize the Apocriton's Mech Resurrection ability but at the cost of enduring the severe Drone of malevolence.</descriptionShort>
     <descriptionHyperlinks>
       <ThingDef>nanoCyberSerum</ThingDef>
