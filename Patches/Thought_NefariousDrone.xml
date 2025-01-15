@@ -179,7 +179,7 @@
         </value>
     </Operation>
 
-    <Operation Class="PatchOperationAdd">
+    <!-- <Operation Class="PatchOperationAdd">
         <xpath>Defs/ThoughtDef[defName = "PawnWithGoodOpinionDied"]</xpath>
         <order>Append</order>
         <value>
@@ -187,7 +187,7 @@
                 <li>ApocritonMechResurrector</li>
             </nullifyingHediffs>
         </value>
-    </Operation>
+    </Operation> -->
 
     <Operation Class="PatchOperationAdd">
         <xpath>Defs/ThoughtDef[@Name = "DeathMemoryFamily"]</xpath>
@@ -243,7 +243,7 @@
         </value>
     </Operation>
 
-    <Operation Class="PatchOperationAdd">
+    <!-- <Operation Class="PatchOperationAdd">
         <xpath>Defs/ThoughtDef[defName = "ColonistLost"]</xpath>
         <order>Append</order>
         <value>
@@ -251,7 +251,7 @@
                 <li>ApocritonMechResurrector</li>
             </nullifyingHediffs>
         </value>
-    </Operation>
+    </Operation> -->
 
     <Operation Class="PatchOperationAdd">
         <xpath>Defs/ThoughtDef[defName = "WitnessedDeathAlly"]/nullifyingHediffs</xpath>
