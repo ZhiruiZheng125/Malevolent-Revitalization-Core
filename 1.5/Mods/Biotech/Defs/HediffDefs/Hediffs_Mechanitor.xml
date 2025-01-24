@@ -14,9 +14,10 @@
     <costList>
       <NanostructuringChip>1</NanostructuringChip>
       <SignalChip>3</SignalChip>
-      <MedicineUltratech>5</MedicineUltratech>
       <ComponentSpacer>9</ComponentSpacer>
       <Plasteel>15</Plasteel>
+      <Gold>30</Gold>
+      <MedicineUltratech>5</MedicineUltratech>
     </costList>
 
     <statBases>
@@ -55,6 +56,12 @@
       </li>
     </comps>
 
+    <!-- <forcedTraits>
+      <li>
+        <def>Bloodlust</def>
+      </li>
+    </forcedTraits> -->
+
     
   </ThingDef>
 
@@ -85,8 +92,12 @@
         </abilityDefs>
       </li>
 
+      <li Class="ZIRI_ApocritonMechResurrector.HediffCompProperties_AddTrait">
+        <traitDef>Bloodlust</traitDef>
+      </li>
+
       <!-- 憎恶毒蜂死亡爆炸效果 -->
-      <li Class = "ZIRI_ApocritonMechResurrector.HediffCompProperties_pawnExpload" >
+      <li Class = "ZIRI_ApocritonMechResurrector.HediffCompProperties_pawnExpload">
         <wickTicks>0</wickTicks>
         <explosiveRadius>30.9</explosiveRadius>
         <explodeOnKilled>true</explodeOnKilled>
@@ -97,94 +108,52 @@
         <extraInspectStringKey>MechStunPulseWarning</extraInspectStringKey>
 			</li>
     </comps>
-    
+
+    <aptitudes>
+      <Animals>-8</Animals>
+      <!-- <Social>-8</Social> -->
+      <Cooking>-8</Cooking>
+      <Plants>-8</Plants>
+    </aptitudes>
+
     <stages>
       <li>
         <minSeverity>1</minSeverity>
-
         <painOffset>0.2</painOffset>
-
         <statFactors>
           <BondAnimalChanceFactor>0</BondAnimalChanceFactor>
         </statFactors>
-
-        <capMods>
-          <li>
-            <capacity>Talking</capacity>
-            <postFactor>0.75</postFactor>
-          </li>
-        </capMods>
-
         <statOffsets>
           <MechResurrectDistance>9.9</MechResurrectDistance>
           <MentalBreakThreshold>-0.04</MentalBreakThreshold>
           <PsychicSensitivity>-0.5</PsychicSensitivity>
         </statOffsets>
-
-        <disabledWorkTags>
-          <li>Cooking</li>
-          <li>PlantWork</li>
-          <li>Animals</li>
-        </disabledWorkTags>
-        
       </li>
 
       <li>
         <minSeverity>2</minSeverity>
-
         <painOffset>0.2</painOffset>
-
         <statFactors>
           <BondAnimalChanceFactor>0</BondAnimalChanceFactor>
         </statFactors>
-        
-        <capMods>
-          <li>
-            <capacity>Talking</capacity>
-            <postFactor>0.75</postFactor>
-          </li>
-        </capMods>
-
         <statOffsets>
           <MechResurrectDistance>14.9</MechResurrectDistance>
           <MentalBreakThreshold>-0.10</MentalBreakThreshold>
           <PsychicSensitivity>-0.5</PsychicSensitivity>
-        </statOffsets>
-
-        <disabledWorkTags>
-          <li>Cooking</li>
-          <li>PlantWork</li>
-          <li>Animals</li>
-        </disabledWorkTags>      
+        </statOffsets> 
         </li>
 
       <li>
         <minSeverity>3</minSeverity>
-
         <painOffset>0.2</painOffset>
-
         <statFactors>
           <BondAnimalChanceFactor>0</BondAnimalChanceFactor>
         </statFactors>
-        
-        <capMods>
-          <li>
-            <capacity>Talking</capacity>
-            <postFactor>0.75</postFactor>
-          </li>
-        </capMods>
-
         <statOffsets>
           <MechResurrectDistance>19.9</MechResurrectDistance>
           <MentalBreakThreshold>-0.16</MentalBreakThreshold>
           <PsychicSensitivity>-0.5</PsychicSensitivity>
         </statOffsets>
-
-        <disabledWorkTags>
-          <li>Cooking</li>
-          <li>PlantWork</li>
-          <li>Animals</li>
-        </disabledWorkTags>
       </li>
     </stages>
     

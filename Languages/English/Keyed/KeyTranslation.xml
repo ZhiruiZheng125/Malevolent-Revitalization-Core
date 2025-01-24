@@ -4,5 +4,6 @@
     <ZIRIMisc_MechResurrector>Malevolent Mechtech - Apocriton MechResurrect Implant</ZIRIMisc_MechResurrector>
     <ZIRIMisc_MechResurrector_MechResurrectChargePointBaseFactor>Mech Resurrection init value：{0}</ZIRIMisc_MechResurrector_MechResurrectChargePointBaseFactor>
     <ZIRIMisc_MechResurrector_MechResurrectChargePointMultiplier>Mech Resurrection addon value：{0}</ZIRIMisc_MechResurrector_MechResurrectChargePointMultiplier>
+    <ZIRIMisc_MechResurrector_MechResurrectActiveEffects>Active Malevolent Drone effects(You do really hate of HATE? QAQ): </ZIRIMisc_MechResurrector_MechResurrectActiveEffects>
     <ZIRIMisc_MechResurrector_Hint>Hint：Due to the special skill functions, please apply the settings before install the Implant, or click forced reset bottom in Toggle God Mod.</ZIRIMisc_MechResurrector_Hint>
 </LanguageData>

@@ -101,25 +101,42 @@ namespace ZIRI_ApocritonMechResurrector
 
         private Gizmo gizmo;
 
-        public int ChargesRemaining => resurrectCharges;
+        //public int ChargesRemaining => resurrectCharges;
 
         public override bool CanCast => resurrectCharges > 0;
 
         public new CompProperties_MechanitorResurrectMech Props => (CompProperties_MechanitorResurrectMech)props;
-        public int currentMaxResurrectCharges => Mathf.Max((int)(this.GetHediff().Severity - 1), 0) * ZIRIMisc_MechResurrector_Settings.MechResurrectChargePointMultiplier + ZIRIMisc_MechResurrector_Settings.MechResurrectChargePointBaseFactor;
-        //Mathf.Max(resurrectCharges, 0)
+        //public int currentMaxResurrectCharges => Mathf.Max((int)(this.GetHediff().Severity - 1), 0) * ZIRIMisc_MechResurrector_Settings.MechResurrectChargePointMultiplier + ZIRIMisc_MechResurrector_Settings.MechResurrectChargePointBaseFactor;
+        public bool CheckResurrectChargesInBound => this.resurrectCharges <= this.GetMaxResurrectCharges();
+
+        public int currentMaxResurrectCharges
+        {
+            get
+            {
+                if (!CheckResurrectChargesInBound)
+                {
+                    this.ResetCharges(); // Call the reset function
+                }
+                return Mathf.Max((int)(this.GetHediff().Severity - 1), 0) * ZIRIMisc_MechResurrector_Settings.MechResurrectChargePointMultiplier
+                              + ZIRIMisc_MechResurrector_Settings.MechResurrectChargePointBaseFactor;
+            }
+        }
 
         public void ResetCharges()
         {
-           //Log.Message("ResetCharges called");
-            this.resurrectCharges = this.currentMaxResurrectCharges;
-           //Log.Message("ResetCharges end");
+            this.resurrectCharges = this.GetMaxResurrectCharges();
         }
 
         public int GetMaxResurrectCharges()
         {
+            if (this.GetHediff() == null)
+            {
+                return -1;
+            }
             //Log.Message("GetMaxResurrectCharges called");
             return this.currentMaxResurrectCharges;
+            
+
         }
 
         public Hediff GetHediff()
@@ -305,7 +322,11 @@ namespace ZIRI_ApocritonMechResurrector
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra() //charge display
         {
-            //Log.Message("CompGetGizmosExtra called");
+            //Log.Message("CompGetGizmosExtra of AMR called by " + parent.pawn.Name.ToStringSafe());
+            if (this.GetHediff() == null || this.parent.pawn == null || this.parent.pawn.Dead)
+            {
+                yield break;
+            }
             if (gizmo == null)
             {
                 gizmo = new Gizmo_MechanitorMechResurrectionCharges(this);
@@ -390,9 +411,11 @@ namespace ZIRI_ApocritonMechResurrector
 
         private static readonly Color EmptyBlockColor = new Color(0.3f, 0.3f, 0.3f, 1f);
 
-        private static readonly Color FilledBlockColor = Color.grey;
+        private static readonly Color FilledBlockColor = Color.yellow;//new Color((float)162 / 255, (float)49 / 255, (float)59 / 255)
 
         private CompAbilityEffect_MechanitorResurrectMech ability;
+
+        public override bool Visible => Find.Selector.SelectedPawns.Count == 1;
 
         public override float GetWidth(float maxWidth)
         {
@@ -408,102 +431,39 @@ namespace ZIRI_ApocritonMechResurrector
 
         public override GizmoResult GizmoOnGUI(Vector2 topLeft, float maxWidth, GizmoRenderParms parms)
         {
+            if (ability.GetHediff() == null)
+            {
+                return new GizmoResult(GizmoState.Clear);
+            }
+            if (!ability.CheckResurrectChargesInBound)
+            {
+                ability.ResetCharges();
+            }
             Rect rect = new Rect(topLeft.x, topLeft.y, GetWidth(maxWidth), 75f);
             Widgets.DrawWindowBackground(rect);
             Rect rect2 = rect.ContractedBy(6f);
-            Rect rect3 = new Rect(rect2.x, rect2.y, rect2.width, 20f);
+            Rect rect3 = new Rect(rect2.x, rect2.y, rect2.width, 21f);
             Widgets.Label(rect3, "ZIRIGizmo_ApocritonMechResurrectorHeader".Translate());
-            Rect rect4 = new Rect(rect2.x, rect3.yMax + 2f, rect2.width, 20f);
+            Rect rect4 = new Rect(rect2.x, rect3.yMax + 2f, rect2.width, 21f);
+            
+            
             using (new TextBlock(GameFont.Tiny))
             {
-                string label = ability.ChargesRemaining.ToString();
-                Widgets.Label(rect4, label);
-                using (new TextBlock(TextAnchor.UpperRight))
+                using (new TextBlock(TextAnchor.MiddleRight))
                 {
-                    string label2 = "Max: " + ability.GetMaxResurrectCharges().ToString();
-                    Widgets.Label(rect4, label2);
+                    string label = "[Max: " + ability.resurrectCharges.ToString() + "/" + ability.GetMaxResurrectCharges().ToString() + "]";
+                    Widgets.Label(rect4, label);
                 }
             }
             Rect rect5 = new Rect(rect2.x, rect4.yMax + 2f, rect2.width, rect2.height - rect3.height - rect4.height - 4f);
             Widgets.DrawBoxSolid(rect5, EmptyBlockColor);
             Rect rect6 = rect5.ContractedBy(3f);
-            rect6.width *= (float)ability.ChargesRemaining / (float)ability.GetMaxResurrectCharges();
-
-            //Log.Message("rect6.width: "+ ((float)ability.ChargesRemaining / (float)ability.GetMaxResurrectCharges()).ToStringSafe());
-
+            rect6.width *= (float)ability.resurrectCharges / (float)ability.GetMaxResurrectCharges();
             Widgets.DrawBoxSolid(rect6, FilledBlockColor);
             TooltipHandler.TipRegion(rect, "ZIRIGizmo_ApocritonMechResurrectorTooltip".Translate());
             return new GizmoResult(GizmoState.Clear);
         }
     }
-
-
-    //[StaticConstructorOnStartup]
-    //public class Gizmo_MechanitorMechResurrectionCharges : Gizmo
-    //{
-    //    private static readonly Texture2D FullShieldBarTex = SolidColorMaterials.NewSolidColorTexture(new Color(0.2f, 0.2f, 0.24f));
-
-    //    private static readonly Texture2D EmptyShieldBarTex = SolidColorMaterials.NewSolidColorTexture(Color.clear);
-
-    //    private static readonly float Width = 140f;
-
-    //    private const int HeaderHeight = 20;
-
-    //    private static readonly Color EmptyBlockColor = new Color(0.3f, 0.3f, 0.3f, 1f);
-
-    //    private static readonly Color FilledBlockColor = Color.grey;
-
-    //    private CompAbilityEffect_MechanitorResurrectMech ability;
-
-    //    private Pawn _pawn;
-
-    //    public override bool Visible
-    //    {
-    //        get
-    //        {
-    //            if (_pawn != null && MechanitorUtility.IsMechanitor(_pawn))
-    //            {
-    //                return Find.Selector.SelectedPawns.Count == 1;
-    //            }
-    //            return false;
-    //        }
-    //    }
-
-    //    public Gizmo_MechanitorMechResurrectionCharges(CompAbilityEffect_MechanitorResurrectMech ability)
-    //    {
-    //        this.ability = ability;
-    //        Order = -100f;
-
-    //    }
-
-    //    public override float GetWidth(float maxWidth)
-    //    {
-    //        return Width;
-    //    }
-
-    //    public override GizmoResult GizmoOnGUI(Vector2 topLeft, float maxWidth, GizmoRenderParms parms)
-    //    {
-
-    //        Rect rect = new Rect(topLeft.x, topLeft.y, GetWidth(maxWidth), 75f);
-    //        Rect rect2 = rect.ContractedBy(6f);
-    //        Widgets.DrawWindowBackground(rect);
-    //        Rect rect3 = rect2;
-    //        rect3.height = rect.height / 2f;
-    //        Text.Font = GameFont.Tiny;
-    //        Text.Anchor = TextAnchor.UpperLeft;
-    //        Widgets.Label(rect3, "MechResurrectionCharges".Translate());
-    //        Text.Anchor = TextAnchor.UpperLeft;
-    //        Rect rect4 = rect;
-    //        rect4.y += rect3.height - 5f;
-    //        rect4.height = rect.height / 2f;
-    //        Text.Font = GameFont.Medium;
-    //        Text.Anchor = TextAnchor.MiddleCenter;
-    //        Widgets.Label(rect4, ability.ChargesRemaining.ToString());
-    //        Text.Anchor = TextAnchor.UpperLeft;
-    //        Text.Font = GameFont.Small;
-    //        return new GizmoResult(GizmoState.Clear);
-    //    }
-    //}
 
     //LTS mech resurrect end
 
@@ -537,30 +497,37 @@ namespace ZIRI_ApocritonMechResurrector
             //find the ability of RemoteResurrect from the user
             //Ability remoteResurrectAbility = user.abilities.GetAbility(abilityDef);
             Ability remoteResurrectAbility = user.abilities.GetAbility(abilityDef);
-
-            if (remoteResurrectAbility == null)// find mech resurrect ability, if not found, add both input hediffs
+            try
             {
-               //Log.Message("Didn't find RemoteResurrect ability");
-               //Log.Message("AddHediff: " + Props.hediffDefAnother);
-                user.health.AddHediff(Props.hediffDef);
-                user.health.AddHediff(Props.hediffDefAnother);
-                return;
-            }
-            else
-            {
-              //Log.Message("Find Abilitiy: " + remoteResurrectAbility.def.defName);
-              //Log.Message("AddHediff: " + Props.hediffDef);
-                //user.health.AddHediff(Props.hediffDef);
-                //find the CompAbilityEffect_MechanitorResurrectMech from the ability(might has better ways to look through)
-                CompAbilityEffect_MechanitorResurrectMech comp = remoteResurrectAbility.EffectComps.Find(x => x is CompAbilityEffect_MechanitorResurrectMech) as CompAbilityEffect_MechanitorResurrectMech;
-
-                if (comp != null)
+                if (remoteResurrectAbility == null)// find mech resurrect ability, if not found, add both input hediffs
                 {
-                  //Log.Message("Find CompAbilityEffect_MechanitorResurrectMech!");
-                    comp.ResetCharges();
+                    //Log.Message("Didn't find RemoteResurrect ability");
+                    //Log.Message("AddHediff: " + Props.hediffDefAnother);
+                    user.health.AddHediff(Props.hediffDef);
+                    user.health.AddHediff(Props.hediffDefAnother);
+                    return;
                 }
-                return;
+                else
+                {
+                    //Log.Message("AddHediff: " + Props.hediffDef);
+                    //user.health.AddHediff(Props.hediffDef);
+                    //find the CompAbilityEffect_MechanitorResurrectMech from the ability(might has better ways to look through)
+                    CompAbilityEffect_MechanitorResurrectMech comp = remoteResurrectAbility.EffectComps.Find(x => x is CompAbilityEffect_MechanitorResurrectMech) as CompAbilityEffect_MechanitorResurrectMech;
+
+                    if (comp != null)
+                    {
+                        //Log.Message("Find CompAbilityEffect_MechanitorResurrectMech!");
+                        comp.ResetCharges();
+                    }
+                    return;
+                }
             }
+            catch (System.Exception ex)
+            {
+                Log.Error($"Error in DoEffect from ZIRI_ApocritonMechResurrector.CompUseEffect_AddHediffAndResetMechResurrectCharge: {ex.Message}");
+            }
+
+
         }
 
         public override AcceptanceReport CanBeUsedBy(Pawn p)
@@ -579,30 +546,101 @@ namespace ZIRI_ApocritonMechResurrector
     {
         protected override ThoughtState CurrentSocialStateInternal(Pawn p, Pawn other)
         {
-
-          //Log.Message("CurrentSocialStateInternal called by: " + p.Name);
-
-            Hediff firstHediffOfDef = p.health.hediffSet.GetFirstHediffOfDef(def.hediff);
-            if (firstHediffOfDef?.def.stages == null)
+            try
             {
-              //Log.Message("Hediff not found in ThoughtWorker_disdainOrganism_Hediff." + p.Name);
+                //Log.Message("CurrentSocialStateInternal called by: " + p.Name);
+                if (ZIRIMisc_MechResurrector_Settings.MechResurrectActiveEffects == false)
+                {
+                    return ThoughtState.Inactive;
+                }
+                Hediff firstHediffOfDef = p.health.hediffSet.GetFirstHediffOfDef(def.hediff);
+                if (firstHediffOfDef?.def.stages == null)
+                {
+                    //Log.Message("Hediff not found in ThoughtWorker_disdainOrganism_Hediff." + p.Name);
+                    return ThoughtState.Inactive;
+                }
+                if (MechanitorUtility.IsMechanitor(other))
+                {
+                    //Log.Message("Other Mechanitor found in ThoughtWorker_disdainOrganism_Hediff." + other.Name);
+                    return ThoughtState.ActiveAtStage(def.stages.Count - 1);
+                }
+                //Log.Message("Hediff found in ThoughtWorker_disdainOrganism_Hediff." + p.Name);
+                return ThoughtState.ActiveAtStage(Mathf.Min(firstHediffOfDef.CurStageIndex, firstHediffOfDef.def.stages.Count - 1, def.stages.Count - 1));
+
+            }
+            catch (System.Exception ex)
+            {
+                Log.Error($"Error in CurrentSocialStateInternal from ZIRI_ApocritonMechResurrector.ThoughtWorker_disdainOrganism_Hediff: {ex.Message}");
                 return ThoughtState.Inactive;
             }
-            if (MechanitorUtility.IsMechanitor(other))
-            {
-              //Log.Message("Other Mechanitor found in ThoughtWorker_disdainOrganism_Hediff." + other.Name);
-                return ThoughtState.ActiveAtStage(def.stages.Count - 1);
-            }
-          //Log.Message("Hediff found in ThoughtWorker_disdainOrganism_Hediff." + p.Name);
-            return ThoughtState.ActiveAtStage(Mathf.Min(firstHediffOfDef.CurStageIndex, firstHediffOfDef.def.stages.Count - 1, def.stages.Count - 1));
+
 
         }
     }
 
+    public class ThoughtWorker_Hediff_Advanced : ThoughtWorker_Hediff
+    {
+        protected override ThoughtState CurrentStateInternal(Pawn p)
+        {
+            //mod setting of MechResurrectActiveEffects
+            if (ZIRIMisc_MechResurrector_Settings.MechResurrectActiveEffects == false)
+            {
+                return ThoughtState.Inactive;
+            }
+            Hediff firstHediffOfDef = p.health.hediffSet.GetFirstHediffOfDef(def.hediff);
+            if (firstHediffOfDef?.def.stages == null)
+            {
+                return ThoughtState.Inactive;
+            }
+            return ThoughtState.ActiveAtStage(Mathf.Min(firstHediffOfDef.CurStageIndex, firstHediffOfDef.def.stages.Count - 1, def.stages.Count - 1));
+        }
+    }
 
+    //add trait depends on the hediff
 
+    public class HediffCompProperties_AddTrait : HediffCompProperties
+    {
+        public TraitDef traitDef;
 
+        public HediffCompProperties_AddTrait()
+        {
+            compClass = typeof(HediffComp_AddTrait);
+        }
+    }
 
+    public class HediffComp_AddTrait : HediffComp
+    {
+        public HediffCompProperties_AddTrait Props => (HediffCompProperties_AddTrait)props;
+
+        public override void CompPostPostAdd(DamageInfo? dinfo)
+        {
+            try
+            {
+                if (Props.traitDef == null)
+                {
+                    return;
+                }
+                if (this.parent.pawn == null)
+                {
+                    return;
+                }
+                if (this.parent.pawn.story == null)
+                {
+                    return;
+                }
+                if (this.parent.pawn.story.traits.HasTrait(Props.traitDef))
+                {
+                    return;
+                }
+                this.parent.pawn.story.traits.GainTrait(new Trait(Props.traitDef), suppressConflicts: true);
+            }
+            catch (System.Exception ex)
+            {
+                Log.Error($"Error in CompPostPostAdd from ZIRI_ApocritonMechResurrector.HediffComp_AddTrait: {ex.Message}");
+            }
+
+        }
+    }
 
     public class HediffCompProperties_pawnExpload : HediffCompProperties
     {
@@ -716,10 +754,10 @@ namespace ZIRI_ApocritonMechResurrector
                 }
                 else if (Props.canUpgrade)
                 {
-                   //Log.Message("Current input charge point before chnage level: " + ((int)user.GetStatValue(StatDefOf.MechResurrectMaxChargePoint, true, -1)));
-                    ((Hediff_Level)firstHediffOfDef).ChangeLevel(1);
-                   //Log.Message("Current input charge point after chnage level: " + ((int)user.GetStatValue(StatDefOf.MechResurrectMaxChargePoint, true, -1)));
 
+                    //Log.Message("Current input charge point before chnage level: " + ((int)user.GetStatValue(StatDefOf.MechResurrectMaxChargePoint, true, -1)));
+                    ((Hediff_Level)firstHediffOfDef).ChangeLevel(1);
+                    //Log.Message("Current input charge point after chnage level: " + ((int)user.GetStatValue(StatDefOf.MechResurrectMaxChargePoint, true, -1)));
                     this.UpdateUserAbilityOfMaxChargePoints(user, ApocritonMechResurrector_AbilityDefOf.ApocritonMechResurrector);
 
                 }
@@ -737,7 +775,7 @@ namespace ZIRI_ApocritonMechResurrector
                 try
                 {
                   //Log.Message("Resetting charges...");
-                    await Task.Delay(50);//have to wait for value assigned to the ability, then reset the charges
+                    await Task.Delay(5);//have to wait for value assigned to the ability, then reset the charges
                     comp.ResetCharges();//other way: just read hediff level and assign to the charges, becuase this way is less reliable
                     return;
                 }
@@ -762,6 +800,8 @@ namespace ZIRI_ApocritonMechResurrector
 
         public static int MechResurrectChargePointMultiplier = 10;
 
+        public static bool MechResurrectActiveEffects = true;
+
         public static void DoSettingsWindowContents(Rect inRect)
         {
             Rect rect = new Rect(inRect.x, inRect.y, inRect.width * 0.6f, inRect.height);
@@ -774,16 +814,18 @@ namespace ZIRI_ApocritonMechResurrector
             listing_Standard.Begin(rect);
 
             listing_Standard.Gap(6f);
-            MechResurrectChargePointBaseFactor = (int)listing_Standard.SliderLabeled("ZIRIMisc_MechResurrector_MechResurrectChargePointBaseFactor".Translate(MechResurrectChargePointBaseFactor.ToString()), (float)MechResurrectChargePointBaseFactor, 10f, 40f);
+            MechResurrectChargePointBaseFactor = (int)listing_Standard.SliderLabeled("ZIRIMisc_MechResurrector_MechResurrectChargePointBaseFactor".Translate(MechResurrectChargePointBaseFactor.ToString()), (float)MechResurrectChargePointBaseFactor, 10f, 50f);
 
             listing_Standard.Gap(12f);
-            MechResurrectChargePointMultiplier = (int)listing_Standard.SliderLabeled("ZIRIMisc_MechResurrector_MechResurrectChargePointMultiplier".Translate(MechResurrectChargePointMultiplier.ToString()), (float)MechResurrectChargePointMultiplier, 10f, 40f);
+            MechResurrectChargePointMultiplier = (int)listing_Standard.SliderLabeled("ZIRIMisc_MechResurrector_MechResurrectChargePointMultiplier".Translate(MechResurrectChargePointMultiplier.ToString()), (float)MechResurrectChargePointMultiplier, 10f, 50f);
 
             listing_Standard.Gap(6f);
             if (listing_Standard.ButtonText("Reset".Translate()))
             {
                 Reset();
             }
+            listing_Standard.Gap(6f);
+            listing_Standard.CheckboxLabeled("ZIRIMisc_MechResurrector_MechResurrectActiveEffects".Translate(), ref MechResurrectActiveEffects);
             listing_Standard.Gap(6f);
             listing_Standard.Label("ZIRIMisc_MechResurrector_Hint".Translate());
             listing_Standard.End();
@@ -800,6 +842,7 @@ namespace ZIRI_ApocritonMechResurrector
             base.ExposeData();
             Scribe_Values.Look(ref MechResurrectChargePointBaseFactor, "MechResurrectChargePointBaseFactor", 30);
             Scribe_Values.Look(ref MechResurrectChargePointMultiplier, "MechResurrectChargePointMultiplier", 10);
+            Scribe_Values.Look(ref MechResurrectActiveEffects, "MechResurrectActiveEffects", true);
 
         }
     }

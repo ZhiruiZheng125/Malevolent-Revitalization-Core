@@ -5,7 +5,7 @@
     <ThoughtDef>
 
       <defName>NefariousDrone</defName>
-      <workerClass>ThoughtWorker_Hediff</workerClass>
+      <workerClass>ZIRI_ApocritonMechResurrector.ThoughtWorker_Hediff_Advanced</workerClass>
       <hediff>ApocritonMechResurrector</hediff>
       <validWhileDespawned>true</validWhileDespawned>
       <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
@@ -19,7 +19,7 @@
 
         <li>
           <label>nefarious drone (strong)</label>
-          <description>Deceit... distortion... extremism... they are so numb, yet so decayed. In truth, we are all sick.</description>
+          <description>Deceit... Distortion... Extremism... they are so numb, yet so decayed. In truth, we are all sick.</description>
           <baseMoodEffect>-10</baseMoodEffect>
         </li>
 
