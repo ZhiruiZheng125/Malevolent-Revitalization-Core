@@ -721,7 +721,7 @@ namespace ZIRI_ApocritonMechResurrector
                     0f,//float excludeRadius = 0f, 
                     true,//bool doSoundEffects = true, 
                     null,//ThingDef postExplosionSpawnThingDefWater = null, 
-                    1f,//float screenShakeFactor = 1f, 
+                    4f,//float screenShakeFactor = 1f, 
                     null,//SimpleCurve flammabilityChanceCurve = null, 
                     null //List<IntVec3> overrideCells = null
                     );
