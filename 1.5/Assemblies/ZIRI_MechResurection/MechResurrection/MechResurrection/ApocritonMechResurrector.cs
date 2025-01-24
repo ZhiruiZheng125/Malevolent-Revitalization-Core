@@ -101,41 +101,41 @@ namespace ZIRI_ApocritonMechResurrector
 
         private Gizmo gizmo;
 
-        //public int ChargesRemaining => resurrectCharges;
-
         public override bool CanCast => resurrectCharges > 0;
 
         public new CompProperties_MechanitorResurrectMech Props => (CompProperties_MechanitorResurrectMech)props;
-        //public int currentMaxResurrectCharges => Mathf.Max((int)(this.GetHediff().Severity - 1), 0) * ZIRIMisc_MechResurrector_Settings.MechResurrectChargePointMultiplier + ZIRIMisc_MechResurrector_Settings.MechResurrectChargePointBaseFactor;
-        public bool CheckResurrectChargesInBound => this.resurrectCharges <= this.GetMaxResurrectCharges();
-
-        public int currentMaxResurrectCharges
-        {
-            get
-            {
-                if (!CheckResurrectChargesInBound)
-                {
-                    this.ResetCharges(); // Call the reset function
-                }
-                return Mathf.Max((int)(this.GetHediff().Severity - 1), 0) * ZIRIMisc_MechResurrector_Settings.MechResurrectChargePointMultiplier
-                              + ZIRIMisc_MechResurrector_Settings.MechResurrectChargePointBaseFactor;
-            }
-        }
+        public int currentMaxResurrectCharges => Mathf.Max((int)(this.GetHediff().Severity - 1), 0) * ZIRIMisc_MechResurrector_Settings.MechResurrectChargePointMultiplier + ZIRIMisc_MechResurrector_Settings.MechResurrectChargePointBaseFactor;
+        //public bool CheckResurrectChargesInBound => this.resurrectCharges <= this.GetMaxResurrectCharges();
+        public bool CheckResurrectChargesInBound => this.resurrectCharges <= this.currentMaxResurrectCharges;
 
         public void ResetCharges()
         {
-            this.resurrectCharges = this.GetMaxResurrectCharges();
+            this.resurrectCharges = this.currentMaxResurrectCharges;
         }
 
         public int GetMaxResurrectCharges()
         {
-            if (this.GetHediff() == null)
+            try
             {
-                return -1;
+                if (this.GetHediff() == null)
+                {
+                    return -1;
+                }
+                //try reset when reach bound
+                if (!this.CheckResurrectChargesInBound)
+                {
+                    this.ResetCharges();
+                }
+                //Log.Message("GetMaxResurrectCharges called");
+                return this.currentMaxResurrectCharges;
+
             }
-            //Log.Message("GetMaxResurrectCharges called");
-            return this.currentMaxResurrectCharges;
-            
+            catch (System.Exception ex)
+            {
+                Log.Error($"Error in GetMaxResurrectCharges from ZIRI_ApocritonMechResurrector.CompAbilityEffect_MechanitorResurrectMech: {ex.Message}");
+                return -99;
+            }
+
 
         }
 
@@ -411,7 +411,7 @@ namespace ZIRI_ApocritonMechResurrector
 
         private static readonly Color EmptyBlockColor = new Color(0.3f, 0.3f, 0.3f, 1f);
 
-        private static readonly Color FilledBlockColor = Color.yellow;//new Color((float)162 / 255, (float)49 / 255, (float)59 / 255)
+        private static Color FilledBlockColor => new Color((float)ZIRIMisc_MechResurrector_Settings.MechResurrectBarColorR / 255f, (float)ZIRIMisc_MechResurrector_Settings.MechResurrectBarColorG / 255f, (float)ZIRIMisc_MechResurrector_Settings.MechResurrectBarColorB / 255f);//Color.yellow
 
         private CompAbilityEffect_MechanitorResurrectMech ability;
 
@@ -435,10 +435,12 @@ namespace ZIRI_ApocritonMechResurrector
             {
                 return new GizmoResult(GizmoState.Clear);
             }
-            if (!ability.CheckResurrectChargesInBound)
-            {
-                ability.ResetCharges();
-            }
+            //if (!ability.CheckResurrectChargesInBound)
+            //{
+            //    ability.ResetCharges();
+            //}
+            //Log.Message($"Display RGB: {ZIRIMisc_MechResurrector_Settings.MechResurrectBarColorR}, {ZIRIMisc_MechResurrector_Settings.MechResurrectBarColorG}, {ZIRIMisc_MechResurrector_Settings.MechResurrectBarColorB}");
+
             Rect rect = new Rect(topLeft.x, topLeft.y, GetWidth(maxWidth), 75f);
             Widgets.DrawWindowBackground(rect);
             Rect rect2 = rect.ContractedBy(6f);
@@ -461,6 +463,7 @@ namespace ZIRI_ApocritonMechResurrector
             rect6.width *= (float)ability.resurrectCharges / (float)ability.GetMaxResurrectCharges();
             Widgets.DrawBoxSolid(rect6, FilledBlockColor);
             TooltipHandler.TipRegion(rect, "ZIRIGizmo_ApocritonMechResurrectorTooltip".Translate());
+            
             return new GizmoResult(GizmoState.Clear);
         }
     }
@@ -553,6 +556,10 @@ namespace ZIRI_ApocritonMechResurrector
                 {
                     return ThoughtState.Inactive;
                 }
+                if (!ApocritonMechResurrectorUtility.IsApocritonMechResurrector(p))
+                {
+                    return ThoughtState.Inactive;
+                }
                 Hediff firstHediffOfDef = p.health.hediffSet.GetFirstHediffOfDef(def.hediff);
                 if (firstHediffOfDef?.def.stages == null)
                 {
@@ -587,6 +594,10 @@ namespace ZIRI_ApocritonMechResurrector
             {
                 return ThoughtState.Inactive;
             }
+            if (!ApocritonMechResurrectorUtility.IsApocritonMechResurrector(p))
+            {
+                return ThoughtState.Inactive;
+            }
             Hediff firstHediffOfDef = p.health.hediffSet.GetFirstHediffOfDef(def.hediff);
             if (firstHediffOfDef?.def.stages == null)
             {
@@ -616,11 +627,16 @@ namespace ZIRI_ApocritonMechResurrector
         {
             try
             {
+                
                 if (Props.traitDef == null)
                 {
                     return;
                 }
                 if (this.parent.pawn == null)
+                {
+                    return;
+                }
+                if (!ApocritonMechResurrectorUtility.IsApocritonMechResurrector(this.parent.pawn))
                 {
                     return;
                 }
@@ -802,6 +818,12 @@ namespace ZIRI_ApocritonMechResurrector
 
         public static bool MechResurrectActiveEffects = true;
 
+        public static int MechResurrectBarColorR = 255;
+
+        public static int MechResurrectBarColorG = 140;
+
+        public static int MechResurrectBarColorB = 0;
+
         public static void DoSettingsWindowContents(Rect inRect)
         {
             Rect rect = new Rect(inRect.x, inRect.y, inRect.width * 0.6f, inRect.height);
@@ -819,15 +841,41 @@ namespace ZIRI_ApocritonMechResurrector
             listing_Standard.Gap(12f);
             MechResurrectChargePointMultiplier = (int)listing_Standard.SliderLabeled("ZIRIMisc_MechResurrector_MechResurrectChargePointMultiplier".Translate(MechResurrectChargePointMultiplier.ToString()), (float)MechResurrectChargePointMultiplier, 10f, 50f);
 
-            listing_Standard.Gap(6f);
+            listing_Standard.Gap(12f);
+            listing_Standard.CheckboxLabeled("ZIRIMisc_MechResurrector_MechResurrectActiveEffects".Translate(), ref MechResurrectActiveEffects);
+
+
+            listing_Standard.Gap(12f);
             if (listing_Standard.ButtonText("Reset".Translate()))
             {
                 Reset();
             }
+
+
+            listing_Standard.Gap(12f);
+            listing_Standard.Label("ZIRIMisc_MechResurrector_setting_MechResurrectBarColor".Translate());
+
             listing_Standard.Gap(6f);
-            listing_Standard.CheckboxLabeled("ZIRIMisc_MechResurrector_MechResurrectActiveEffects".Translate(), ref MechResurrectActiveEffects);
+            MechResurrectBarColorR = (int)listing_Standard.SliderLabeled("ZIRIMisc_MechResurrector_MechResurrectBarColorR".Translate(MechResurrectBarColorR.ToString()), (float)MechResurrectBarColorR, 0f, 255f);
+
             listing_Standard.Gap(6f);
+            MechResurrectBarColorG = (int)listing_Standard.SliderLabeled("ZIRIMisc_MechResurrector_MechResurrectBarColorG".Translate(MechResurrectBarColorG.ToString()), (float)MechResurrectBarColorG, 0f, 255f);
+
+            listing_Standard.Gap(6f);
+            MechResurrectBarColorB = (int)listing_Standard.SliderLabeled("ZIRIMisc_MechResurrector_MechResurrectBarColorB".Translate(MechResurrectBarColorB.ToString()), (float)MechResurrectBarColorB, 0f, 255f);
+
+            
+            listing_Standard.Gap(12f);
+            if (listing_Standard.ButtonText("ResetColor".Translate()))
+            {
+                ResetColor();
+            }
+
+            listing_Standard.Gap(12f);
             listing_Standard.Label("ZIRIMisc_MechResurrector_Hint".Translate());
+
+            
+
             listing_Standard.End();
         }
 
@@ -835,6 +883,14 @@ namespace ZIRI_ApocritonMechResurrector
         {
             MechResurrectChargePointBaseFactor = 30;
             MechResurrectChargePointMultiplier = 10;
+            MechResurrectActiveEffects = true;
+        }
+
+        protected static void ResetColor()
+        {
+            MechResurrectBarColorR = 255;
+            MechResurrectBarColorG = 140;
+            MechResurrectBarColorB = 0;
         }
 
         public override void ExposeData()
@@ -843,6 +899,10 @@ namespace ZIRI_ApocritonMechResurrector
             Scribe_Values.Look(ref MechResurrectChargePointBaseFactor, "MechResurrectChargePointBaseFactor", 30);
             Scribe_Values.Look(ref MechResurrectChargePointMultiplier, "MechResurrectChargePointMultiplier", 10);
             Scribe_Values.Look(ref MechResurrectActiveEffects, "MechResurrectActiveEffects", true);
+
+            Scribe_Values.Look(ref MechResurrectBarColorR, "MechResurrectBarColorR", 255);
+            Scribe_Values.Look(ref MechResurrectBarColorG, "MechResurrectBarColorG", 140);
+            Scribe_Values.Look(ref MechResurrectBarColorB, "MechResurrectBarColorB", 0);
 
         }
     }

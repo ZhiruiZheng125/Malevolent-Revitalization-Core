@@ -4,5 +4,10 @@
     <ZIRIMisc_MechResurrector_MechResurrectChargePointBaseFactor>机械复活充能的初始修正值：{0}</ZIRIMisc_MechResurrector_MechResurrectChargePointBaseFactor>
     <ZIRIMisc_MechResurrector_MechResurrectChargePointMultiplier>机械复活充能的增长修正值：{0}</ZIRIMisc_MechResurrector_MechResurrectChargePointMultiplier>
     <ZIRIMisc_MechResurrector_MechResurrectActiveEffects>激活憎恶低语效果(真的要取消我吗QAQ): </ZIRIMisc_MechResurrector_MechResurrectActiveEffects>
+    <ZIRIMisc_MechResurrector_setting_MechResurrectBarColor>自定义机械复活充能条颜色: </ZIRIMisc_MechResurrector_setting_MechResurrectBarColor>
+    <ZIRIMisc_MechResurrector_MechResurrectBarColorR>R: {0}</ZIRIMisc_MechResurrector_MechResurrectBarColorR>
+    <ZIRIMisc_MechResurrector_MechResurrectBarColorG>G: {0}</ZIRIMisc_MechResurrector_MechResurrectBarColorG>
+    <ZIRIMisc_MechResurrector_MechResurrectBarColorB>B: {0}</ZIRIMisc_MechResurrector_MechResurrectBarColorB>
     <ZIRIMisc_MechResurrector_Hint>注意：由于特殊的技能机制最好提前修改数值再进行义体安装, 或者在 Toggle God Mod 中点击手动重置按钮。</ZIRIMisc_MechResurrector_Hint>
+    <ResetColor>重置颜色</ResetColor>
 </LanguageData>
