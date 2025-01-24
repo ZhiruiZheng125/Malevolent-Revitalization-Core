@@ -16,14 +16,14 @@
       <SignalChip>3</SignalChip>
       <ComponentSpacer>9</ComponentSpacer>
       <Plasteel>15</Plasteel>
-      <Gold>30</Gold>
+      <Gold>22</Gold>
       <MedicineUltratech>5</MedicineUltratech>
     </costList>
 
     <statBases>
       <MaxInstallCount>3</MaxInstallCount>
-      <MarketValue>6000</MarketValue>
-      <WorkToMake>100000</WorkToMake>
+      <MarketValue>8000</MarketValue>
+      <WorkToMake>250000</WorkToMake>
     </statBases>
     
     <recipeMaker>
@@ -162,7 +162,7 @@
   <AbilityDef MayRequire="ludeon.rimworld.biotech">
     <defName>ApocritonMechResurrector</defName>
     <label>Mech Reviving</label>
-    <description>Malevolent Resurrection Pulse allows the user to fully harness the Apocriton's Mech Resurrection ability. It can unleash a powerful energy pulse without requiring line of sight, overloading fallen nearby mechanoids with incredible efficiency, bringing them back to battle with their injuries intact.</description>
+    <description>Malevolent Reviving allows the user to fully harness the Apocriton's Mech Resurrection ability. It can unleash a powerful energy pulse without requiring line of sight, overloading fallen nearby mechanoids with incredible efficiency, bringing them back to battle with their injuries intact.</description>
     
     <descriptionHyperlinks>
       <ThingDef>nanoCyberSerum</ThingDef>

@@ -5,7 +5,7 @@
   <ThingDef ParentName="ResourceBase">
     <defName>nanoCyberSerum</defName>
     <label>Nano Cyber Serum</label>
-    <description>Nano Cyber Serum is an advanced injectable nanomechanical fluid designed to reset the Malevolent Revitalization Core's revival capabilities. It works by emitting low-frequency RF signals to liquefy the nanostructures within the Nano-Structured Chip, releasing nanoparticles that seek out and reactivate dormant revival implants.\n\nOnce injected into the neck, the serum rapidly adheres to the implant, restoring its mechanical revival charge and ensuring uninterrupted combat efficiency. Its compact design makes it ideal for quick replenishment during intense frontline battles.\n\nHowever, improper use carries severe risks. In non-implanted individuals, the nanomachines can malfunction, causing irreversible infection by SensoryMechanites and FibrousMechanites. Due to these dangers and its high production costs, Nano Cyber Serum was banned after the Rust Wars.\n\nEffect: Resets the Malevolent Revitalization Core's revival charge. Non-implanted users will suffer fatal nanomechanical virus infections.</description>
+    <description>Nano Cyber Serum is an advanced injectable nanomechanical fluid designed to reset the Malevolent Revitalization Core's revival capabilities. It works by emitting low-frequency RF signals to liquefy the nanostructures within the Nano-Structured Chip, releasing nanoparticles that seek out and reactivate dormant revival implants.\n\nOnce injected into the neck, the serum rapidly adheres to the implant, restoring its mechanical revival charge and ensuring uninterrupted combat efficiency. Its compact design makes it ideal for quick replenishment during intense frontline battles.\n\nHowever, improper use carries severe risks. In non-implanted individuals, the nanomachines can malfunction, causing irreversible infection by SensoryMechanites and FibrousMechanites. Due to these dangers and its high production costs, Nano Cyber Serum was banned after the Rust Wars. And those ancient mechanitors who once made outstanding contributions quickly became Castoffs, either secretly executed by humans or mysteriously disappeared.\n\nEffect: Resets the Malevolent Revitalization Core's revival charge. Non-implanted users will suffer fatal nanomechanical virus infections.</description>
     <descriptionHyperlinks>
       <AbilityDef>ApocritonMechResurrector</AbilityDef>
       <ThingDef>ApocritonMechResurrector</ThingDef>
@@ -17,7 +17,7 @@
     <orderedTakeGroup>Drug</orderedTakeGroup>
     <statBases>
       <MaxHitPoints>20</MaxHitPoints>
-      <MarketValue>2000</MarketValue>
+      <MarketValue>1800</MarketValue>
       <Mass>0.1</Mass>
       <Flammability>0.15</Flammability>
     </statBases>
@@ -76,7 +76,7 @@
       <Neutroamine>15</Neutroamine>
     </costList>
     <recipeMaker>
-      <workAmount>80000</workAmount>
+      <workAmount>400000</workAmount>
       <workSkill>Intellectual</workSkill>
       <skillRequirements>
         <Crafting>12</Crafting>
